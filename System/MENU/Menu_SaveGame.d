@@ -1,0 +1,651 @@
+instance MENU_SAVEGAME_LOAD(C_MENU_BLACKALPHA_BACKGROUND)
+{
+	// Title
+	items[1] = "MENUITEM_LOAD_HEADLINE";
+	
+	// Thumbpic + subtitle
+	items[2] = "MENUITEM_LOADSAVE_THUMBPICFIXED";
+	items[3] = "MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER";
+	
+	// Description of a selected save under the thumbpic
+	items[4] = "MENUITEM_LOADSAVE_SAVEDESC_CHAPTER";
+	items[5] = "MENUITEM_LOADSAVE_SAVEDESC_CHAPTER_VALUE";
+	items[6] = "MENUITEM_LOADSAVE_DATETIME";
+	items[7] = "MENUITEM_LOADSAVE_DATETIME_VALUE";
+	items[8] = "MENUITEM_LOADSAVE_PLAYTIME";
+	items[9] = "MENUITEM_LOADSAVE_PLAYTIME_VALUE";
+	
+	// Load slots
+	items[10] = "MENUITEM_LOAD_SLOT1";
+	items[11] = "MENUITEM_LOAD_SLOT2";
+	items[12] = "MENUITEM_LOAD_SLOT3";
+	items[13] = "MENUITEM_LOAD_SLOT4";
+	items[14] = "MENUITEM_LOAD_SLOT5";
+	items[15] = "MENUITEM_LOAD_SLOT6";
+	items[16] = "MENUITEM_LOAD_SLOT7";
+	items[17] = "MENUITEM_LOAD_SLOT8";
+	items[18] = "MENUITEM_LOAD_SLOT9";
+	items[19] = "MENUITEM_LOAD_SLOT10";
+	items[20] = "MENUITEM_LOAD_SLOT11";
+	items[21] = "MENUITEM_LOAD_SLOT12";
+	items[22] = "MENUITEM_LOAD_SLOT13";
+	items[23] = "MENUITEM_LOAD_SLOT14";
+	items[24] = "MENUITEM_LOAD_SLOT15";
+	
+	// Back
+	items[25] = "MENUITEM_LOAD_BACK";
+	
+	flags = flags | MENU_SHOW_INFO;
+};
+
+instance MENU_SAVEGAME_SAVE(C_MENU_BLACKALPHA_BACKGROUND)
+{
+	// Title
+	items[1] = "MENUITEM_SAVE_HEADLINE";
+	
+	// Thumbpic + subtitle
+	items[2] = "MENUITEM_LOADSAVE_THUMBPICFIXED";
+	items[3] = "MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER";
+	
+	// Description of a selected save under the thumbpic
+	items[4] = "MENUITEM_LOADSAVE_SAVEDESC_CHAPTER";
+	items[5] = "MENUITEM_LOADSAVE_SAVEDESC_CHAPTER_VALUE";
+	items[6] = "MENUITEM_LOADSAVE_DATETIME";
+	items[7] = "MENUITEM_LOADSAVE_DATETIME_VALUE";
+	items[8] = "MENUITEM_LOADSAVE_PLAYTIME";
+	items[9] = "MENUITEM_LOADSAVE_PLAYTIME_VALUE";
+	
+	// Save slots
+	items[10] = "MENUITEM_SAVE_SLOT1";
+	items[11] = "MENUITEM_SAVE_SLOT2";
+	items[12] = "MENUITEM_SAVE_SLOT3";
+	items[13] = "MENUITEM_SAVE_SLOT4";
+	items[14] = "MENUITEM_SAVE_SLOT5";
+	items[15] = "MENUITEM_SAVE_SLOT6";
+	items[16] = "MENUITEM_SAVE_SLOT7";
+	items[17] = "MENUITEM_SAVE_SLOT8";
+	items[18] = "MENUITEM_SAVE_SLOT9";
+	items[19] = "MENUITEM_SAVE_SLOT10";
+	items[20] = "MENUITEM_SAVE_SLOT11";
+	items[21] = "MENUITEM_SAVE_SLOT12";
+	items[22] = "MENUITEM_SAVE_SLOT13";
+	items[23] = "MENUITEM_SAVE_SLOT14";
+	items[24] = "MENUITEM_SAVE_SLOT15";
+	
+	// Back
+	items[25] = "MENUITEM_SAVE_BACK";
+	flags = flags | MENU_SHOW_INFO;
+};
+
+instance MENUITEM_LOAD_HEADLINE(C_MENU_ITEM_PANELREST_DEF)
+{
+	text[0] = "WCZYTAJ GRÊ";
+	type = MENU_ITEM_TEXT;
+	posx = SAVEGAME_X1;
+	posy = MENU_TITLE_Y;
+	flags = IT_CHROMAKEYED | IT_TRANSPARENT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_SAVE_HEADLINE(C_MENU_ITEM_PANELREST_DEF)
+{
+	text[0] = "ZAPISZ GRÊ";
+	type = MENU_ITEM_TEXT;
+	posx = SAVEGAME_X1;
+	posy = MENU_TITLE_Y;
+	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+
+// Thumbpic + subtitle
+instance MENUITEM_LOADSAVE_THUMBPICFIXED(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_THUMBPICFIXED_PIC;
+	posx = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_POS_Y;
+	dimx = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_DIM_X;
+	dimy = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_THUMBPIC_DIM_Y;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER_TEXT;
+	posx = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_POS_Y + MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_THUMBPIC_DIM_Y + MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_CHAPTER_PADDING_TOP;
+	dimx = MENUITEM_LOADSAVE_SPALTE_THUMBPICFIXED_DIM_X;
+	fontname = MENU_FONT_DEFAULT;
+	flags = flags | IT_TXT_CENTER;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+
+// Description of a selected save under the thumbpic
+instance MENUITEM_LOADSAVE_SAVEDESC_CHAPTER(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = MENUITEM_LOADSAVE_CHAPTERSMALL_TEXT;
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y;
+	fontname = MENU_FONT_BRIGHT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_SAVEDESC_CHAPTER_VALUE(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = MENUITEM_LOADSAVE_CHAPTERSMALL_VALUE_TEXT;
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y + MENUITEM_LOADSAVE_SPALTE_SAVEDESC_DY;
+	fontname = MENU_FONT_SMALL;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_DATETIME(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = MENUITEM_LOADSAVE_DATETIME_TEXT;
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y + 2 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_DY + MENUITEM_LOADSAVE_SPALTE_SAVEDESC_SUBSECTION_DY;
+	fontname = MENU_FONT_BRIGHT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_DATETIME_VALUE(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = "--/--/--";
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y + 3 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_DY + MENUITEM_LOADSAVE_SPALTE_SAVEDESC_SUBSECTION_DY;
+	fontname = MENU_FONT_SMALL;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_PLAYTIME(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = MENUITEM_LOADSAVE_PLAYTIME_TEXT;
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y + 4 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_DY + 2 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_SUBSECTION_DY;
+	fontname = MENU_FONT_BRIGHT;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_LOADSAVE_PLAYTIME_VALUE(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_TEXT;
+	text[0] = "-- -- --";
+	posx = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_X;
+	posy = MENUITEM_LOADSAVE_SPALTE_SAVEDESC_POS_Y + 5 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_DY + 2 * MENUITEM_LOADSAVE_SPALTE_SAVEDESC_SUBSECTION_DY;
+	fontname = MENU_FONT_SMALL;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+// Back
+instance MENUITEM_SAVE_BACK(C_MENU_ITEM_PANELREST_DEF)
+{
+	text[0] = MENU_COMMON_BACK_TEXT;
+	text[1] = MENU_COMMON_BACK_TEXT;
+	posx = SAVEGAME_X1;
+	posy = MENU_BACK_Y;
+};
+
+instance MENUITEM_LOAD_BACK(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_COMMON_BACK_TEXT;
+	posx = SAVEGAME_X1;
+	posy = MENU_BACK_Y;
+};
+
+// Save slots
+instance MENUITEM_SAVE_SLOT1(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "1/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (0 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT1";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT2(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "2/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (1 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT2";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT3(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "3/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (2 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT3";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT4(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "4/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (3 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT4";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT5(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "5/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (4 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT5";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT6(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "6/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (5 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT6";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT7(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "7/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (6 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT7";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT8(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "8/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (7 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT8";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT9(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "9/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (8 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT9";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT10(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "10/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (9 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT10";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT11(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "11/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (10 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT11";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT12(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "12/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (11 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT12";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT13(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "13/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (12 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT13";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT14(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "14/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (13 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT14";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_SAVE_SLOT15(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_INPUT_BACK_PIC;
+	type = MENU_ITEM_INPUT;
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "15/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (14 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_STARTITEM;
+	onselaction_s[0] = "MENUITEM_SAVE_SLOT15";
+	onselaction[1] = SEL_ACTION_CLOSE;
+	onselaction_s[1] = "SAVEGAME_SAVE";
+	fontname = MENU_FONT_SMALL;
+};
+
+// Load slots
+instance MENUITEM_LOAD_SLOT1(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "1/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (0 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT2(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "2/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (1 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT3(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "3/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (2 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT4(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "4/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (3 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT5(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "5/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (4 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT6(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "6/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (5 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT7(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "7/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (6 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT8(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "8/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (7 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT9(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "9/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (8 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT10(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "10/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (9 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT11(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "11/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (10 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT12(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "12/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (11 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT13(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "13/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (12 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT14(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "14/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (13 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
+
+instance MENUITEM_LOAD_SLOT15(C_MENU_ITEM_DEF)
+{
+	text[0] = MENU_MAIN_LOADSAVE_3DASHES;
+	text[1] = "15/15";
+	posx = SAVEGAME_X1;
+	posy = SAVEGAME_Y + (14 * SAVEGAME_DY);
+	dimx = SAVEGAME_DX1;
+	dimy = SAVEGAME_DY;
+	onselaction[0] = SEL_ACTION_CLOSE;
+	onselaction_s[0] = "SAVEGAME_LOAD";
+	fontname = MENU_FONT_SMALL;
+};
