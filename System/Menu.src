@@ -1,0 +1,22 @@
+// Menue-Definitionen (Texturen, Fonts etc.)
+Menu\Menu_Defines.d
+
+// Deklarationen
+_Intern\Menu.d
+
+// Menue (Spielmenue)
+Menu\Menu_Main.d
+Menu\Menu_Opt.d
+Menu\Menu_Opt_Game.d
+Menu\Menu_Opt_Graphics.d
+Menu\Menu_Opt_Video.d
+Menu\Menu_Opt_Audio.d
+Menu\Menu_Opt_Controls.d
+Menu\Menu_Misc.d
+Menu\Menu_SaveGame.d
+
+// Log-Screen
+Menu\Menu_Log.d
+
+// Status-Screen
+Menu\Menu_Status.d
