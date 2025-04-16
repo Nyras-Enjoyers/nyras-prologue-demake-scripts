@@ -23,7 +23,7 @@
 "System/MENU/Menu_Defines.d:170","Wymagane ponowne uruchomienie gry!","Reiniciar Gothic para activar config.","","False","MENU_TEXT_NEEDS_RESTART","",""
 "System/MENU/Menu_Defines.d:172","WITAMY W KOLONII!","BIENVENIDO A LA COLONIA!","","False","MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER_TEXT","",""
 "System/MENU/Menu_Defines.d:174","Rozdział:","Capítulo:","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_TEXT","",""
-"System/MENU/Menu_Defines.d:175","Nyras","Cofradía:","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_VALUE_TEXT","",""
+"System/MENU/Menu_Defines.d:175","Nyras","Nyras","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_VALUE_TEXT","",""
 "System/MENU/Menu_Defines.d:176","Zapisz czas","Hora de guardado","","False","MENUITEM_LOADSAVE_DATETIME_TEXT","",""
 "System/MENU/Menu_Defines.d:177","Czas gry:","Tiempo jugado:","","False","MENUITEM_LOADSAVE_PLAYTIME_TEXT","",""
 "System/MENU/Menu_Defines.d:178","Wstecz","Atrás","","False","MENU_COMMON_BACK_TEXT","",""
