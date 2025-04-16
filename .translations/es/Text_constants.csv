@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Los Guardianes del Portal","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Capítulo 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","La guarida del Durmiente","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Habilidad aumentada: {SkillName}","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Habilidad aumentada: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","Una mano","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","Basura","","","Item_Junk","",""
