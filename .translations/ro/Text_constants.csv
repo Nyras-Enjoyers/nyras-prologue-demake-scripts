@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Garzile portalului","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Capitolul 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","The Templul Sleeperului","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Abilitate crescută: {SkillName}","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Abilitate crescută: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","Cu o mână","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","Vechitură","","","Item_Junk","",""
