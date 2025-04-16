@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","秘境之门的守护者","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","第 6 章","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","沉睡者的神殿","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","技能提升：{SkillName}","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","技能提升： ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","单手","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","垃圾","","","Item_Junk","",""
