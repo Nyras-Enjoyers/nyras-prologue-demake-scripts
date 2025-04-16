@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Die Hüter des Portals","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Kapitel 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","Die Hallen des Schläfers","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Fähigkeit verbessert: {SkillName}","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Fähigkeit verbessert: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","Einhand","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","Kram","","","Item_Junk","",""
