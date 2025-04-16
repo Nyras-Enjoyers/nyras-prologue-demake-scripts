@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Guardians of the portal","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Chapter 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","The temple of the Sleeper","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Skill increased: {SkillName}","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Skill increased: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","One Handed","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","Junk","","","Item_Junk","",""
