@@ -306,6 +306,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Strážci portálu","","","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Kapitola 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","Spáčovy síně","","","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Zlepšená dovednost: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","Jednoruční zbraně","","False","Skill_Melee_OneHanded","",""
-"Content/Story/Text.d:645","Śmieć","","","","Item_Junk","",""
+"Content/Story/Text.d:645","Śmieć","Odpad","","False","Item_Junk","",""
