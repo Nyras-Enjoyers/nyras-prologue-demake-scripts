@@ -305,6 +305,6 @@
 "Content/Story/Text.d:642","Strażnicy portalu","Хранители портала","","False","KapWechsel_5_Text","",""
 "Content/Story/Text.d:643","Rozdział 6","Глава 6","","False","KapWechsel_6","",""
 "Content/Story/Text.d:644","Leże Śniącego","Логово Спящего","","False","KapWechsel_6_Text","",""
-"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Улучшен навык: «{SkillName}»","","","UI_Notification_SkillIncreasedFormat","",""
+"Content/Story/Text.d:645","Rozwinięta umiejętność: ","Улучшен навык: ","","False","UI_Notification_SkillIncreasedFormat","",""
 "Content/Story/Text.d:645","Broń jednoręczna","Одноручн. оружие","","","Skill_Melee_OneHanded","",""
 "Content/Story/Text.d:645","Śmieć","Мусор","","","Item_Junk","",""
