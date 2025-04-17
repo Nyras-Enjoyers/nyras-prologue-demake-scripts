@@ -404,3 +404,5 @@
 "Content/Items/NyrasPrologueDemake/MISC.d:3","Siekiera","Sekera","","False","ItMw_1h_Misc_Axe.name","",""
 "Content/Items/NyrasPrologueDemake/Written.d:1","Enigmatyczny obrazek o nieznanym przeznaczeniu, prawdopodobnie narysowany przez Jorika","Tajemná kresba bez zjevného účelu. Pravděpodobně ji nakrslil Jorika.","","False","ItWr_Scroll_Mysteriousnote_Description","",""
 "Content/Items/NyrasPrologueDemake/Written.d:2","Tajemnicza notatka","Tajemná cedulka","","False","ItWr_Scroll_Mysteriousnote","",""
+"Content/Items/NyrasPrologueDemake/Written.d:2","Enigmatyczny obrazek o nieznanym przeznaczeniu,","Tajemná kresba bez zjevného účelu.","","False","ItWr_Scroll_Mysteriousnote_Description_1","",""
+"Content/Items/NyrasPrologueDemake/Written.d:3","prawdopodobnie narysowany przez Jorika","Pravděpodobně ji nakrslil Jorika.","","False","ItWr_Scroll_Mysteriousnote_Description_2","",""
