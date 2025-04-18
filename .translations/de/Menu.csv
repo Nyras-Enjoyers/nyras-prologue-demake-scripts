@@ -117,7 +117,7 @@
 "System/MENU/menu_opt_controls.d:505","Przywraca domyślne ustawienia klawiatury.","Aktiviert die Standardbelegung der Tastatur.","","False","MENU_ITEM_CHG_KEYS_SET_DEFAULT.text[1]","",""
 "System/MENU/menu_opt_controls.d:517","Alternatywne ustawienia","Alternativ-Einstellung","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[0]","",""
 "System/MENU/menu_opt_controls.d:518","Uaktywnia alternatywne ustawienia klawiatury.","Aktiviert eine alternative Belegung der Tastatur.","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[1]","",""
-"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","Gothic verlassen?","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
+"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","SPIEL VERLASSEN","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:82","WCZYTAJ GRĘ","SPIEL LADEN","","False","MENUITEM_LOAD_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:92","ZAPISZ GRĘ","SPIEL SPEICHERN","","False","MENUITEM_SAVE_HEADLINE.text[0]","",""
 "System/MENU/menu_log.d:34","Bieżące\nMisje","Aktuelle\nMissionen","","False","MENU_ITEM_SEL_MISSIONS_ACT.text[0]","",""
