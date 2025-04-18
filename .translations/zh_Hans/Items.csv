@@ -404,3 +404,5 @@
 "Content/Items/NyrasPrologueDemake/MISC.d:3","Siekiera","手斧","","False","ItMw_1h_Misc_Axe.name","",""
 "Content/Items/NyrasPrologueDemake/Written.d:1","Enigmatyczny obrazek o nieznanym przeznaczeniu, prawdopodobnie narysowany przez Jorika","一张意义不明的神秘图画，大概是由乔里克绘制的。","","","ItWr_Scroll_Mysteriousnote_Description","",""
 "Content/Items/NyrasPrologueDemake/Written.d:2","Tajemnicza notatka","神秘的笔记","","","ItWr_Scroll_Mysteriousnote","",""
+"Content/Items/NyrasPrologueDemake/Written.d:2","Enigmatyczny obrazek o nieznanym przeznaczeniu,","一张意义不明的神秘图画，","","False","ItWr_Scroll_Mysteriousnote_Description_1","",""
+"Content/Items/NyrasPrologueDemake/Written.d:3","prawdopodobnie narysowany przez Jorika","大概是由乔里克绘制的。","","False","ItWr_Scroll_Mysteriousnote_Description_2","",""
