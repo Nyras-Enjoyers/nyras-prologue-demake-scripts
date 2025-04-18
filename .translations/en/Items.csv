@@ -404,3 +404,5 @@
 "Content/Items/NyrasPrologueDemake/MISC.d:3","Siekiera","Hatchet","","False","ItMw_1h_Misc_Axe.name","",""
 "Content/Items/NyrasPrologueDemake/Written.d:1","Enigmatyczny obrazek o nieznanym przeznaczeniu, prawdopodobnie narysowany przez Jorika","Cryptic image with an unknown purpose presumably drawn by Jorik.","","","ItWr_Scroll_Mysteriousnote_Description","",""
 "Content/Items/NyrasPrologueDemake/Written.d:2","Tajemnicza notatka","Mysterious Note","","","ItWr_Scroll_Mysteriousnote","",""
+"Content/Items/NyrasPrologueDemake/Written.d:2","Enigmatyczny obrazek o nieznanym przeznaczeniu,","Cryptic image with an unknown purpose","","False","ItWr_Scroll_Mysteriousnote_Description_1","",""
+"Content/Items/NyrasPrologueDemake/Written.d:3","prawdopodobnie narysowany przez Jorika","presumably drawn by Jorik.","","False","ItWr_Scroll_Mysteriousnote_Description_2","",""
