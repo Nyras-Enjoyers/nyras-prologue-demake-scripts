@@ -117,7 +117,7 @@
 "System/MENU/menu_opt_controls.d:505","Przywraca domyślne ustawienia klawiatury.","恢复默认设置。","","False","MENU_ITEM_CHG_KEYS_SET_DEFAULT.text[1]","",""
 "System/MENU/menu_opt_controls.d:517","Alternatywne ustawienia","替代设置","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[0]","",""
 "System/MENU/menu_opt_controls.d:518","Uaktywnia alternatywne ustawienia klawiatury.","激活替代键盘设置。","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[1]","",""
-"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","确定退出游戏？","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
+"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","退出游戏","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:82","WCZYTAJ GRĘ","载入游戏","","False","MENUITEM_LOAD_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:92","ZAPISZ GRĘ","保存游戏","","False","MENUITEM_SAVE_HEADLINE.text[0]","",""
 "System/MENU/menu_log.d:34","Bieżące\nMisje","当前\n任务","","False","MENU_ITEM_SEL_MISSIONS_ACT.text[0]","",""
