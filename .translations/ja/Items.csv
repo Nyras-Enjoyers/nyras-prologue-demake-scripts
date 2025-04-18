@@ -404,3 +404,5 @@
 "Content/Items/NyrasPrologueDemake/MISC.d:3","Siekiera","","","","ItMw_1h_Misc_Axe.name","",""
 "Content/Items/NyrasPrologueDemake/Written.d:1","Enigmatyczny obrazek o nieznanym przeznaczeniu, prawdopodobnie narysowany przez Jorika","謎の絵が描かれたメモ。おそらくはジョリックが描いたもの。","","","ItWr_Scroll_Mysteriousnote_Description","",""
 "Content/Items/NyrasPrologueDemake/Written.d:2","Tajemnicza notatka","謎のメモ","","","ItWr_Scroll_Mysteriousnote","",""
+"Content/Items/NyrasPrologueDemake/Written.d:2","Enigmatyczny obrazek o nieznanym przeznaczeniu,","謎の絵が描かれたメモ。おそら","","False","ItWr_Scroll_Mysteriousnote_Description_1","",""
+"Content/Items/NyrasPrologueDemake/Written.d:3","prawdopodobnie narysowany przez Jorika","くはジョリックが描いたもの。","","False","ItWr_Scroll_Mysteriousnote_Description_2","",""
