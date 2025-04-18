@@ -117,7 +117,7 @@
 "System/MENU/menu_opt_controls.d:505","Przywraca domyślne ustawienia klawiatury.","Sets the keyboard setting back to default.","","False","MENU_ITEM_CHG_KEYS_SET_DEFAULT.text[1]","",""
 "System/MENU/menu_opt_controls.d:517","Alternatywne ustawienia","Alternative Setting","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[0]","",""
 "System/MENU/menu_opt_controls.d:518","Uaktywnia alternatywne ustawienia klawiatury.","Activates an alternative keyboard setting.","","False","MENU_ITEM_CHG_KEYS_SET_ALTERNATIVE.text[1]","",""
-"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","Really quit Gothic?","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
+"System/MENU/menu_misc.d:17","ZAMKNIJ GRĘ","QUIT GAME","","False","MENUITEM_LEAVE_GAME_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:82","WCZYTAJ GRĘ","LOAD GAME","","False","MENUITEM_LOAD_HEADLINE.text[0]","",""
 "System/MENU/Menu_SaveGame.d:92","ZAPISZ GRĘ","SAVE GAME","","False","MENUITEM_SAVE_HEADLINE.text[0]","",""
 "System/MENU/menu_log.d:34","Bieżące\nMisje","Current\nMissions","","False","MENU_ITEM_SEL_MISSIONS_ACT.text[0]","",""
