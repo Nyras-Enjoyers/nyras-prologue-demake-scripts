@@ -203,7 +203,7 @@
 "Content/Story/Text.d:434","Mana +","Mana +","","False","NAME_BuyAttributeMAN","",""
 "Content/Story/Text.d:438","Doświadczenie +","Experienta +","","False","NAME_XPGained","",""
 "Content/Story/Text.d:442","Kolejny poziom!","Ai trecut un nivel!","","False","NAME_LevelUp","",""
-"Content/Story/Text.d:445","Nowy zapis w dzienniku","New Journal Entry","","False","NAME_NewLogEntry","",""
+"Content/Story/Text.d:445","Nowy zapis w dzienniku","Obiectiv Nou","","False","NAME_NewLogEntry","",""
 "Content/Story/Text.d:451","(Nieznane)-","(Unknown)-","","False","_STR_INVALID","",""
 "Content/Story/Text.d:452","PŻ","Vitalitate","","False","_STR_ATTRIBUTE_HITPOINTS","",""
 "Content/Story/Text.d:453","Maks. PŻ","Vitalitate","","False","_STR_ATTRIBUTE_HITPOINTS_MAX","",""
