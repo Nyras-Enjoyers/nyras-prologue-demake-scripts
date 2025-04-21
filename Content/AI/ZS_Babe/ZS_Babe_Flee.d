@@ -3,7 +3,7 @@ func void ZS_Babe_Flee ()
 	B_FullSTop	(self);
 	PrintDebugNpc		(PD_ZS_FRAME, "ZS_Babe_Flee" );			
 	AI_SetWalkmode		(self,	NPC_RUN );		
-	B_Say				(self,	NULL,	"$HELP");
+	// B_Say				(self,	NULL,	"$HELP");
 	AI_UnequipArmor		(self);
 	if !Hlp_IsValidNpc(other)
 	{

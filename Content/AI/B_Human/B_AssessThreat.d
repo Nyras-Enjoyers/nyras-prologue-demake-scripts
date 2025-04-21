@@ -22,14 +22,14 @@ func void B_AssessThreat ()
 		//-------- von FRIENDLY auf NEUTRAL --------
 		if 		(Npc_GetAttitude(self,other) == ATT_FRIENDLY)
 		{
-			B_SayOverlay		(self,	other,	"$WATCHYOURAIM");
+			// B_SayOverlay		(self,	other,	"$WATCHYOURAIM");
 			Npc_SetTempAttitude	(self,	ATT_NEUTRAL);
 		}
 
 		//-------- von NEUTRAL auf ANGRY --------
 		else if	(Npc_GetAttitude(self,other) == ATT_NEUTRAL)
 		{
-			B_SayOverlay		(self,	other,	"$WATCHYOURAIMANGRY");
+			// B_SayOverlay		(self,	other,	"$WATCHYOURAIMANGRY");
 			Npc_SetTempAttitude	(self,	ATT_ANGRY);
 		}
 

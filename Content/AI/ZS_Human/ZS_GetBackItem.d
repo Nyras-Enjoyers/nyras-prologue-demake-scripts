@@ -11,7 +11,7 @@ func void ZS_GetBackItem ()
 	Npc_PercEnable  ( self,	PERC_ASSESSITEM    		, 		B_GetBackItem_Seen 		);
 	Npc_PercEnable  ( self, PERC_DRAWWEAPON			, 		ZS_GetBackItem_DrawWeapon);
 	Npc_SetPercTime	( self, 1);
-	B_Say			( self, other, "$GIVEITTOME");
+	// B_Say			( self, other, "$GIVEITTOME");
 	Npc_SendPassivePerc	( self, PERC_NPCCOMMAND, self, other );
 	if (Hlp_IsValidNpc (other))
 	{	
@@ -72,12 +72,12 @@ func void	B_GetBackItem_Given ()
 			PrintDebugNpc( PD_ZS_FRAME, "ZS_GetBackItem_Given // want this cause it´s worthy" );				
 			Npc_ClearAIQueue( self);
 			Npc_GiveItem 	( other, item, self);
-			B_Say			( self, other, "$OKAYTOO");
+			// B_Say			( self, other, "$OKAYTOO");
 		}
 		else
 		{
 			PrintDebugNpc( PD_ZS_FRAME, "ZS_GetBackItem_Given don´t want this crap" );				
-			B_Say	( self, other, "$YOUWANNAFOOLME");
+			// B_Say	( self, other, "$YOUWANNAFOOLME");
 			if (C_AmIStronger ( self, other))
 			{
 				PrintDebugNpc( PD_ZS_FRAME, "ZS_GetBackItem_Given don´t want this crap // stronger" );				
@@ -94,7 +94,7 @@ func void ZS_GetBackItem_DrawWeapon ()
 {		
 	PrintDebugNpc( PD_ZS_FRAME, "ZS_GetBackItem_DrawWeapon" );				
 	Npc_PercEnable  	(self, 	PERC_ASSESSMAGIC		,	B_AssessMagic			);			
-	B_Say			( self, other, "$YOUASKEDFORIT");
+	// B_Say			( self, other, "$YOUASKEDFORIT");
 	Npc_SetTarget	( self, other);
 	AI_StartState	( self, ZS_Attack, 0, "");
 };

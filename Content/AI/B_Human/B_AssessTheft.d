@@ -10,7 +10,7 @@ func void B_GuardItemsAssessTheft ()
 		{
 			if (Npc_CanSeeNpcFreeLOS(self, other))
 			{	
-				B_SayOverlay(self,other,"$HANDSOFF");
+				// B_SayOverlay(self,other,"$HANDSOFF");
 				Npc_SendPassivePerc	(self, 	PERC_ASSESSWARN, self,	other);
 								
 				if (C_AmIStronger(self, other))
@@ -103,7 +103,7 @@ func void B_AssessTheft ()
 				{
 					Npc_ClearAIQueue	( self);
 					AI_Quicklook 		( self, other);
-					B_Say				( self, other, "$YOUCANKEEPTHECRAP");
+					// B_Say				( self, other, "$YOUCANKEEPTHECRAP");
 					AI_ContinueRoutine	( self);
 				};
 			};
@@ -119,7 +119,7 @@ func void B_AssessTheft ()
 				B_FullStop			(self);
 				C_LookAtNpc 		(self, other);
 				AI_PointAtNpc 		(self, other);
-				B_Say 				(self, other, "$BEHINDYOU");
+				// B_Say 				(self, other, "$BEHINDYOU");
 				B_AssessAndMemorize	(NEWS_THEFT, NEWS_SOURCE_WITNESS, self, other, victim); 
 				AI_StopPointAt 		(self);
 				Npc_SendPassivePerc (self, PERC_ASSESSWARN, victim, other); // Im Auge behalten, ob SinglePerc reicht um den Dieb durch Bewegung (CAtchThief in AssessWarn) den Dieb mitzubekommen

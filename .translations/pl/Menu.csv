@@ -129,6 +129,8 @@
 "System/MENU/menu_log.d:121","Failed Missions","Failed Missions","","","MENU_ITEM_LIST_MISSIONS_OLD.text[0]","",""
 "System/MENU/menu_log.d:138","Log","Log","","","MENU_ITEM_LIST_LOG.text[0]","",""
 "System/MENU/menu_log.d:154","no content","no content","","","MENU_ITEM_CONTENT_VIEWER.text[0]","",""
+"System/MENU/menu_log.d:169","Dzień","Dzień","","","MENU_ITEM_DAY_TITLE.text[0]","",""
+"System/MENU/menu_log.d:178","Czas:","Czas:","","","MENU_ITEM_TIME_TITLE.text[0]","",""
 "System/MENU/menu_status.d:91","Nyras","Nyras","","","MENU_ITEM_PLAYERGUILD_TITLE.text[0]","",""
 "System/MENU/menu_status.d:112","Poziom","Poziom","","","MENU_ITEM_LEVEL_TITLE.text[0]","",""
 "System/MENU/menu_status.d:121","Doświadczenie","Doświadczenie","","","MENU_ITEM_EXP_TITLE.text[0]","",""

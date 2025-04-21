@@ -113,7 +113,7 @@ func int ZS_ObserveIntruderWaitNeutral_Loop ()
 	
 	if (Npc_GetStateTime(self) > 10)
 	{
-		B_Say			(self,	other,	"$WHATDOYOUWANT");
+		// B_Say			(self,	other,	"$WHATDOYOUWANT");
 		AI_StartState	(self,	ZS_ObserveIntruderWaitNeutral2,	0,	"");
 	};
 
@@ -172,7 +172,7 @@ func int ZS_ObserveIntruderWaitNeutral2_Loop ()
 	
 	if (Npc_GetStateTime(self) > 20)
 	{
-		B_Say			(self,	other,	"$ISAIDWHATDOYOUWANT");
+		// B_Say			(self,	other,	"$ISAIDWHATDOYOUWANT");
 		return 			LOOP_END;
 	};
 

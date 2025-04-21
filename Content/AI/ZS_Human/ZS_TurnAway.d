@@ -33,7 +33,7 @@ func void ZS_TurnAway ()
 
 	B_RemoveWeapon		(self);
 	AI_TurnAway			(self,	hero);
-	B_Say				(self,	NULL,	"$LookAway");
+	// B_Say				(self,	NULL,	"$LookAway");
 };
 
 func int ZS_TurnAway_Loop()

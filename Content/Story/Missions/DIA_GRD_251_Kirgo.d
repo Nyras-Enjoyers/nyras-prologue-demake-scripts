@@ -79,9 +79,9 @@ func void DIA_GRD_251_Kirgo_Hello_Too_Bad()
 	AI_Output	(self, hero, "Kirgo-CH0-None-Kirgo-28860-0");	//Nie wyobra¿am sobie s³odszej istoty. By³a lepszym cz³owiekiem, ni¿ ja kiedykolwiek bêdê.  
 	AI_Output	(self, hero, "Kirgo-CH0-None-Kirgo-50097");		//Cholera, znowu zaczynam biadoliæ jak stary dziad. Wybacz. 
 	
-	Info_ClearChoices(DIA_GRD_251_Kirgo_Hello);
-	Info_AddChoice (DIA_GRD_251_Kirgo_Hello, "Czy to prawda, ¿e w ogóle nie ma tu kobiet?", DIA_GRD_251_Kirgo_Hello_About_Women);
-	Info_AddChoice (DIA_GRD_251_Kirgo_Hello, "Twoja kolej. Jakie masz dla mnie rady?", DIA_GRD_251_Kirgo_Hello_Any_Advice);
+	Info_ClearChoices	(DIA_GRD_251_Kirgo_Hello);
+	Info_AddChoice 		(DIA_GRD_251_Kirgo_Hello, "Czy to prawda, ¿e w ogóle nie ma tu kobiet?", DIA_GRD_251_Kirgo_Hello_About_Women);
+	Info_AddChoice 		(DIA_GRD_251_Kirgo_Hello, "Twoja kolej. Jakie masz dla mnie rady?", DIA_GRD_251_Kirgo_Hello_Any_Advice);
 };
 
 //Nie mam na to czasu.
@@ -160,8 +160,12 @@ func void DIA_GRD_251_Kirgo_Hello_Why_Not()
 	{
 		Info_AddChoice (DIA_GRD_251_Kirgo_Hello, "Mo¿e za chwilê.", DIA_GRD_251_Kirgo_Ready_To_Fight_Maybe_Later);
 		Info_AddChoice (DIA_GRD_251_Kirgo_Hello, "Jestem gotowy do walki.", DIA_GRD_251_Kirgo_Ready_To_Fight_I_Am_Ready);
+
+	
+	}
+
 	// Immediately comment a fake duel, i.e. start `DIA_GRD_251_Kirgo_After_Fight` dialogue.
-	} else
+	else
 	{
 		Kirgo_ImmediatelyCommentFakeDuel = true;
 	};
@@ -213,9 +217,9 @@ func int DIA_GRD_251_Kirgo_Ready_To_Fight_Condition()
 
 func void DIA_GRD_251_Kirgo_Ready_To_Fight_Info()
 {
-	Info_ClearChoices(DIA_GRD_251_Kirgo_Ready_To_Fight);
-	Info_AddChoice (DIA_GRD_251_Kirgo_Ready_To_Fight, "Mo¿e za chwilê.", DIA_GRD_251_Kirgo_Ready_To_Fight_Maybe_Later);
-	Info_AddChoice (DIA_GRD_251_Kirgo_Ready_To_Fight, "Jestem gotowy do walki.", DIA_GRD_251_Kirgo_Ready_To_Fight_I_Am_Ready);
+	Info_ClearChoices	(DIA_GRD_251_Kirgo_Ready_To_Fight);
+	Info_AddChoice 		(DIA_GRD_251_Kirgo_Ready_To_Fight, "Mo¿e za chwilê.", DIA_GRD_251_Kirgo_Ready_To_Fight_Maybe_Later);
+	Info_AddChoice 		(DIA_GRD_251_Kirgo_Ready_To_Fight, "Jestem gotowy do walki.", DIA_GRD_251_Kirgo_Ready_To_Fight_I_Am_Ready);
 };
 
 func void DIA_GRD_251_Kirgo_Ready_To_Fight_Maybe_Later()
@@ -276,12 +280,7 @@ func void DIA_GRD_251_Kirgo_Ready_To_Fight_I_Am_Ready()
 	if (Npc_HasEquippedMeleeWeapon (hero))
 	{
 		Kirgo_PlayerIsReady = true;
-	
-		// Walka z Kirgo:
-		// 1. Postaæ bohatera musi siê odpowiednio ustawiæ wzglêdem postaci Kirgo (w remake trochê odesz³a do ty³u)
-		// 2. Kirgo powiedzia³ tekst "Zatañczmy" taki trochê ala dialog, ala svm (nie mog³eœ siê wtedy ruszaæ)
-		// 3. Zaczê³a siê walka
-		// 4. Kirgo nie ma nas oczywiœcie dobijaæ tylko powaliæ
+
 		KirgoFight_Start();
 	}
 
@@ -395,8 +394,13 @@ func void DIA_GRD_251_Kirgo_Why_Are_You_Nice_Info()
 {
 	AI_Output	(hero, self, "Kirgo-CH0-G1RDemo_KirgoFight-Hero-21333");	//W³aœciwie to dlaczego jesteœ taki przyjazny?
 	AI_Output	(self, hero, "Kirgo-CH0-G1RDemo_KirgoFight-Kirgo-42430-0");	//Mówisz, jakby by³o w tym coœ z³ego. Sam nie wiem. Mo¿e dlatego, ¿e pozostali tutaj wygl¹daj¹, jakby nie srali od lat, wiêc próbujê to jakoœ zrównowa¿yæ.
-	
-	// DAMIANUT-TODO: Jak nie ma ¿adnych innych opcji dialogowych, to ma siê automatycznie koñczyæ dialog. Np. jak zapyta siê go o to po rewan¿u.
+
+	if (Npc_KnowsInfo(hero, DIA_GRD_251_Kirgo_After_Rematch_Fight) == true)
+	{
+		Kirgo_SaidEverything = true;
+		
+		AI_StopProcessInfos (self);
+	};
 };
 
 //========================================
@@ -426,7 +430,6 @@ func void DIA_GRD_251_Kirgo_About_Rematch_Info()
 {
 	AI_Output	(hero, self, "Kirgo-CH0-G1RDemo_KirgoFight-Hero-57048");	//Co powiesz na rewan¿?
 	
-	// If has a weapon
 	if (Npc_HasEquippedMeleeWeapon (hero))
 	{
 		AI_Output	(self, hero, "Kirgo-CH0-G1RDemo_KirgoFight-Kirgo-48441");	//Tak szybko? Pewnie. Powiedz kiedy.
@@ -499,8 +502,10 @@ func int DIA_GRD_251_Kirgo_After_Rematch_Fight_Condition()
 
 func void DIA_GRD_251_Kirgo_After_Rematch_Fight_Info()
 {
-	// DAMIANUT-TODO: Pytanie o bycie przyjaznym, a automatycznie koñczenie tego dialogu.
-	Kirgo_SaidEverything = true;
+	if (Npc_KnowsInfo (hero, DIA_GRD_251_Kirgo_Why_Are_You_Nice) == true)
+	{
+		Kirgo_SaidEverything = true;
+	};
 
 	if (Kirgo_SecondDuelHeroWon == true)
 	{

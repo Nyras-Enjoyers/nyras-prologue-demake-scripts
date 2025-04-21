@@ -101,7 +101,7 @@ func int ZS_Attack_Loop()
 						// NyrasPrologueDemake
 						AI_PlayAni(self, "T_IGETYOU");
 						// AI_PointAtNpc		(self,	other);
-						// B_Say				(self,	other,	"$RUNCOWARD");	
+//						// B_Say				(self,	other,	"$RUNCOWARD");	
 						// AI_StopPointAt		(self);
 					};
 				};
@@ -144,7 +144,7 @@ func int ZS_Attack_Loop()
 						// NyrasPrologueDemake
 						AI_PlayAni(self, "T_IGETYOU");
 						// AI_PointAtNpc		(self,	other);
-						// B_Say				(self,	other,	"$RUNCOWARD");	
+//						// B_Say				(self,	other,	"$RUNCOWARD");	
 						// AI_StopPointAt		(self);
 					};
 					
@@ -227,7 +227,7 @@ func void ZS_Attack_End()
 		if (Npc_GetAttitude (self,	other) == ATT_FRIENDLY)
 		{
 			B_RemoveWeapon	(self);
-			B_Say			(self, 	other,	"$LETSFORGETOURLITTLEFIGHT");
+//			B_Say			(self, 	other,	"$LETSFORGETOURLITTLEFIGHT");
 			C_StopLookAt	(self);
 			// AI_StartState	(self,	ZS_HealSelf,	1,	"");
 		};
@@ -341,7 +341,7 @@ func void B_CombatCatchThief ()
 	B_AssessAndMemorize	( NEWS_THEFT, NEWS_SOURCE_WITNESS, self, other, self);
 	B_FullStop 			( self);
 	B_WhirlAround 		( self, other);
-	B_SayOverlay 	( self, other, "$DIRTYTHIEF");
+//	B_SayOverlay 	( self, other, "$DIRTYTHIEF");
 	Npc_SetTarget	( self, other);
 	AI_StartState	( self, ZS_Attack, 0, "");
 };

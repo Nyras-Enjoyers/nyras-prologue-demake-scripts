@@ -128,7 +128,6 @@ func void ZS_Unconscious_End ()
 	AI_StopLookAt	(self);
 
 	//-------- den eigenen Besieger anquatschen ! --------
-	// DAMIANUT-TODO: Komentowanie po wstaniu
 	/*
 	if (Npc_HasNews 	(self,	NEWS_DEFEAT, other, self) 	&&
 		!Npc_IsInState	(other,	ZS_Unconscious)				&&

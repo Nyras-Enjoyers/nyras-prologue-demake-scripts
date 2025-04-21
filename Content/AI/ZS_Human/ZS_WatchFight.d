@@ -23,7 +23,7 @@ func void ZS_WatchFight ()
 	if (!Npc_WasInState(self, ZS_GotoFight))
 	{
 		PrintDebugNpc		(PD_ZS_CHECK,"...NSC kommt nicht aus ZS_GotoFight!");
-		B_Say				(self,	NULL, "$THERESAFIGHT");
+		// B_Say				(self,	NULL, "$THERESAFIGHT");
 	};
 
 	AI_PlayAni				(self,	"T_STAND_2_WATCHFIGHT");
@@ -59,7 +59,7 @@ func int ZS_WatchFight_Loop ()
 			{
 				PrintDebugNpc	(PD_ZS_LOOP,	"ZS_WatchFight_Loop // Fight in 10m range // cheer");
 				AI_TurnToNpc	(self,	victim);
-				B_Say 			(self,	NULL,	"$HEYHEYHEY");
+				// B_Say 			(self,	NULL,	"$HEYHEYHEY");
 				return			LOOP_CONTINUE;
 			};
 	

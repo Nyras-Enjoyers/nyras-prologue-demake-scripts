@@ -32,7 +32,7 @@ FUNC VOID B_CheckStolenEquipment ()
 			C_LookAtNpc 	( self, other);
 			AI_TurnToNpc 	( self, other);
 			AI_PointAtNpc 	( self, other);
-			B_Say 			( self, other,"$THATSMYWEAPON");
+			// B_Say 			( self, other,"$THATSMYWEAPON");
 			AI_StartState 	( self, ZS_GetBackBelongings, 1, "");
 			return;
 		};
@@ -47,7 +47,7 @@ FUNC VOID B_CheckStolenEquipment ()
 			C_LookAtNpc 	( self, other);
 			AI_TurnToNpc 	( self, other);
 			AI_PointAtNpc 	( self, other);
-			B_Say 			( self, other,"$THATSMYWEAPON");
+			// B_Say 			( self, other,"$THATSMYWEAPON");
 			AI_StartState 	( self, ZS_GetBackBelongings, 1, "");
 			return;
 		};
@@ -81,7 +81,7 @@ func void B_AssessSc ()
 			if (Wld_GetGuildAttitude(self.guild,other.guild)!=ATT_FRIENDLY)
 			{
 				B_FullStop			(self);	
-				B_Say		 		(self,other,"$NOWWAIT");
+				// B_Say		 		(self,other,"$NOWWAIT");
 				B_IntruderAlert		(self,	other);
 				B_SetAttackReason	(self,	AIV_AR_INTRUDER);
 				Npc_SetTarget		(self,	other);

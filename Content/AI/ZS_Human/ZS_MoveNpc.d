@@ -24,7 +24,7 @@ func void ZS_MoveNpcWait_Loop ()
 		&&	(other.aivar[AIV_INVINCIBLE] == FALSE)	// SC könnte mittlerweile reden
 		{
 			B_DrawWeapon 	(self,	other);
-			B_Say 			(self,	other,  "$YOUDEAFORWHAT");
+			// B_Say 			(self,	other,  "$YOUDEAFORWHAT");
 			AI_StartState 	(self,	ZS_MoveNpcWait1, 0, "");	
 			return;
 		}

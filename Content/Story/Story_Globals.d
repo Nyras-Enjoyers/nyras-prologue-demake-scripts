@@ -43,7 +43,6 @@ var int Drax_HeroWeaponCheck; // If the player has a melee or ranged weapon.
 var int Drax_HeroNoWeapon; // If player hasn't weapon for the hunt
 var int Drax_HeroNoWeaponLogAdded; // Whether a log entry was added after Drax said about no weapon
 var int Drax_HeroEnteredHuntAreaTooFast; // Whether player entered Drax's hunt area too fast
-// DAMIANUT-TODO: Implement a case, when it is assigned (probably in `ZS_MM_Attack` or `ZS_Dead`)
 var int Drax_HeroStartedFightAlone; // Whether player attacked the scavengers without warning
 var int Drax_FailedMissionKilledAloneAfterJorik; // If player killed the scavengers alone, after said is ready for hunting, and already found Jorik.
 var int Drax_RefusedCamp; // If Drax refused Nyras
@@ -85,7 +84,7 @@ var int Hero_TookJorikSketch; // Whether hero already took Jorik's sketch
  *	   Diego_CH0_None_Diego_38791			8D
  *	   Diego_CH0_None_Whistler_2972			7W
  */
-// var int Smalltalk_DiegoHasGoToWhistlerAfterWP; // If Diego wasn't on the lower part of the Exchange Area, then he has to go to a WP first, then to Whistler // DAMIANUT-TODO: Diego ma iść ścieżką...
+// var int Smalltalk_DiegoHasGoToWhistlerAfterWP; // If Diego wasn't on the lower part of the Exchange Area, then he has to go to a WP first, then to Whistler // DAMIANUT-OPT-TODO: Diego ma iść ścieżką...
 var string Smalltalk_Diego_WP; // Near which WP Diego has to stay while the smalltalk with Whistler
 var int Smalltalk_HasToBeFinished; // Whether the smalltalk has to be finished
 var int Smalltalk_Finished; // Whether the smalltalk was finished
@@ -140,3 +139,8 @@ var int MIS_CH0_DraxHunt; // "Polowanie na ścierwojady"
 var int MIS_CH0_FindJorik; // "Poszukiwania Jorika"
 var int MIS_CH0_KirgoFight; // "Sparing"
 var int MIS_CH0_OrryBeer; // "Spragniony strażnik"
+
+// The Shadowbeast
+var int Shadowbeast_Inserted; // Whether the shadowbeast was inserted
+var int Shadowbeast_VisualFXPlayed; // Whether VFX was played at inserting
+var int Shadowbeast_AI_DidntSeePlayerRecently; // To avoid hitting him behind a wall. Used in `ZS_MM_Attack`

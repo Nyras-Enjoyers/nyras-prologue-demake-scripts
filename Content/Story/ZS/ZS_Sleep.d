@@ -61,7 +61,7 @@ func void ZS_SleepBed_End()
 
 	if	Wld_IsTime(07,00,	08,30)
 	{
-		B_Say			(self, NULL, "$AWAKE");	
+		// B_Say			(self, NULL, "$AWAKE");	
 	};
 
 	AI_UseMob			(self,"BEDHIGH",-1);

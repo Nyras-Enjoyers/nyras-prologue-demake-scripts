@@ -96,7 +96,7 @@ func void B_CombatReactToDamage_FixMinimalDamage()
 		self.aivar[AIV_LASTHITHP] = self.attribute[ATR_HITPOINTS];
 	};
 	
-	// DAMIANUT-TODO: Handle last hit
+	// DAMIANUT-OPT-TODO: Handle last hit
 };
 
 func void B_CombatReactToDamage ()

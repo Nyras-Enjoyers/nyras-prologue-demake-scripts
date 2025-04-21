@@ -59,7 +59,7 @@ func void ZS_AssessFighter ()
 		
 		if (Npc_GetPermAttitude(self,other)!=ATT_HOSTILE)
 		{
-			B_SayOverlay	(self,	other,	"$YESYES");
+			// B_SayOverlay	(self,	other,	"$YESYES");
 		};
 		
 		if (Npc_GetDistToNpc(self,other)<HAI_DIST_MELEE)
@@ -98,7 +98,7 @@ func int ZS_AssessFighter_Loop ()
 		{
 			if (Npc_IsInFightMode(other, FMODE_MAGIC))
 			{
-				B_Say 		(self,	other, "$STOPMAGIC");
+				// B_Say 		(self,	other, "$STOPMAGIC");
 			}
 			else
 			{
@@ -173,7 +173,7 @@ func void ZS_AssessFighterWait ()
 
 	if (Npc_IsInFightMode(other, FMODE_MAGIC))
 	{
-		B_Say 				(self,	other, "$ISAIDSTOPMAGIC");
+		// B_Say 				(self,	other, "$ISAIDSTOPMAGIC");
 	}
 	else
 	{

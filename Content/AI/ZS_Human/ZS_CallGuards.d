@@ -10,7 +10,7 @@ func void ZS_CallGuards ()
 	Npc_PercEnable  	(self,	PERC_ASSESSSURPRISE	,  	ZS_AssessSurprise	);
 
 	B_SmartTurnToNpc	(self, 	hero);
-	B_SayOverlay		(self, 	hero, "$ALARM");
+	// B_SayOverlay		(self, 	hero, "$ALARM");
 	Npc_SendPassivePerc	(self, 	PERC_ASSESSWARN, self, hero);
 	AI_StartState		(self, 	ZS_Flee,	0,	"");
 };	
@@ -26,7 +26,7 @@ func void ZS_CallGuardsOnEnterRoom ()
 	Npc_PercEnable  	(self,	PERC_ASSESSSURPRISE	,  	ZS_AssessSurprise	);
 
 	B_SmartTurnToNpc	(self, 	hero);
-	B_SayOverlay		(self, 	hero, "$ALARM");
+	// B_SayOverlay		(self, 	hero, "$ALARM");
 	Npc_SendPassivePerc	(self, 	PERC_ASSESSWARN, self, hero);
 	//AI_StartState		(self, 	ZS_Flee,	0,	"");	//SN: kommt etwas püntig rüber!
 };	

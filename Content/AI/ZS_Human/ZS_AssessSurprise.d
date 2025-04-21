@@ -14,7 +14,7 @@ func void ZS_AssessSurprise	()
 	{
 		PrintDebugNpc		(PD_ZS_CHECK, "ZS_AssessSurprise dist Flee" );
 		B_WhirlAround 		(self, other);
-		B_Say				(self, other, "$WHATSTHAT");
+		// B_Say				(self, other, "$WHATSTHAT");
 
 		if	(Npc_GetAttitude(self, other) == ATT_HOSTILE)
 		{

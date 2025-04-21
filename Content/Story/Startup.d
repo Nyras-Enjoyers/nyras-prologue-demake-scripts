@@ -20,7 +20,7 @@ func void INIT_SURFACE ()
 };
 
 //-------- eigentliche Startup des Spiels --------
-func void INIT_WORLD ()
+func void INIT_WORLD_DEMAKE ()
 {
 	INIT_Sub_Surface 		();
 
@@ -31,10 +31,10 @@ func void INIT_WORLD ()
 	Wld_SetMobRoutine(00,00, "FIREPLACE", 1);
 };
 
-func void STARTUP_WORLD ()
+func void STARTUP_WORLD_DEMAKE ()
 {
 	Startup_Sub_Surface			();
-	INIT_WORLD					();
+	INIT_WORLD_DEMAKE					();
 	
 	// NPC's
 	Wld_InsertNpc	(PC_Thief, "DIEGO_START"); 
@@ -72,20 +72,3 @@ func void STARTUP_WORLD ()
 	// TICKTOCK
 	Wld_SendTrigger("TICKTOCK");
 };
-
-/********************************************************
-*                                                       *
-*												        *
-*					END STARTUP WORLD					*
-*												        *
-*					END STARTUP WORLD					*
-*                                                       *
-*					END STARTUP WORLD					*
-*                                                       *
-*					END STARTUP WORLD					*
-*                                                       *
-*					END STARTUP WORLD					*
-*                                                       *
-*                                                       *
-********************************************************/		
-

@@ -38,12 +38,12 @@ func void B_BuyAttributePoints (var C_NPC typ, var int ATR, var int AtrPlus)
 		else
 		{
 			PrintScreen	("100 punktów to wartoœæ maksymalna!", -1,-1,"FONT_OLD_20_WHITE.TGA",1);
-			B_Say (self, other, "$NOLEARNOVERMAX");
+			// B_Say (self, other, "$NOLEARNOVERMAX");
 		};
 	}
 	else 
 	{
 		PrintScreen	("Za ma³o punktów umiejêtnoœci!", -1,-1,"FONT_OLD_20_WHITE.TGA",1);
-		B_Say (self, other, "$NOLEARNNOPOINTS");
+		// B_Say (self, other, "$NOLEARNNOPOINTS");
 	};
 };

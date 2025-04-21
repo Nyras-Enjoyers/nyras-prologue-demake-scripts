@@ -43,7 +43,7 @@ func void ZS_AssessMonster	()
 		PrintDebugNpc	(PD_ZS_CHECK, "...NSC ist WACHE(NK/FK) oder BOSS!" );
 		
 		B_FullStop		(self);
-		B_SayOverlay	(self,	NULL,	"$DieMonster");
+//		B_SayOverlay	(self,	NULL,	"$DieMonster");
 		
 		
 		Npc_SetTarget	(self,	other);
@@ -69,7 +69,7 @@ func void ZS_AssessMonster	()
 			B_FullStop		(self);
 			B_WhirlAround	(self,	other);
 			Npc_SetTarget	(self,	other);
-			B_SayOverlay	(self,	NULL,	"$ShitWhatAMonster");
+//			B_SayOverlay	(self,	NULL,	"$ShitWhatAMonster");
 			
 			Npc_GetTarget	( self);
 			AI_StartState	(self,	ZS_Flee,	0, "");
@@ -104,7 +104,7 @@ func int ZS_AssessMonster_Loop ()
 	{
 		PrintDebugNpc		(PD_ZS_CHECK, "...Monster ist jetzt zu nahe herangekommen!");
 		Npc_SetTarget		(self,	other);
-		B_SayOverlay		(self,	NULL,	"$DieMonster");
+//		B_SayOverlay		(self,	NULL,	"$DieMonster");
 		AI_StartState		(self,	ZS_Attack, 0, "");
 	}
 	

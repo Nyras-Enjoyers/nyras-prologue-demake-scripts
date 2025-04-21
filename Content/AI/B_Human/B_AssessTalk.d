@@ -40,7 +40,7 @@ func void B_AssessTalk ()
 		if (Drax_HowLooksThisRatford == true)
 		{
 			Npc_ClearAIQueue(self);
-			AI_OutputSVM_Overlay(self, other, "$Drax_CH0_G1RDemo_FindJorik_Drax_96572");
+			AI_OutputSVM(self, other, "$Drax_CH0_G1RDemo_FindJorik_Drax_96572");
 			return;
 		} else if (Drax_IHaveNoTimeForThat == true)
 		|| (Drax_IsHunting == true)
@@ -66,10 +66,12 @@ func void B_AssessTalk ()
 		{
 			Npc_ClearAIQueue(self);
 			B_Say(self, other, "$Ratford_CH0_None_Ratford_44688");
+			return;
 		} else if (Ratford_GentlyPissedOff == true)
 		{
 			Npc_ClearAIQueue(self);
-			B_Say(self, other, "Ratford_CH0_None_Ratford_99079_1");
+			B_Say(self, other, "$Ratford_CH0_None_Ratford_99079_1");
+			return;
 		} else if (Ratford_PissedOff == true)
 		{
 			Npc_ClearAIQueue(self);

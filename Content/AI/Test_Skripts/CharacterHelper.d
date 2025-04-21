@@ -99,7 +99,7 @@ func void B_SetHeroAttributes(VAR INT selection, var int increase, var int LP_co
 	else 
 	{
 		PrintScreen	("Zu wenig Lernpunkte!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
-		B_Say (self, other, "$NOLEARNNOPOINTS");
+		// B_Say (self, other, "$NOLEARNNOPOINTS");
 	};	
 };
 

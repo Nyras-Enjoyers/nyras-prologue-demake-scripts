@@ -61,10 +61,8 @@ func void Rtn_Jorik_818 ()
 {
 	if (Hlp_StrCmp(RtnJorik818_WpName, "") == true)
 	{
-		RtnJorik818_WpName = "RATFORD_JORIK_FOUND_START";
-	} 
-
-	else
+		RtnJorik818_WpName = "RATFORD_JORIK_FOUND_WAY_002";
+	} else
 	{
 		RtnJorik818_WpName = "RATFORD_JORIK_FOUND_STAY";
 	};

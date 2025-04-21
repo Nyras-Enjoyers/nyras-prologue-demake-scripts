@@ -12,7 +12,7 @@ func void ZS_ClearRoom ()
 	C_ZSInit();
 	B_WhirlAround		(self,	other);
     AI_PointAtNpc		(self,	other);
-    B_Say				(self,	other,	"$HEYYOU");
+    // B_Say				(self,	other,	"$HEYYOU");
     AI_StopPointAt		(self);		
     AI_SetWalkmode		(self,	NPC_RUN);
 	Npc_SetTarget		(self,	other);
@@ -62,13 +62,13 @@ func void ZS_ClearRoom_End ()
 	{
 		PrintDebugNpc	(PD_ZS_CHECK, "...Nsc ist stärker!");
 		B_DrawWeapon	(self,	other);
-		B_Say			(self, 	other, "$GETOUTOFHERE");
+		// B_Say			(self, 	other, "$GETOUTOFHERE");
 		AI_StartState	(self, 	ZS_ClearRoomWait, 0, "");			
 	}
 	else
 	{
 		PrintDebugNpc	(PD_ZS_CHECK, "...Nsc ist schwächer!");
-		B_Say 			(self, 	other, "$WHYAREYOUINHERE ");
+		// B_Say 			(self, 	other, "$WHYAREYOUINHERE ");
 		AI_StartState	(self, 	ZS_ClearRoomWait, 0, "");			
 	};
 };
@@ -180,7 +180,7 @@ func void B_ClearRoomUseMob()
 			
 		if (C_AmIStronger(self,other))
 		{
-			B_Say 			(self, 	other,	"$DIRTYTHIEF");
+			// B_Say 			(self, 	other,	"$DIRTYTHIEF");
 			Npc_SetTarget	(self, 	other);
 			AI_StartState	(self, 	ZS_Attack, 0, "");
 		}

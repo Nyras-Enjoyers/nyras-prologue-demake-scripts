@@ -27,7 +27,7 @@ func void ZS_WakeUp ()
 	else
 	{
 		AI_TurnToNpc	(self,	other);
-		B_Say			(self,	other,	"$YOUDISTURBEDMYSLUMBER");
+		// B_Say			(self,	other,	"$YOUDISTURBEDMYSLUMBER");
 		AI_Wait			(self,	3);
 		B_ObserveIntruder();
 	};

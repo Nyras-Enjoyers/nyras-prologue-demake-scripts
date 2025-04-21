@@ -1,5 +1,17 @@
 func void B_MoveNpc ()
 {
+	// NyrasPrologueDemake: doesn't concern Drax and Ratford while returing to the hunters camp
+	if (Hlp_GetInstanceID(self) == ORG_819_Drax)
+	&& (Drax_StartGoingToTheCamp == true)
+	{
+		return;
+	} else if (Hlp_GetInstanceID(self) == ORG_818_Ratford)
+	&& (Ratford_StartGoingToTheCamp == true)
+	{
+		return;
+	};
+	
+
 	PrintDebugNpc		(PD_ZS_DETAIL,	"B_MoveNpc");
 	
 	if (other.aivar[AIV_INVINCIBLE]==FALSE) //sonst ignorieren!	

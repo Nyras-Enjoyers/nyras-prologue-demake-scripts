@@ -75,7 +75,7 @@ FUNC VOID ZS_AssessMurder ()
 		if (Npc_GetAttitude(self,other)==ATT_HOSTILE)
 		{
 			PrintDebugNpc	(PD_ZS_CHECK,	"...hostile zum Mörder!");
-			B_Say			(self,	other,	"$HEKILLEDHIM");	//MH: von B_AssessAndMemorize hierhin kopiert, weil sonst IMMER der Spruch kam!
+//			B_Say			(self,	other,	"$HEKILLEDHIM");	//MH: von B_AssessAndMemorize hierhin kopiert, weil sonst IMMER der Spruch kam!
 			B_AssessEnemy	();
 		}
 		else
@@ -84,7 +84,7 @@ FUNC VOID ZS_AssessMurder ()
 			if ((Npc_GetAttitude (self,victim) == ATT_ANGRY) || (Npc_GetAttitude (self,victim) == ATT_HOSTILE))
 			{
 				PrintDebugNpc(PD_ZS_CHECK,	"...angry/hostile zu Opfer!");
-				B_Say 		(self,	other,	"$YEAHWELLDONE");
+//				B_Say 		(self,	other,	"$YEAHWELLDONE");
 				C_StopLookAt(self);
 			};
 		};

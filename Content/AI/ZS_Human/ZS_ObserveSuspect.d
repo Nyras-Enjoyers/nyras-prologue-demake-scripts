@@ -29,7 +29,7 @@ func void ZS_ObserveSuspect ()
 	AI_TurnToNpc		( self, other);
 	AI_LookAtNpc		( self, other);
 	AI_PointAtNpc		( self,	other);
-	B_Say 				( self, 	other,	"$WHATSTHISSUPPOSEDTOBE");
+	// B_Say 				( self, 	other,	"$WHATSTHISSUPPOSEDTOBE");
 	Npc_SendPassivePerc ( self, 	PERC_ASSESSWARN, self, other);
 	// Jp: AUf beide Hostile Typen geändert
 	if ((Npc_GetTempAttitude ( self,other) == ATT_HOSTILE) || ( Npc_GetPermAttitude (self,other) == ATT_HOSTILE))

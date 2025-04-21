@@ -31,7 +31,7 @@ func int ZS_Upset_Loop ()
 
 		//-------- Random Jubel --------
 		AI_TurnToNpc(self,	other);
-		B_SayOverlay(self,	other,	"$HeyHeyHey");	
+		// B_SayOverlay(self,	other,	"$HeyHeyHey");	
 		AI_PlayAni	(self,	"T_ANGRY");
 		
 		//-------- auf Distanz gehen/bleiben --------

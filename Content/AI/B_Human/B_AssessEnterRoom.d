@@ -64,12 +64,12 @@ func void B_AssessEnterRoom ()
 				B_FullStop		(self);
     			B_WhirlAround	(self,	other);
     			AI_PointAtNpc	(self,	other);
-    			B_Say			(self,	other,	"$HEYYOU");
+    			// B_Say			(self,	other,	"$HEYYOU");
     			AI_StopPointAt	(self);		
     			Npc_PercDisable	(self,	PERC_MOVENPC);
     			AI_SetWalkmode	(self,	NPC_RUN);
     			AI_GotoNpc		(self,	other);
-    			B_Say			(self,	other, "$WHATDIDYOUINTHERE");		
+    			// B_Say			(self,	other, "$WHATDIDYOUINTHERE");		
     		};
     			
     		
@@ -105,12 +105,12 @@ func void B_AssessEnterRoom ()
 				B_FullStop			(self);
     	       	B_WhirlAround		(self,	other);
     			AI_PointAtNpc		(self,	other);
-    			B_Say				(self,	other,	"$HEYYOU");
+    			// B_Say				(self,	other,	"$HEYYOU");
     			AI_StopPointAt		(self);		
     			Npc_PercDisable		(self,	PERC_MOVENPC);
     			AI_SetWalkmode		(self,	NPC_RUN);
     			AI_GotoNpc			(self,	other);
-    			B_Say				(self,	other, "$WHATDIDYOUINTHERE");		
+    			// B_Say				(self,	other, "$WHATDIDYOUINTHERE");		
     		};
     	};
     }

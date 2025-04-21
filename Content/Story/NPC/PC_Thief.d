@@ -145,8 +145,7 @@ func void Rtn_SmallTalkDiegoWhistler_1 ()
 
 func void Rtn_AfterSmalltalk_1 ()
 {
-	TA_Pee(7,35, 7,55, "WP_INTRO_017");
-	TA_SitAround(7,25, 7,55, "WP_INTRO_019");
+	TA_SitAround(7,35, 7,55, "WP_INTRO_019");
 	TA_WoodChoppin_Diego(7,55, 8,40, "DIEGO_WOODCHOPPIN");
 	TA_SitAround(8,40, 9,10, "WP_INTRO_019");
 	TA_WoodChoppin_Diego(9,10, 9,55, "DIEGO_WOODCHOPPIN");
@@ -173,7 +172,7 @@ func void Rtn_AfterSmalltalk_1 ()
 	TA_SitAround(20,45, 21,15, "WP_INTRO_019");
 	TA_WoodChoppin_Diego(21,15, 22,00, "DIEGO_WOODCHOPPIN");
 	TA_SitAround(22,00, 22,30, "WP_INTRO_019");
-	TA_WoodChoppin_Diego(23,00, 00,15, "DIEGO_WOODCHOPPIN");
+	TA_WoodChoppin_Diego(22,30, 00,15, "DIEGO_WOODCHOPPIN");
 	TA_SitAround(00,15, 00,45, "WP_INTRO_019");
 	TA_Pee(00,45, 1,05, "WP_INTRO_017");
 	TA_SitAround(1,05, 1,35, "WP_INTRO_019");

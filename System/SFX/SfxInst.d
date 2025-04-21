@@ -1770,13 +1770,13 @@ instance CONTROL_RETURN     	(C_SFX_DEF) {file= "Magic_6.wav" ;					};
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-				instance WOODCHOPPIN_NOISE				(C_SFX_DEF) {file= "SplitWoodFX1A.wav";				vol = 130;			};
-				instance WOODCHOPPIN_NOISE_A1			(C_SFX_DEF) {file= "SplitWoodFX2A.wav";				vol = 130;			};
-				instance WOODCHOPPIN_NOISE_A2			(C_SFX_DEF) {file= "SplitWoodFX3A.wav";				vol = 130;			};
+				instance WOODCHOPPIN_NOISE				(C_SFX_DEF) {file= "SplitWoodFX1A.wav";				vol = 127;			};
+				instance WOODCHOPPIN_NOISE_A1			(C_SFX_DEF) {file= "SplitWoodFX2A.wav";				vol = 127;			};
+				instance WOODCHOPPIN_NOISE_A2			(C_SFX_DEF) {file= "SplitWoodFX3A.wav";				vol = 127;			};
 				
-				instance WOODCHOPPIN_NOISE2				(C_SFX_DEF) {file= "SplitWoodFX1B.wav";				vol = 130;			};
-				instance WOODCHOPPIN_NOISE2_A1			(C_SFX_DEF) {file= "SplitWoodFX2B.wav";				vol = 130;			};
-				instance WOODCHOPPIN_NOISE2_A2			(C_SFX_DEF) {file= "SplitWoodFX3B.wav";				vol = 130;			};
+				instance WOODCHOPPIN_NOISE2				(C_SFX_DEF) {file= "SplitWoodFX1B.wav";				vol = 127;			};
+				instance WOODCHOPPIN_NOISE2_A1			(C_SFX_DEF) {file= "SplitWoodFX2B.wav";				vol = 127;			};
+				instance WOODCHOPPIN_NOISE2_A2			(C_SFX_DEF) {file= "SplitWoodFX3B.wav";				vol = 127;			};
 				
 				instance WOODCHOPPIN_SPLIT				(C_SFX_DEF) {file= "SplitWoodFX1C.wav";				vol = 80;			};
 				instance WOODCHOPPIN_SPLIT_A1			(C_SFX_DEF) {file= "SplitWoodFX2C.wav";				vol = 80;			};
@@ -1921,6 +1921,10 @@ instance CONTROL_RETURN     	(C_SFX_DEF) {file= "Magic_6.wav" ;					};
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-				instance NyrasDemoExtro_Music				(C_SFX_DEF) {file= "NyrasDemoExtro_Music_02.wav";				vol = 130;			};
+				instance NyrasDemoExtro_Music				(C_SFX_DEF) {file= "NyrasDemoExtro_Music_02.wav";				vol = 127;			};
+				instance NyrasDemoExtro_SFX_SleeperCave_02				(C_SFX_DEF) {file= "NyrasDemoExtro_SFX_SleeperCave_02.wav";				vol = 127;			};
+				instance NyrasDemoExtro_SFX_IAmHere				(C_SFX_DEF) {file= "TEXT_WIP_ZGXJJXC_20250214_184235_2083.wav";				vol = 127;			};
+				instance NyrasDemoExtro_SFX_HeReallyExists				(C_SFX_DEF) {file= "TEXT_WIP_ZGXJJXC_20250214_184235_41.wav";				vol = 127;			};
+				
 
 

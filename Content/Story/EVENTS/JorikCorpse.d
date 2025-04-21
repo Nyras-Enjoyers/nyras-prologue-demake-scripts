@@ -18,7 +18,7 @@ func void TRIGGER_JORIK_CORPSE_FUNC()
 		Ratford_GentlyPissedOff = false;
 		
 		// Set to WP near player and set to the routine of staying near the corpse
-		AI_Teleport(RatfordNpc, "RATFORD_JORIK_FOUND_START");
+		AI_Teleport(RatfordNpc, "RATFORD_JORIK_FOUND_WAY_002");
 		Npc_ExchangeRoutine(RatfordNpc, "Jorik");
 
 		// The corpse reached

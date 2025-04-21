@@ -15,7 +15,7 @@ func void B_AssessUseMob ()
 			if (Npc_GetPermAttitude	(self, other)==ATT_FRIENDLY || self.guild==other.guild)
 			{
 				PrintDebugNpc		(PD_ZS_CHECK,	"...Manipulator ist FRIENDLY oder in gleicher Gilde!");
-				B_Say 				(self,	other,	"$HandsOff");
+				// B_Say 				(self,	other,	"$HandsOff");
 			}
 			else
 			{
@@ -25,7 +25,7 @@ func void B_AssessUseMob ()
 				Npc_SetTempAttitude	( self,	ATT_HOSTILE);
 				Npc_ClearAIQueue	( self);
 				B_WhirlAround		( self,	other);
-				B_SayOverlay		( self,	other,	"$IWillTeachYouRespectForForeignProperty");
+				// B_SayOverlay		( self,	other,	"$IWillTeachYouRespectForForeignProperty");
 				// JP: Ist ein heikler Fall, eigentlich sollten die Nsc´s nah genug sein, evtl. aber noch auf ZS_WarnAndPunish umbauen
 				AI_SetWalkmode		( self,	NPC_RUN);
 				Npc_SetTarget 		( self,	other);

@@ -3,7 +3,34 @@
 // *************************************************************************************
 // SN: Sind aus Gründen der nötigen Compile-Reihenfolge in AI_INTERN\AI_MM_CONSTANTS.D gewandert
 
+// NyrasPrologueDemake: the shadowbeast's strategies
+/*
+ *  C_Shadowbeast_Strategy_GoToNextWP
+ *   - a strategy to unblock a shadowbeast
+ */
+func void C_Shadowbeast_Strategy_GoToNextWP(var C_NPC monster)
+{
+	// DEBUG
+	// print("Go to a nearest WP strategy");
+	// END DEBUG
+	
+	AI_GotoWP(monster, Npc_GetNearestWP(monster));
+	AI_AlignToWP(monster);
+};
 
+/*
+ *  C_Shadowbeast_Strategy_GoToWP
+ *   - a strategy to unblock a shadowbeast
+ */
+func void C_Shadowbeast_Strategy_GoToWP(var C_NPC monster)
+{
+	// DEBUG
+	// print("Go to a next WP strategy");
+	// END DEBUG
+	
+	AI_GotoWP(monster, Npc_GetNextWP(monster));
+	AI_AlignToWP(monster);
+};
 
 // *************************************************************************************
 // 										MASTER - AI
@@ -20,6 +47,11 @@ func INT C_PreyToPredator (var C_NPC prey, var C_NPC predator)
 	if (prey.guild == GIL_MOLERAT)
 	{
 		if (predator.guild == GIL_WOLF)			{return 1;};
+	};
+	
+	if (Npc_IsPlayer(prey) == true)
+	{
+		if (predator.guild == GIL_SHADOWBEAST) {return 1;};
 	};
 	/*
 	if (prey.guild == GIL_GOBBO)
@@ -332,6 +364,17 @@ func void B_MM_ReactToCombatDamage ()
 	{
 		Npc_SetTarget	(self, other);	//macht SC zum target
 	};
+	
+	// NyrasPrologueDemake: unblock a shadowbeast
+	if (self.guild == GIL_SHADOWBEAST)
+	{
+		// If `AI` action takes too long time
+		if (Npc_GetStateTime(self) >= AI_SHADOWBEAST_FIGHT_BLOCKED_RESET)
+		{
+			Npc_ClearAIQueue(self);
+			Npc_SetStateTime(self, 0);
+		};
+	};
 };
 // -------------------------------------------------------------------------------------------------
 func void ZS_MM_Attack ()
@@ -409,7 +452,6 @@ func void ZS_MM_Attack ()
 		};
 	};
 };
-
 func int ZS_MM_Attack_Loop ()
 {
 	PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Attack_Loop");
@@ -443,11 +485,89 @@ func int ZS_MM_Attack_Loop ()
 		}
 		else
 		{
-			Npc_SetStateTime (self,0);
+			// NyrasPrologueDemake: A shadowbeast has to the obstacles
+			if (self.guild == GIL_SHADOWBEAST)
+			{
+				// If sees
+				if (Npc_CanSeeNpc(self, other) == true)
+				&& (self.aivar[AIV_DIDNTSEE] < SHADOWBEAST_DIDNTSEE_MAX)
+				{
+					// DEBUG
+					// print("See hero");
+					// END DEBUG
+
+					// Count how much times didn't see a player
+					if (Shadowbeast_AI_DidntSeePlayerRecently == true)
+					{
+						// DEBUG
+						// print("Didn't see counter");
+						// END DEBUG
+						self.aivar[AIV_DIDNTSEE] += 1;
+						
+						Shadowbeast_AI_DidntSeePlayerRecently = false;
+					};
+				
+					// Reset time
+					Npc_SetStateTime(self, 0);
+				// If he doesn't see hero for a longer time, the most possible player tries to hit him behind a wall
+				} else
+				{
+					// Count a time. If waits to long, then try to omit an obstacle and reset time
+					if (Npc_GetStateTime(self) >= AI_SHADOWBEAST_FIGHT_NOTSEE_WAIT)
+					|| (self.aivar[AIV_DIDNTSEE] >= SHADOWBEAST_DIDNTSEE_MAX)
+					{
+						// DEBUG
+						// print("Hasn't time");
+						// END DEBUG
+						
+						// Change a strategy
+						self.aivar[AIV_LASTOMITOBSTACLESTRATEGY] += 1;
+						
+						// DEBUG
+						// print(IntToString(self.aivar[AIV_LASTOMITOBSTACLESTRATEGY]));
+						// END DEBUG
+					
+						// Go to a nearest WP
+						if (self.aivar[AIV_LASTOMITOBSTACLESTRATEGY] == STRATEGY_OMITOBSTACLE_GOWP)
+						{
+							C_Shadowbeast_Strategy_GoToWP(self);
+						// Go to a next WP
+						} else if (self.aivar[AIV_LASTOMITOBSTACLESTRATEGY] == STRATEGY_OMITOBSTACLE_GONEXTWP)
+						{
+							C_Shadowbeast_Strategy_GoToNextWP(self);
+							
+							// Rest counter
+							self.aivar[AIV_LASTOMITOBSTACLESTRATEGY] = 0;
+						};
+
+						// Rest a counter of don't seeing a player
+						self.aivar[AIV_DIDNTSEE] = 0;
+						
+						// Reset time
+						Npc_SetStateTime(self, 0);
+					} else
+					{
+						// DEBUG
+						// print("Has time");
+						// END DEBUG
+						
+						Shadowbeast_AI_DidntSeePlayerRecently = true;
+					};
+				};
+			// Not a shadowbeast
+			} else
+			{
+				Npc_SetStateTime(self, 0);
+			};
 		};
 		
 		if (other.aivar[AIV_INVINCIBLE]==FALSE) // Nur NSCs angreifen, die NICHT im Talk sind
 		{
+			// DEBUG
+			// var string str; str = ConcatStrings(IntToString(Npc_CanSeeNpc(self, other)), " ");
+			// str = ConcatStrings(str, IntToString(Npc_CanSeeNpcFreeLOS(self, other)));
+			// print(str);
+			// END DEBUG
 			AI_Attack		(self); 
 		};
 	}
@@ -568,6 +688,12 @@ func void B_MM_AssessWarn ()
 
 func void ZS_MM_AllScheduler()
 {
+	// To avoid noises while the end sequence
+	if (Trialog_EndCameraStarted == true)
+	{	
+		return;
+	};
+
     PrintDebugNpc		(PD_MST_FRAME, "ZS_MM_AllScheduler");
     
 	if (Wld_IsTime	(self.aivar[AIV_MM_SleepStart],00,self.aivar[AIV_MM_SleepEnd],00) || (self.aivar[AIV_MM_SleepStart] == OnlyRoutine))
@@ -893,6 +1019,7 @@ func void ZS_MM_Rtn_Wusel()
 	Npc_PercEnable		(self, PERC_ASSESSBODY,			B_MM_AssessBody);
 
 	AI_SetWalkmode 	(self, NPC_RUN);
+	
 	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE) //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
 	{
 		AI_GotoWP (self, self.WP);
@@ -1055,3 +1182,48 @@ func void ZS_MM_MoveNpc ()
 
 */
 
+// NyrasPrologueDemake: The shadowbeast attacks
+func void ZS_MM_Shadowbeast()
+{
+	var C_NPC her; her = Hlp_GetNpc(PC_HERO);
+	if (Npc_CanSeeNpcFreeLOS(self, hero))
+	{
+		if (hero.attribute[ATR_HITPOINTS] > 0)
+		{
+			Npc_SetTarget(self,her);
+			Npc_GetTarget(self);
+			Npc_ClearAIQueue(self);
+			AI_StartState(self, ZS_MM_Attack, 0, "");
+		} else
+		{
+			Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_MM_ReactToDamage);
+			Npc_PercEnable(self, PERC_ASSESSENEMY, B_MM_AssessEnemy);
+			Npc_PercEnable(self, PERC_ASSESSBODY, B_MM_AssessBody);
+		
+			AI_SetWalkmode(self, NPC_RUN);
+		};
+	} else
+	{
+		Npc_PercEnable		(self, PERC_ASSESSDAMAGE,		B_MM_ReactToDamage);
+		Npc_PercEnable		(self, PERC_ASSESSENEMY,		B_MM_AssessEnemy);
+		Npc_PercEnable		(self, PERC_ASSESSBODY,			B_MM_AssessBody);
+	
+		AI_SetWalkmode 	(self, NPC_WALK);
+		if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE)
+		{
+			AI_GotoWP (self, self.WP);
+		};	
+	};
+};
+func int ZS_MM_Shadowbeast_loop()
+{
+	if (Npc_GetDistToWP(self, self.wp) > 300)
+	{
+		AI_GotoWP(self, self.wp);
+	};
+	return LOOP_CONTINUE;
+};
+func void ZS_MM_Shadowbeast_end()
+{
+};
+func void TA_MM_Shadowbeast(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,  start_h,start_m, stop_h, stop_m, ZS_MM_Shadowbeast,waypoint);};

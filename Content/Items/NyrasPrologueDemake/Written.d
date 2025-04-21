@@ -1,4 +1,6 @@
 const string ItWr_Scroll_Mysteriousnote_Description = "Enigmatyczny obrazek o nieznanym przeznaczeniu, prawdopodobnie narysowany przez Jorika";
+const string ItWr_Scroll_Mysteriousnote_Description_1 = "Enigmatyczny obrazek o nieznanym przeznaczeniu,";
+const string ItWr_Scroll_Mysteriousnote_Description_2 = "prawdopodobnie narysowany przez Jorika";
 const string ItWr_Scroll_Mysteriousnote = "Tajemnicza notatka";
 INSTANCE ItWrJorik(C_Item)
 {	
@@ -11,5 +13,12 @@ INSTANCE ItWrJorik(C_Item)
 	material 				=	MAT_LEATHER;
 
 	description				= Item_Junk;
-	TEXT[4] = ItWr_Scroll_Mysteriousnote_Description;
+	if (Hlp_StrCmp(ItWr_Scroll_Mysteriousnote_Description_1, ""))
+	{
+		TEXT[4] = ItWr_Scroll_Mysteriousnote_Description;
+	} else
+	{
+		TEXT[4] = ItWr_Scroll_Mysteriousnote_Description_1;
+		TEXT[5] = ItWr_Scroll_Mysteriousnote_Description_2;
+	};
 };

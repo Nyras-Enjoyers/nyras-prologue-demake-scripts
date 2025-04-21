@@ -107,7 +107,7 @@ func void ZS_ProclaimAndPunish_End ()
 			if (Npc_GetAttitude	(self,murder_victim) == ATT_FRIENDLY)
 			{
 				PrintDebugNpc	(PD_ZS_CHECK,	"...und zwar einen Freund des NSCs!" );	
-				B_SayOverlay	(self,	hero,	"$YouKilledOneOfUs");
+//				B_SayOverlay	(self,	hero,	"$YouKilledOneOfUs");
 			};
 		}
 
@@ -115,28 +115,28 @@ func void ZS_ProclaimAndPunish_End ()
 		else if (Wld_GetGuildAttitude(self.guild,hero.guild) == ATT_HOSTILE)
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...SC ist Todfeind!" );	
-			B_SayOverlay		(self,	hero,	"$DieMortalEnemy");
+//			B_SayOverlay		(self,	hero,	"$DieMortalEnemy");
 		}
 	
 		//-------- SC klaut oder hat geklaut ! --------
 		else if (Npc_HasNews(self, NEWS_THEFT, hero, self))
 		{	
 			PrintDebugNpc		(PD_ZS_CHECK,	"...SC hat vom NSC geklaut!"	);		
-			B_SayOverlay		(self,	hero,	"$DIRTYTHIEF");
+//			B_SayOverlay		(self,	hero,	"$DIRTYTHIEF");
 		}
 
 		//-------- Normaler Angriff (SC ist schon mal besiegt worden) --------
 		else if (Npc_HasNews(self, NEWS_DEFEAT, self, hero)) 
 		{		
 			PrintDebugNpc		(PD_ZS_CHECK,	"...Normaler Angriff (SC ist schon mal besiegt worden)!");		
-			B_SayOverlay		(self,	hero,	"$YOUSTILLNOTHAVEENOUGH");
+//			B_SayOverlay		(self,	hero,	"$YOUSTILLNOTHAVEENOUGH");
 		}
 
 		//-------- Normaler Angriff (SC wurde noch nicht besiegt) --------
 		else
 		{			
 			PrintDebugNpc		(PD_ZS_CHECK,	"...Normaler Angriff (SC wurde noch nicht besiegt)!");		
-			B_SayOverlay		(self,	hero,	"$NowWait");
+//			B_SayOverlay		(self,	hero,	"$NowWait");
 		};
 	}
 	else
@@ -145,7 +145,7 @@ func void ZS_ProclaimAndPunish_End ()
 		if (C_GetAttackReason(self) == AIV_AR_INTRUDER)
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...SC hat Durchgang durchbrochen!" );	
-			B_SayOverlay		(self,	hero,	"$NowWaitIntruder");
+//			B_SayOverlay		(self,	hero,	"$NowWaitIntruder");
 		} else if (C_GetAttackReason(self) == AIV_AR_KILL)
 		{
 		
@@ -154,7 +154,7 @@ func void ZS_ProclaimAndPunish_End ()
 		else
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...SC greift Schützling einer Wache an !");	
-			B_SayOverlay		(self,	hero,	"$YouAttackedMyCharge");
+//			B_SayOverlay		(self,	hero,	"$YouAttackedMyCharge");
 		};	
 	};
 

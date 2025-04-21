@@ -81,7 +81,7 @@ func void ZS_AssessDefeat ()
 		else if ((Npc_GetTempAttitude(self, victim) == ATT_ANGRY) || (Npc_GetTempAttitude(self, victim) == ATT_HOSTILE))
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...NSC ist angry/hostile zu Besiegtem!" );
-			B_Say				(self,	NULL,	"$HEDESERVEDIT");
+//			B_Say				(self,	NULL,	"$HEDESERVEDIT");
 			C_StopLookAt		(self);
 		}
 		
@@ -89,14 +89,14 @@ func void ZS_AssessDefeat ()
 		else if (Npc_GetTempAttitude(self, other) == ATT_FRIENDLY)
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...NSC ist friendly/neutral zum Sieger!" );
-			B_Say 				(self,	other,	"$ITWASAGOODFIGHT");
+//			B_Say 				(self,	other,	"$ITWASAGOODFIGHT");
 		}
 		
 		//-------- Default ! --------
 		else
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...Default!" );
-			B_Say				(self,	NULL,	"$HEDEFEATEDHIM");
+//			B_Say				(self,	NULL,	"$HEDEFEATEDHIM");
 		};
 	
 		AI_Wait					(self,	1);	

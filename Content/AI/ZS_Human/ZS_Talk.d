@@ -3,7 +3,7 @@ FUNC VOID B_RefuseTalk()
 {
 	PrintDebugNpc	(PD_ZS_FRAME,"B_RefuseTalk");
 	B_SmartTurnToNpc(self,other);
-	B_Say			(self,other,"$NOTNOW");
+	// B_Say			(self,other,"$NOTNOW");
 	C_StopLookAt	(self);
 };
 
@@ -164,6 +164,9 @@ FUNC INT ZS_Talk_Loop ()
 
 FUNC VOID ZS_Talk_End ()
 {
+	// To avoid a noise while adding the log entries
+	B_LogEntry_AlreadyAdded = false;
+
 	// Diego
 	if (PC_Thief == Hlp_GetInstanceID(self))
 	{
@@ -173,6 +176,12 @@ FUNC VOID ZS_Talk_End ()
 		{
 			if (Npc_KnowsInfo(hero, DIA_PC_Thief_Hello) == true)
 			{
+				// Start CH0_APlaceToSleep
+				Log_CreateTopic(CH0_APlaceToSleep, LOG_MISSION);
+				Log_SetTopicStatus(CH0_APlaceToSleep, LOG_RUNNING);
+				B_LogEntry(CH0_APlaceToSleep, CH0_APlaceToSleep_0);
+				MIS_CH0_APlaceToSleep = LOG_RUNNING;
+	
 				// To not be blocked on hero
 				AI_TurnAway(self, hero);
 				
@@ -266,7 +275,14 @@ FUNC VOID ZS_Talk_End ()
 				
 				// An entry about searching for a weapon
 				// INFO: Even, if the mission was started. Because player could say, that "maybe later", and then won't have a weapon.
-				B_LogEntry(CH0_KirgoFight, CH0_KirgoFight_2);
+				// INFO 2: The condition to avoid noise while the log entries adding
+				if (MIS_CH0_KirgoFight == LOG_NONE)
+				{
+					B_LogEntry_Silent(CH0_KirgoFight, CH0_KirgoFight_2);
+				} else
+				{
+					B_LogEntry(CH0_KirgoFight, CH0_KirgoFight_2);
+				};
 				
 				GRD_251_Kirgo_Ready_To_Fight_I_Am_Ready_No_Weapon = true;
 			};
@@ -282,7 +298,7 @@ FUNC VOID ZS_Talk_End ()
 				KirgoFight_MissionStart();
 			
 				// An entry about call to the duel when ready
-				B_LogEntry(CH0_KirgoFight, CH0_KirgoFight_1);
+				B_LogEntry_Silent(CH0_KirgoFight, CH0_KirgoFight_1);
 				
 				GRD_251_Kirgo_Ready_To_Fight_Maybe_Later = true;
 			};
@@ -314,7 +330,6 @@ FUNC VOID ZS_Talk_End ()
 			// Finished quest CH0_FindJorik
 			Log_SetTopicStatus(CH0_FindJorik, LOG_SUCCESS);
 			MIS_CH0_FindJorik = LOG_SUCCESS;
-			B_LogEntry_Fake();
 			
 			// Give exp
 			B_GiveXP(50);
@@ -333,9 +348,9 @@ FUNC VOID ZS_Talk_End ()
 			// Start CH0_DraxHunt if not started
 			if (MIS_CH0_DraxHunt == LOG_NONE)
 			{
-				Log_CreateTopic		(CH0_DraxHunt, LOG_MISSION);
-				Log_SetTopicStatus	(CH0_DraxHunt, LOG_RUNNING);
-				B_LogEntry			(CH0_DraxHunt, CH0_DraxHunt_0);
+				Log_CreateTopic(CH0_DraxHunt, LOG_MISSION);
+				Log_SetTopicStatus(CH0_DraxHunt, LOG_RUNNING);
+				B_LogEntry_Silent(CH0_DraxHunt, CH0_DraxHunt_0);
 				MIS_CH0_DraxHunt = LOG_RUNNING;
 			} else 
 			{
@@ -374,7 +389,7 @@ FUNC VOID ZS_Talk_End ()
 					// Update quest CH0_APlaceToSleep - help Drax, if player didn't find Jorik yet. Otherwise `CH0_APlaceToSleep_2` was already added.
 					if (MIS_CH0_FindJorik == LOG_SUCCESS)
 					{
-						B_LogEntry(CH0_APlaceToSleep, CH0_APlaceToSleep_3);
+						B_LogEntry_Silent(CH0_APlaceToSleep, CH0_APlaceToSleep_3);
 					};
 				};
 			
@@ -401,7 +416,12 @@ FUNC VOID ZS_Talk_End ()
 					MIS_CH0_DraxHunt = LOG_SUCCESS;
 					B_GiveXP(50);
 				};
-				B_LogEntry_Fake();
+				
+				// Play the entry sound, if won't be played later
+				if (MIS_CH0_FindJorik == LOG_NONE)
+				{
+					B_LogEntry_Fake();
+				};
 				
 				// Drax goes the camp, if didn't refuse Nyras
 				if (Drax_RefusedCamp == false)
@@ -419,10 +439,10 @@ FUNC VOID ZS_Talk_End ()
 					MIS_CH0_FindJorik = LOG_RUNNING;
 					
 					// Update quest CH0_APlaceToSleep - find Jorik
-					B_LogEntry(CH0_APlaceToSleep, CH0_APlaceToSleep_4);
+					B_LogEntry_Silent(CH0_APlaceToSleep, CH0_APlaceToSleep_4);
 					
 					// Update quest CH0_APlaceToSleep - talk Ratford
-					B_LogEntry(CH0_APlaceToSleep, CH0_APlaceToSleep_6);
+					B_LogEntry_Silent(CH0_APlaceToSleep, CH0_APlaceToSleep_6);
 				};
 			
 				ORG_819_Drax_After_Hunting = true;
@@ -438,7 +458,13 @@ FUNC VOID ZS_Talk_End ()
 			if (Drax_MaybeLater == true)
 			{
 				// An entry about talk Drax when ready
-				B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_1);
+				if (B_LogEntry_AlreadyAdded == false)
+				{
+					B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_1);
+				} else
+				{
+					B_LogEntry_Silent(CH0_DraxHunt, CH0_DraxHunt_1);
+				};
 			
 				ORG_819_Drax_Hunting_Maybe_Later = true;
 			};
@@ -452,14 +478,26 @@ FUNC VOID ZS_Talk_End ()
 			&& (Drax_HeroNoWeaponLogAdded == false)
 			{
 				// An entry about talk Drax when has a weapon
-				B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_2);
+				if (B_LogEntry_AlreadyAdded == false)
+				{
+					B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_2);
+				} else
+				{
+					B_LogEntry_Silent(CH0_DraxHunt, CH0_DraxHunt_2);
+				};
 			
 				Drax_HeroNoWeaponLogAdded = true;
 				
 			} else if (Drax_HeroWeaponCheck == true)
 			{
 				// A log entry about a danger
-				B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_3);
+				if (B_LogEntry_AlreadyAdded == false)
+				{
+					B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_3);
+				} else
+				{
+					B_LogEntry_Silent(CH0_DraxHunt, CH0_DraxHunt_3);
+				};
 				
 				// Start a hunting
 				DraxStartsHunt();
@@ -477,7 +515,8 @@ FUNC VOID ZS_Talk_End ()
 			if (Npc_KnowsInfo(hero, DIA_GRD_254_Orry_Your_Beer) == true)
 			{
 				// CH0_OrryBeer finished
-				Log_SetTopicStatus	(CH0_OrryBeer, LOG_SUCCESS);
+				Log_SetTopicStatus(CH0_OrryBeer, LOG_SUCCESS);
+				MIS_CH0_OrryBeer = LOG_SUCCESS;
 				B_LogEntry_Fake();
 				
 				GRD_254_Orry_Your_Beer = true;
@@ -493,10 +532,18 @@ FUNC VOID ZS_Talk_End ()
 				// If player agreed to give a beer
 				if (Orry_IWillDoThat == true)
 				{
-					Log_CreateTopic		(CH0_OrryBeer, LOG_MISSION);
-					Log_SetTopicStatus	(CH0_OrryBeer, LOG_RUNNING);
-					B_LogEntry			(CH0_OrryBeer, CH0_OrryBeer_0);
-					B_LogEntry			(CH0_OrryBeer, CH0_OrryBeer_1);
+					Log_CreateTopic(CH0_OrryBeer, LOG_MISSION);
+					Log_SetTopicStatus(CH0_OrryBeer, LOG_RUNNING);
+					
+					// To avoid doubling a new log entry sound
+					if (Npc_HasItems(hero, ItFoBeer) <= 0)
+					{
+						B_LogEntry(CH0_OrryBeer, CH0_OrryBeer_0);
+					} else
+					{
+						B_LogEntry_Silent(CH0_OrryBeer, CH0_OrryBeer_0);
+					};
+					B_LogEntry_Silent(CH0_OrryBeer, CH0_OrryBeer_1);
 					MIS_CH0_OrryBeer = LOG_RUNNING;
 				};
 			

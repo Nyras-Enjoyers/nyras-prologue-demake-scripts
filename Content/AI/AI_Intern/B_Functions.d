@@ -182,7 +182,7 @@ func void B_CallComrades()
 {
 	PrintDebugNpc		(PD_ZS_DETAIL,	"B_CallComrades");	
 
-	B_SayOverlay		(self, 	NULL,	"$COMRADESHELP");
+	// B_SayOverlay		(self, 	NULL,	"$COMRADESHELP");
 	Npc_SendPassivePerc	(self, 	PERC_ASSESSWARN,	self,	other);
 };	
 
@@ -195,7 +195,7 @@ func void B_CallGuards()
 {
 	PrintDebugNpc		(PD_ZS_DETAIL,	"B_CallGuards");	
 
-	B_SayOverlay		(self, 	NULL,	"$HELP");
+	// B_SayOverlay		(self, 	NULL,	"$HELP");
 	Npc_SendPassivePerc	(self, 	PERC_ASSESSWARN,	self,	other);
 };	
 
@@ -209,7 +209,7 @@ func void B_IntruderAlert(var C_NPC slf, var C_NPC oth)
 {
 	PrintDebugNpc		(PD_ZS_DETAIL,	"B_IntruderAlert");	
 
-	B_SayOverlay		(slf, 	NULL,	"$IntruderAlert");
+	// B_SayOverlay		(slf, 	NULL,	"$IntruderAlert");
 	Npc_SendPassivePerc	(slf, 	PERC_ASSESSWARN,	slf,	oth);
 };	
 
@@ -511,11 +511,26 @@ func void B_LogEntry_Fake()
 };
 
 //////////////////////////////////////////////////////////////////////////
+//	B_LogEntry_Silent
+//	==========
+//	Add a log entry without a sound
+//////////////////////////////////////////////////////////////////////////
+func void B_LogEntry_Silent(var string topic, var string entry)
+{
+	PrintDebugNpc	(PD_ZS_DETAIL,	"B_LogEntry");
+
+	Log_AddEntry	(topic, entry);
+
+	PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
+};
+
+//////////////////////////////////////////////////////////////////////////
 //	B_LogEntry
 //	==========
 //	Kapselt die Funktion Log_AddEntry und gibt eine Bildschirmmeldung
 //	aus.
 //////////////////////////////////////////////////////////////////////////
+var int B_LogEntry_AlreadyAdded; // NyrasPrologueDemake: a log entry was already added. To avoid a noise while calling in `ZS_Talk_end`. Used for the permanent dialogues only
 func void B_LogEntry(var string topic, var string entry)
 {
 	PrintDebugNpc	(PD_ZS_DETAIL,	"B_LogEntry");
@@ -524,6 +539,8 @@ func void B_LogEntry(var string topic, var string entry)
 
 	PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
 	Snd_Play 		("LogEntry");
+	
+	B_LogEntry_AlreadyAdded = true;
 };
 
 //////////////////////////////////////////////////////////////////////////

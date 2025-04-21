@@ -4,15 +4,15 @@ instance MENU_MAIN(C_MENU_DEF)
 	musictheme = "SYS_Menu";
 	
 	// items[0] = "MENUITEM_MAIN_HEADLINE";
-	items[1] = "MENUITEM_MAIN_HEADLINE2"; // Shadow of the logo
-	items[2] = "MENUITEM_MAIN_RESUME";
-	items[3] = "MENUITEM_MAIN_NEWGAME";
-	items[4] = "MENUITEM_MAIN_SAVEGAME_SAVE";
-	items[5] = "MENUITEM_MAIN_SAVEGAME_LOAD";
-	items[6] = "MENUITEM_MAIN_OPTIONS";
-	items[7] = "MENUITEM_MAIN_EXIT";
+	items[0] = "MENUITEM_MAIN_HEADLINE2"; // Shadow of the logo
+	items[1] = "MENUITEM_MAIN_RESUME";
+	items[2] = "MENUITEM_MAIN_NEWGAME";
+	items[3] = "MENUITEM_MAIN_SAVEGAME_SAVE";
+	items[4] = "MENUITEM_MAIN_SAVEGAME_LOAD";
+	items[5] = "MENUITEM_MAIN_OPTIONS";
+	items[6] = "MENUITEM_MAIN_EXIT";
 
-	defaultingame = 4; // New game and resume are blocked out game by a IT_ONLY_IN_GAME flag.
+	defaultingame = 3; // New game and resume are blocked out game by a IT_ONLY_IN_GAME flag.
 	
 	flags = MENU_SHOW_INFO | MENU_EXCLUSIVE;
 };
@@ -24,8 +24,7 @@ instance MENUITEM_MAIN_HEADLINE2(C_MENU_ITEM_DEF)
 	posy = MENU_MAIN_LOGO_Y;
 	dimx = MENU_MAIN_LOGO_WIDTH;
 	dimy = MENU_MAIN_LOGO_HEIGHT;
-	alphamode = "BLEND";
-	alpha = 255;
+	alphamode = "NONE";
 	flags = flags | IT_TXT_CENTER;
 	flags = flags & ~IT_SELECTABLE;
 };

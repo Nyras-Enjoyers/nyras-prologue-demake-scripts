@@ -3,9 +3,12 @@ var int TickTock_Ticks_ToStartFirstSpeech; // To allow Nyras sitting
 var int TickTock_Ticks_EndCamera; // To fade-out and play the end video
 const int TICKTOCK_TICKS_INTERVAL = 8; // `TICKTOCK_TICKS_INTERVAL` ticks last 1 [s]
 const int TICKTOCK_TICKS_WAITASHEROWILLSIT = 16; // `TICKTOCK_TICKS_WAITASHEROWILLSIT` ticks last 2 [s] // INFO: And wait a bit more, like in Remake.
-const int TICKTOCK_TICKS_INTERVALENDSFX = 42; // INFO: Measured by hand
-const int TICKTOCK_TICKS_INTERVALENDCAM = 143; // INFO: Measured by hand
-const int TICKTOCK_TICKS_INTERVALENDBIK = 205; // INFO: Measured by hand
+const int TICKTOCK_TICKS_INTERVALENDSFX = 48; // INFO: Measured by hand
+const int TICKTOCK_TICKS_INTERVALENDCAM = 148; // INFO: Measured by hand
+// const int TICKTOCK_TICKS_INTERVALENDBIK = 205; // INFO: Measured by hand
+const int TICKTOCK_TICKS_INTERVALENDIAMHERE = 229; // INFO: Measured by hand
+const int TICKTOCK_TICKS_INTERVALENDHEREALLYEXISTS = 269; // INFO: Measured by hand
+const int TICKTOCK_TICKS_INTERVALENDGAME = 293; // INFO: Measured by hand
 
 func void TICKTOCK_FUNC()
 {
@@ -37,13 +40,13 @@ func void TICKTOCK_FUNC()
 			// A beer found
 			if (Npc_HasItems(hero, ItFoBeer) > 0)
 			{
+				Orry_ABeerFound = true;
+
 				// And Orry is not during `ZS_Talk` (to add this entry after a dialogue)
 				if (Npc_IsInState(OrryNpc, ZS_Talk) == false)
 				{
 					B_LogEntry(CH0_OrryBeer, CH0_OrryBeer_2);
 				};
-			
-				Orry_ABeerFound = true;
 			};
 		};
 	};
@@ -60,17 +63,17 @@ func void TICKTOCK_FUNC()
 				// If didn't start to go already
 				if (Ratford_HeroGoesToHimAsFoundJorik == false)
 				{
+					Ratford_HeroGoesToHimAsFoundJorik = true;
+
 					AI_Wait(hero, 0.1);
 					AI_GotoNpc(hero, RatfordNpc);
 					AI_Wait(hero, 0.1);
-					
-					Ratford_HeroGoesToHimAsFoundJorik = true;
 				};
 			};
 		};
 	};
+
 	// Drax's scavengers
-	
 	
 	// Taking Jorik's sketch
 	if (Hero_TookJorikSketch == false)
@@ -83,7 +86,6 @@ func void TICKTOCK_FUNC()
 			if (Ratford_TalkNyrasNearJorik == true)
 			{
 				Ratford_HeroHasToGoesToHimAsFoundJorikNote = true;
-				
 			};
 		};
 	};
@@ -97,11 +99,11 @@ func void TICKTOCK_FUNC()
 			if (C_BodyStateContains(hero, BS_INVENTORY) == false) // And hasn't opened inventory
 			&& (Npc_IsInState(RatfordNpc, ZS_Attack) == false) // And if Ratford isn't in ZS_Attack
 			{
+				Ratford_HeroHasToGoesToHimAsFoundJorikNote = false;
+
 				AI_Wait(hero, 0.1);
 				AI_GotoNpc(hero, RatfordNpc);
 				AI_Wait(hero, 0.1);
-				
-				Ratford_HeroHasToGoesToHimAsFoundJorikNote = false;
 			};
 		};
 	};
@@ -142,43 +144,57 @@ func void TICKTOCK_FUNC()
 						AI_SetWalkMode(hero, NPC_WALK);
 						AI_GotoWP(hero, "HUNTERSCAMP_BENCH");
 					};
-				} else if (Trialog_HeroReachedFP == false)
+
+				} 
+
+				else if (Trialog_HeroReachedFP == false)
 				&& (Trialog_HeroStartedUsingBench == false)
 				{
+					Trialog_HeroReachedFP = true;
+
 					Npc_ClearAIQueue(hero);
 					AI_RemoveWeapon(hero);
+
 					if (Wld_IsFPAvailable(hero,"HERO"))
 					{																	
 						AI_GotoFP (hero, "HERO");
 						AI_AlignToFP (hero);
-					} else if (Npc_IsOnFP(hero, "HERO"))
+					} 
+
+					else if (Npc_IsOnFP(hero, "HERO"))
 					{
 						AI_AlignToFP(hero);
 					};
-					
-					Trialog_HeroReachedFP = true;
-				} else if (C_BodyStateContains(hero, BS_SIT) == false)
+				} 
+
+				else if (C_BodyStateContains(hero, BS_SIT) == false)
 				&& (Trialog_HeroStartedUsingBench == false)
 				{
 					if (Wld_IsMobAvailable(hero,"BENCH") == true)
 					{
+						Trialog_HeroStartedUsingBench = true;
+
 						Npc_ClearAIQueue(hero);
+						hero.aivar[AIV_INVINCIBLE] = true;
 						AI_RemoveWeapon(hero);
 						AI_UseMob(hero,"BENCH",1);
 						AI_LookAtNpc(hero, RatfordNpc);
-						Trialog_HeroStartedUsingBench = true;
 					};
-				} else if (Trialog_HeroIsSitting == true)
+
+				} 
+
+				else if (Trialog_HeroIsSitting == true)
 				{
-					Trialog_HeroForcedToAPosition = true;
-					Trialog_During_Talking = true;
-					Drax_Smalltalk_HasSVMToSay = true;
+					Trialog_HeroForcedToAPosition 	= true;
+					Trialog_During_Talking 			= true;
+					Drax_Smalltalk_HasSVMToSay 		= true;
 				};
 			};
 		};
 		
 		// Count ticks to execute code slower during the trialog sequence
 		TickTock_Ticks_Trialog += 1;
+		
 		if (TickTock_Ticks_Trialog == TICKTOCK_TICKS_INTERVAL)
 		{
 			TickTock_Ticks_Trialog = 0;
@@ -199,17 +215,49 @@ func void TICKTOCK_FUNC()
 		if (Trialog_EndCameraStarted == true)
 		{
 			TickTock_Ticks_EndCamera += 1;
+
 			if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDSFX)
 			{
 				// Play sound
 				Snd_Play("NyrasDemoExtro_Music");
-			} else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDCAM)
+			}
+
+			else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDCAM)
 			{
 				Wld_PlayEffect("BLACKSCREEN", hero, hero, 0, 0, 0, false);
-			} else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDBIK)
+				Wld_SendUnTrigger("EVT_CAM_ENDGAME");
+				Wld_SendTrigger("EVT_CAM_ENDGAME");
+			} 
+
+			else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDIAMHERE)
 			{
-				PlayVideo("Credits.bik");
+				Snd_Play("NyrasDemoExtro_SFX_IAmHere");
+			} 
+
+			else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDHEREALLYEXISTS)
+			{
+				Snd_Play("NyrasDemoExtro_SFX_HeReallyExists");
+			} 
+
+			else if (TickTock_Ticks_EndCamera == TICKTOCK_TICKS_INTERVALENDGAME)
+			{
 				ExitGame();
+			};
+		};
+	};
+	
+	// Insert the shadowbeast
+	if (Shadowbeast_Inserted == false)
+	{
+		// If the end sequence wasn't started
+		if (Trialog_Sequence_Started == false)
+		{
+			if (Wld_IsTime(22,00,22,10) == true)
+			{
+				Shadowbeast_Inserted = true;
+
+				Wld_InsertNpc(Shadowbeast, "SHADOWBEAST_START");
+				Wld_PlayEffect("spellFX_Teleport", Shadowbeast, Shadowbeast, 0, 0, 0, false);
 			};
 		};
 	};

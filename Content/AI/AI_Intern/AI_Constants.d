@@ -34,8 +34,9 @@ const int   AIV_ISLOOKING					= 21;
 const int   AIV_IMPORTANT					= 22;
 const int   AIV_MOVINGMOB					= 23;
 
+const int	AIV_DIDNTSEE					= 24; // NyrasPrologueDemake: Fight with a shadowbeast
+	const int SHADOWBEAST_DIDNTSEE_MAX = 5;
 //-------- Missionen --------
-const int	AIV_MISSION1					= 24;
 const int	AIV_MISSION2					= 25;
 const int	AIV_MISSION3					= 26;
 
@@ -68,10 +69,15 @@ const int	AIV_TALKBEFOREATTACK			= 40;	//SN: ist dieses Flag gesetzt, so wird be
 const int	AIV_DEALDAY						= 41;	//SN: wird für Ambient NSCs benutzt, um sich den Tag des letzten Deals zu merken (z.B.:Sumpfkraut für ORG oder Wasser für BAU)
 
 const int 	AIV_ITEMSCHWEIN					= 42;   //MH: NSCs, die dieses Flag auf TRUE haben, gehen IMMER, wenn im FreeLos der HERO ein Item nimmt (assessTheft-Wn) von DIEBSTAHL aus (--> ZS_CatchThief)
+// NyrasPrologueDemake: the new aivars
 const int	AIV_LASTHITHP					= 43;
 const int	AIV_NPCSTARTEDTALK				= 44;
 const int	AIV_KILLED						= 45;
-const int 	AIV_LASTSTATETIME				= 46;
+const int 	AIV_LASTOMITOBSTACLESTRATEGY	= 46; // The strategies are defined in `ZS_MM_Attack_loop`.
+	const int STRATEGY_OMITOBSTACLE_NONE = 0;
+	const int STRATEGY_OMITOBSTACLE_GOWP = 1;
+	const int STRATEGY_OMITOBSTACLE_GONEXTWP = 2;
+	const int STRATEGY_OMITOBSTACLE_MAX = 3;
 const int 	AIV_TAPOSITION					= 47;
 	const int ISINPOS					= 0;
 	const int NOTINPOS					= 1;

@@ -27,14 +27,14 @@ CONST INT 	MOVE_WAIT			=	19; // 200 ms
 // Gegner attackiert mich
 INSTANCE FA_ENEMY_PREHIT_16 (C_FightAI)
 {
-	move[0] = MOVE_JUMPBACK;
+	move[0] = MOVE_ATTACK; // NyrasPrologueDemake: Make a shadowbeast harder to defeat
 };
 
 // Gegner macht Sturmattacke
 INSTANCE FA_ENEMY_STORMPREHIT_16 (C_FightAI)
 {
 // FIXME: Auch wenn ich einfach so auf das Monster zurenne, macht es eine ParadeJumpB!
-	move[0] = MOVE_JUMPBACK;
+	move[0] = MOVE_ATTACK; // NyrasPrologueDemake: Make a shadowbeast harder to defeat
 };
 
 
@@ -46,7 +46,7 @@ INSTANCE FA_ENEMY_STORMPREHIT_16 (C_FightAI)
 INSTANCE FA_MY_W_RUNTO_16 (C_FightAI)
 {
 	move[0] = MOVE_ATTACK;
-	move[1] = MOVE_WAIT;
+	// move[1] = MOVE_WAIT; // NyrasPrologueDemake: Make a shadowbeast harder to defeat
 };
 
 // was tun, wenn ich gerade Strafe?

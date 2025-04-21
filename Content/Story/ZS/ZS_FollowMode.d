@@ -120,7 +120,7 @@ func int ZS_FriendlyAttack_Loop()
 	if (Npc_IsInState	(other, ZS_Unconscious)) 
 	{
 		PrintGlobals	(PD_ZS_CHECK);
-		B_Say			(self,	other,	"$LETSFORGETOURLITTLEFIGHT" );		 
+//		B_Say			(self,	other,	"$LETSFORGETOURLITTLEFIGHT" );		 
 		return			1;											// Loop abbrechen
 	};
 	
@@ -157,7 +157,7 @@ func int ZS_FriendlyAttack_Loop()
 		else
 		{
 			PrintDebugNpc(PD_ZS_FRAME,	"...SC hat Nahkampfwaffe");		
-			B_Say		(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
+//			B_Say		(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
 			return		1;											// Loop abbrechen
 		};
 	};
@@ -166,7 +166,7 @@ func int ZS_FriendlyAttack_Loop()
 	if (Npc_IsInFightMode(other, FMODE_NONE))
 	{
 		PrintDebugNpc	(PD_ZS_FRAME,	"...SC hat keine Waffe mehr in der Hand!");		
-		B_Say			(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
+//		B_Say			(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
 		return			1;											// Loop abbrechen
 	};
 	
@@ -190,7 +190,7 @@ func void B_FriendlyAttackRemoveWeapon ()
 	PrintDebugNpc		(PD_ZS_FRAME,	"B_FriendlyAttackRemoveWeapon");		
 	Npc_ClearAIQueue	(self);
 	AI_StandUp 			(self);	
-	B_Say				(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
+//	B_Say				(self,	other,	"$LETSFORGETOURLITTLEFIGHT");		 
 	AI_ContinueRoutine	(self);
 };
 
@@ -265,7 +265,7 @@ func void B_CheckDistToPlayer ()
 		Npc_ClearAIQueue(self);
 		AI_StandUp		(self);
 		AI_TurnToNpc 	(self,	other);
-		B_Say 			(self,	other,	"$CATCHUP");
+//		B_Say 			(self,	other,	"$CATCHUP");
 		AI_StartState 	(self,	ZS_FollowModeWait,	1,	"");
 	};		
 };

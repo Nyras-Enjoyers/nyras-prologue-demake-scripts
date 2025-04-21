@@ -117,12 +117,6 @@ func void DIA_PC_Thief_I_Understand_Thanks()
 	AI_Output	(self, hero, "Diego-CH0-None-Diego-3476");  //Jasne.
 	AI_Output	(self, hero, "Diego-CH0-None-Diego-73935"); //Witamy w Kolonii.
 
-	//START QUEST
-	Log_CreateTopic		(CH0_APlaceToSleep, LOG_MISSION);
-	Log_SetTopicStatus	(CH0_APlaceToSleep, LOG_RUNNING);
-	B_LogEntry			(CH0_APlaceToSleep, CH0_APlaceToSleep_0);
-	MIS_CH0_APlaceToSleep = LOG_RUNNING;
-
 	// Go to the place, where is Whistler
 	Npc_ExchangeRoutine(self, "GoWhistler");
 

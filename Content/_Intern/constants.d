@@ -432,4 +432,11 @@ CONST INT LOG_NOTE										= 1						;
 //																				 
 CONST INT TIME_INFINITE									= -1000000 / 1000		;
 const int NPC_VOICE_VARIATION_MAX						= 10					;
+
+//
+// NYRASPROLOGUEDEMAKE
+//
+const int AI_SHADOWBEAST_FIGHT_NOTSEE_WAIT = 5; // How long a shadowbeast wait, if can't attack player
+const int AI_SHADOWBEAST_FIGHT_BLOCKED_RESET = 5; // How much time can `AI` action be performed
+
 																				

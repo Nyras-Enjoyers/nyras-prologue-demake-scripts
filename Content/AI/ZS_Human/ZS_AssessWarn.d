@@ -60,12 +60,12 @@ func void ZS_AssessWarn ()
     	Npc_PercEnable  	(self, 	PERC_ASSESSENTERROOM	,	B_ClearRoomEnterRoom);			
     	B_WhirlAround		(self,	other);
     	AI_PointAtNpc		(self,	other);
-    	B_Say				(self,	other,	"$HEYYOU");
+//    	B_Say				(self,	other,	"$HEYYOU");
     	AI_StopPointAt		(self);		
     	Npc_PercDisable		(self,	PERC_MOVENPC);
     	AI_SetWalkmode		(self,	NPC_RUN);
     	AI_GotoNpc			(self,	other);
-    	B_Say				(self,	other, "$WHATDIDYOUINTHERE");		
+//    	B_Say				(self,	other, "$WHATDIDYOUINTHERE");		
 	}
 	else if	C_NpcIsGuardArcher(self)
 	&&		Npc_IsInState(victim,ZS_CallGuardsOnEnterRoom)
@@ -76,10 +76,10 @@ func void ZS_AssessWarn ()
 		{
     		B_WhirlAround		(self,	hero);
     		AI_PointAtNpc		(self,	hero);
-    		B_Say				(self,	hero,	"$HEYYOU");
+//    		B_Say				(self,	hero,	"$HEYYOU");
     		AI_StopPointAt		(self);		
     		B_DrawWeapon		(self,	other);
-    		B_Say				(self,	hero, "$YOUVIOLATEDFORBIDDENTERRITORY");		
+//    		B_Say				(self,	hero, "$YOUVIOLATEDFORBIDDENTERRITORY");		
     		Npc_SetTarget 		(self,	hero);
     		AI_StartState		(self,	ZS_Attack, 0, "");
     	}

@@ -94,11 +94,11 @@ func void ZS_AssessBody_End()
 		AI_PlayAni		(self,	"T_PLUNDER");
 		if (B_Plunder())
 		{
-			B_Say		(self,	other, "$ITookYourOre");
+			// B_Say		(self,	other, "$ITookYourOre");
 		}
 		else
 		{
-			B_Say		(self,	other, "$ShitNoOre");
+			// B_Say		(self,	other, "$ShitNoOre");
 		};
 		other.aivar[AIV_PLUNDERED] = TRUE;
 	};
@@ -119,7 +119,7 @@ func void ZS_AssessBody_RecoverWeapon ()
 	    && Npc_GetDistToItem(self,item) < 300 )
 	{
 		PrintDebugNpc	(PD_ZS_CHECK, "...Nah- oder Fernkampfwaffe gefunden!" );
-		B_SayOverlay	(self,	NULL, "$ITakeYourWeapon");
+		// B_SayOverlay	(self,	NULL, "$ITakeYourWeapon");
 		AI_TakeItem		(self,	item);
 		AI_EquipBestMeleeWeapon(self);
 		AI_EquipBestRangedWeapon(self);

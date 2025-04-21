@@ -2678,5 +2678,4 @@ instance BLACKSCREEN(CFX_BASE_PROTO)
     userstring[1] = "0 0 0 255";
     userstring[2] = "0";
     visalphablendfunc_s = "BLEND";
-    emfxlifespan = 30;
 };

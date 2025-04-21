@@ -132,7 +132,10 @@ instance DIA_ORG_818_Ratford_Hello_Again (C_INFO)
 
 func int DIA_ORG_818_Ratford_Hello_Again_Condition()
 {
-	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_ORG_818_Ratford_Hello)) && (Ratford_HelloIfYouThinkSo == true)
+	if (Npc_IsInState (self, ZS_Talk))
+	&& (Npc_KnowsInfo (hero, DIA_ORG_818_Ratford_Hello))
+	&& (Ratford_HelloIfYouThinkSo == true)
+	&& (Jorik_CorpseReached == false)
 	{
 		return true;
 	};
@@ -220,13 +223,16 @@ func void DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence()
 	Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, "Co to za sekta?", DIA_ORG_818_Ratford_Who_Are_You_About_Sect_Camp);
 	Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, "Mówisz o bagiennym zielu?", DIA_ORG_818_Ratford_Who_Are_You_About_Swamp_Herb);
 	Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, "Bóg mówi³ do niego we œnie?", DIA_ORG_818_Ratford_Who_Are_You_About_Sleep);
-	
-	// DAMIANUT-TODO: Inny SVM, gdy ju¿ nie ma dialogów, jak ju¿ jest przy ognisku.
 };
 
 func void DIA_ORG_818_Ratford_Who_Are_You_Info()
 {
-	// Jeœli nie zna Nyrasa
+	// Since this dialogue, SVM in the camp is not played
+	HuntersCamp_Busy = true;
+	
+	// If Ratford talked Nyras near Jorik's corpse
+	Ratford_TalkNyrasNearJorik = true;
+
 	if (Npc_KnowsInfo (hero, DIA_ORG_818_Ratford_Hello) == false)
 	{
 		AI_DrawWeapon 	(self);
@@ -237,22 +243,16 @@ func void DIA_ORG_818_Ratford_Who_Are_You_Info()
 		Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, "Tak go znalaz³em.", DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik);
 	} 
 
-	// Jeœli ju¿ go spotka³
 	else
 	{
 		AI_Output	(self, hero, "Ratford-CH0-None-Ratford-29260");	//Znowu ty. 
 		AI_Output	(hero, self, "Ratford-CH0-None-Hero-22878");	//Chyba znalaz³em twojego kumpla.
 		AI_Output	(self, hero, "Ratford-CH0-None-Ratford-80190");	//W³aœnie widzê. 
 		
+		// DAMIANUT-TODO <-- TU DAJ ALBO KOM PO ANGIELSKU ALBO DO WYWALENIA CA£KIEM (FABIO)
 		// Kontynuuje dialog wspólny dla przypadku, gdy nie spotka³ Nyrasa i ten nie powiedzia³, by w niego nie celowa³.
 		DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence();
 	};
-	
-	// Since this dialogue, SVM in the camp is not played
-	HuntersCamp_Busy = true;
-	
-	// If Ratford talked Nyras near Jorik's corpse
-	Ratford_TalkNyrasNearJorik = true;
 };
 
 // INFO_ADDCHOICE: Nie celuj tym we mnie.
@@ -277,9 +277,9 @@ func void DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik()
 	AI_Output	(self, hero, "Ratford-CH0-None-Ratford-81347");	//Hmm. 
 	AI_Output	(self, hero, "Ratford-CH0-None-Ratford-80505");	//Dobra, wierzê ci.
 
-	// RATFORD CHOWA TU BROÑ
 	AI_RemoveWeapon(self);
 
+	// DAMIANUT-TODO <-- TU DAJ ALBO KOM PO ANGIELSKU ALBO DO WYWALENIA CA£KIEM (FABIO)
 	// Kontynuuje dialog wspólny dla przypadku, gdy ju¿ spotka³ Nyrasa
 	DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence();
 };
@@ -305,7 +305,6 @@ func void DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik()
 		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-3445");		//Co to za sekta?
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-56576");	//No tak... Zapominam, ¿e jesteœ tu nowy.
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-61788");	//W du¿ym skrócie: mamy tu w Kolonii trzy obozy, a jeden z nich to powaleni sekciarze. 
-		// DAMIANUT-TODO: Bardzo d³uga kwestia. Ciekawe, jak wygl¹da w demake'u.
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-95458");	//Podobno ich naczelny wariat szeœæ lat temu mia³ wizjê jakiegoœ przedwiecznego boga, który ma siê obudziæ i zbawiæ ich wszystkich, wiêc przenieœli siê na bagna. Do dziœ tam mieszkaj¹.
 	}; 
 
@@ -329,9 +328,9 @@ func void DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik()
 		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-90162-0");		//Taa.
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-32267-0");	//Dobra ju¿ chuj tam – mo¿esz spaæ przy naszym ognisku. W starym obozie Kopaczy po drugiej stronie Opuszczonej Kopalni. Stwór siê tam nie zapuœci. 
 		
-		Info_ClearChoices (DIA_ORG_818_Ratford_Who_Are_You);
-		Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, Ratford_CH0_G1RDemo_DraxHunt_Caption_25858_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Nice_Thanks);
-		Info_AddChoice (DIA_ORG_818_Ratford_Who_Are_You, Ratford_CH0_G1RDemo_DraxHunt_Caption_9934_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Just_That);
+		Info_ClearChoices 	(DIA_ORG_818_Ratford_Who_Are_You);
+		Info_AddChoice 		(DIA_ORG_818_Ratford_Who_Are_You, Ratford_CH0_G1RDemo_DraxHunt_Caption_25858_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Nice_Thanks);
+		Info_AddChoice 		(DIA_ORG_818_Ratford_Who_Are_You, Ratford_CH0_G1RDemo_DraxHunt_Caption_9934_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Just_That);
 	};
 
 	//Co teraz?
@@ -349,6 +348,7 @@ func void DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik()
 		};
 
 		Info_ClearChoices (DIA_ORG_818_Ratford_Who_Are_You);
+
 		AI_StopProcessInfos	(self);
 	};
 
@@ -420,6 +420,8 @@ func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Info()
 };
 func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching__Choices_Common()
 {
+	Ratford_CommentedFoundNote = true;
+
 	// If Nyras refused Drax, Drax already go to the camp
 	if (Drax_IHaveNoTimeForThat == true)
 	{
@@ -431,26 +433,27 @@ func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching__Choices_Common
 	{
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-62191-1"); //Mój kumpel, Drax, powinien ju¿ byæ w obozie. Idziemy.
 	}
+
 	// If Drax didn't go
 	else
 	{
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-32587-0"); //Tak czy siak, kolacji nie bêdzie, dopóki Drax nie upoluje dla nas paru œcierwojadów. 
 		
-		// DAMIANUT-TODO
+		// DAMIANUT-OPT-TODO: Ograæ Remake jeszcze raz i sprawdziæ tê opcjê.
 		if (MIS_CH0_DraxHunt == LOG_NONE)
 		{
-			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-15507-0"); //Mo¿e ty mu pomo¿esz? Bêdzie móg³ ciê wtedy poznaæ.
-			AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-94901-0"); //Gdzie go szukaæ? 
-			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-26907-1"); //IdŸ t¹ drog¹, a¿ dojdziesz do doliny. Powinien byæ gdzieœ w okolicy. Spotkamy siê w obozie. 
-		} else if (MIS_CH0_DraxHunt == LOG_RUNNING)
+			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-15507-0"); 	//Mo¿e ty mu pomo¿esz? Bêdzie móg³ ciê wtedy poznaæ.
+			AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-94901-0"); 		//Gdzie go szukaæ? 
+			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-26907-1"); 	//IdŸ t¹ drog¹, a¿ dojdziesz do doliny. Powinien byæ gdzieœ w okolicy. Spotkamy siê w obozie. 
+		}
+
+		else if (MIS_CH0_DraxHunt == LOG_RUNNING)
 		{
 			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-26907-2"); //Spotkamy siê w obozie.
 		};
 	};
 	
-	Ratford_CommentedFoundNote = true;
-	
-	AI_StopProcessInfos(self);
+	AI_StopProcessInfos (self);
 	
 	Npc_ExchangeRoutine(self, "HUNTERSCAMP");
 };
@@ -497,13 +500,13 @@ func int DIA_ORG_818_Ratford_Go_Camp_Smalltalk_Condition()
 		return true;
 	};
 };
-// TODO: Czy mówi "ZnajdŸmy Draxa", jeœli nie dokoñczyliœmy polowania?
+
 func void DIA_ORG_818_Ratford_Go_Camp_Smalltalk_Info()
 {
 	AI_Output	(self, hero, "Ratford-CH0-None-Ratford-26027"); //Co? ZnajdŸmy Draxa. 
 
-	Info_ClearChoices (DIA_ORG_818_Ratford_Go_Camp_Smalltalk);
-	Info_AddChoice (DIA_ORG_818_Ratford_Go_Camp_Smalltalk, "No dobrze.", DIA_ORG_818_Ratford_Go_Camp_Smalltalk_Good);
+	Info_ClearChoices 	(DIA_ORG_818_Ratford_Go_Camp_Smalltalk);
+	Info_AddChoice 		(DIA_ORG_818_Ratford_Go_Camp_Smalltalk, "No dobrze.", DIA_ORG_818_Ratford_Go_Camp_Smalltalk_Good);
 
 	if (Ratford_Go_Camp_Smalltalk_How_Did_You_End_Here == false)
 	{
