@@ -24,7 +24,7 @@
 "System/MENU/Menu_Defines.d:172","WITAMY W KOLONII!","DIE WELT DER VERURTEILTEN","","False","MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER_TEXT","",""
 "System/MENU/Menu_Defines.d:174","Rozdział:","Kapitel:","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_TEXT","",""
 "System/MENU/Menu_Defines.d:175","Nyras","Nyras","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_VALUE_TEXT","",""
-"System/MENU/Menu_Defines.d:176","Zapisz czas","Speicherzeit","","True","MENUITEM_LOADSAVE_DATETIME_TEXT","",""
+"System/MENU/Menu_Defines.d:176","Zapisz czas","Speicherzeit:","","False","MENUITEM_LOADSAVE_DATETIME_TEXT","",""
 "System/MENU/Menu_Defines.d:177","Czas gry:","Spielzeit:","","False","MENUITEM_LOADSAVE_PLAYTIME_TEXT","",""
 "System/MENU/Menu_Defines.d:178","Wstecz","Zurück","","False","MENU_COMMON_BACK_TEXT","",""
 "System/MENU/Menu_Defines.d:181","Gra","Spiel","","False","MENUITEM_OPT_GAME_TEXT_0","",""
