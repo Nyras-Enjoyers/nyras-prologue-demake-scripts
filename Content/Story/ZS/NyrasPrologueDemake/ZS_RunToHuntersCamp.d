@@ -20,7 +20,7 @@ func void ZS_RunToHuntersCamp ()
 	AI_AlignToWP			(self);
 };
 
-func void ZS_RunToHuntersCamp_Loop ()
+func int ZS_RunToHuntersCamp_Loop ()
 {
 	PrintDebugNpc			(PD_TA_LOOP,	"ZS_RunToHuntersCamp_Loop");
 	
@@ -38,7 +38,7 @@ func void ZS_RunToHuntersCamp_Loop ()
 			// Doesn't want to talk
 			Ratford_LastPissedOff = true;
 			
-			B_ExchangeRoutine(self, "WaitHuntersCamp_Ratford");
+			B_ExchangeRoutine_C_NPC(self, "WaitHuntersCamp_Ratford");
 		} else if (Hlp_GetInstanceID(self) == ORG_819_Drax)
 		{
 			Drax_GoToTheCamp = false;
@@ -48,12 +48,12 @@ func void ZS_RunToHuntersCamp_Loop ()
 			// Ratford stop waiting for Drax
 			if (Ratford_IsInTheCamp == true)
 			{
-				B_ExchangeRoutine(self, "WaitHuntersCamp_Ratford");
+				B_ExchangeRoutine_C_NPC(self, "WaitHuntersCamp_Ratford");
 			};
 			
-			B_ExchangeRoutine(self, "WaitHuntersCamp_Drax");
+			B_ExchangeRoutine_C_NPC(self, "WaitHuntersCamp_Drax");
 		};
-		return;
+		return LOOP_END;
 	};
 	
 	// Restore running if interrupted by bothering him by player
@@ -66,6 +66,8 @@ func void ZS_RunToHuntersCamp_Loop ()
 			AI_AlignToWP(self);
 		};
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_RunToHuntersCamp_End ()
@@ -73,5 +75,5 @@ func void ZS_RunToHuntersCamp_End ()
 	PrintDebugNpc			(PD_TA_FRAME,	"ZS_RunToHuntersCamp_End");
 	self.senses	=			hero.senses;
 	
-	C_StopLookAt			(self);
+	_ = C_StopLookAt			(self);
 };

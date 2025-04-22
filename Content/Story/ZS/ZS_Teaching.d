@@ -17,7 +17,7 @@ func void ZS_Teaching()
 	};
 };
 
-func void ZS_Teaching_Loop ()
+func int ZS_Teaching_Loop ()
 {
     PrintDebugNpc		(PD_TA_LOOP,	"ZS_Teaching_Loop");
 	
@@ -53,6 +53,8 @@ func void ZS_Teaching_Loop ()
 	};
 	
 	AI_Wait				(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 

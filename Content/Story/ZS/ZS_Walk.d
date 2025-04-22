@@ -24,7 +24,7 @@ FUNC VOID ZS_Walk ()
 	};
 };
 
-FUNC VOID ZS_Walk_Loop ()
+FUNC int ZS_Walk_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_Walk_Loop");
     
@@ -38,6 +38,8 @@ FUNC VOID ZS_Walk_Loop ()
 	};
     
     AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 FUNC VOID ZS_Walk_End()

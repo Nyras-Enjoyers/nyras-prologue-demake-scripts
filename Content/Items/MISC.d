@@ -13,7 +13,7 @@ const int	Value_SwordRawHot		= 	(Value_SwordBladeHot*8)/10; // 80% der geschmied
 const int	Value_SwordRaw			= 	(Value_SwordRawHot	*8)/10; // 80% des erhitzen Rohstahls
 
 const int	Value_Dietrich			=	10;
-const int	Value_Schlüssel			=	3;
+const int	Value_Schlussel			=	3;
 
 const int	Value_Joint1			=	8;
 const int	Value_Joint2			=	15;
@@ -26,9 +26,9 @@ const int	Value_Fackel			=	2;
 const int	Value_Sumpfkraut		=	8;
 const int	Value_Pfeife			=	10;
 const int	Value_Rasiermesser		=	5;// EX 25 NIEDRIGER WERT WEIL ES VIEL DAVON GIBT!!! 
-const int	Value_Münze				=	0;// BITTE AUF 0 LASSEN, DAFÜR IST SIE DA, FÜR SONST NIX!!!!! M.F.
-const int	Value_Schüssel			=	4;
-const int	Value_Kerzenständer		=	10;
+const int	Value_Munze				=	0;// BITTE AUF 0 LASSEN, DAFÜR IST SIE DA, FÜR SONST NIX!!!!! M.F.
+const int	Value_Schussel			=	4;
+const int	Value_Kerzenstander		=	10;
 const int	Value_Becher			=	 4;
 const int	Value_Pokal				=	50;
 const int	Value_Besteck			=	15;
@@ -42,7 +42,7 @@ const int	Value_Statue			=	15;
 const int	Value_Schwefel			=	20;
 const int	Value_Quecksilber		=	25;
 const int	Value_Salz				=	10;
-const int	Value_Öl				=	15;
+const int	Value_Ol				=	15;
 const int	Value_Moleratfett		=	5;
 const int	Value_Alcohol			=	18;
 
@@ -82,13 +82,13 @@ INSTANCE ItKeKey1(C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	0;
 
-	value 				=	Value_Schlüssel;
+	value 				=	Value_Schlussel;
 
 	visual 				=	"ItKe_Key_01.3ds";
 	material 			=	MAT_METAL;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 /******************************************************************************************/
@@ -99,13 +99,13 @@ INSTANCE ItKeKey2(C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	0;
 
-	value 				=	Value_Schlüssel;
+	value 				=	Value_Schlussel;
 
 	visual 				=	"ItKe_Key_02.3ds";
 	material 			=	MAT_METAL;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 /******************************************************************************************/
@@ -116,13 +116,13 @@ INSTANCE ItKeKey3(C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	0;
 
-	value 				=	Value_Schlüssel;
+	value 				=	Value_Schlussel;
 
 	visual 				=	"ItKe_Key_03.3ds";
 	material 			=	MAT_METAL;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 /******************************************************************************************/
@@ -133,13 +133,13 @@ INSTANCE ItKeKey4(C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	0;
 
-	value 				=	Value_Schlüssel;
+	value 				=	Value_Schlussel;
 
 	visual 				=	"ItKe_Key_04.3ds";
 	material 			=	MAT_METAL;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 /******************************************************************************************/
@@ -150,13 +150,13 @@ INSTANCE ItKeCavalorn01(C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	0;
 
-	value 				=	Value_Schlüssel;
+	value 				=	Value_Schlussel;
 
 	visual 				=	"ItKe_Key_04.3ds";
 	material 			=	MAT_METAL;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 
@@ -536,7 +536,7 @@ INSTANCE ItLsTorchburning(C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	//	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	//	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 /******************************************************************************************/
@@ -553,7 +553,7 @@ INSTANCE ItLsTorchburned(C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	//	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	//	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 
@@ -629,7 +629,7 @@ INSTANCE ItMi_Stuff_OldCoin_01 (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	Value_Münze;
+	value 				=	Value_Munze;
 
 	visual 				=	"ItMi_Stuff_OldCoin_01.3DS";
 	material 			=	MAT_METAL;
@@ -647,7 +647,7 @@ INSTANCE ItMi_Stuff_OldCoin_02 (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI|ITEM_MISSION;
 
-	value 				=	Value_Münze;
+	value 				=	Value_Munze;
 
 	visual 				=	"ItMi_Stuff_OldCoin_01.3DS";
 	material 			=	MAT_METAL;
@@ -665,7 +665,7 @@ INSTANCE ItMi_Stuff_Plate_01 (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	Value_Schüssel;
+	value 				=	Value_Schussel;
 
 	visual 				=	"ItMi_Stuff_Plate_01.3DS";
 	material 			=	MAT_CLAY;
@@ -682,7 +682,7 @@ INSTANCE ItMi_Stuff_Candel_01 (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	Value_Kerzenständer;
+	value 				=	Value_Kerzenstander;
 
 	visual 				=	"ItMi_Stuff_Candel_01.3DS";
 	material 			=	MAT_METAL;
@@ -693,6 +693,8 @@ INSTANCE ItMi_Stuff_Candel_01 (C_Item)
 
 /******************************************************************************************/
 const string ItMi_Stuff_Cup_01_description = "Widzia³ wiele toastów. Czêsto jedyny luksus w skromnym dobytku Kopacza.";
+const string ItMi_Stuff_Cup_01_description_1 = "Widzia³ wiele toastów.";
+const string ItMi_Stuff_Cup_01_description_2 = "Czêsto jedyny luksus w skromnym dobytku Kopacza.";
 INSTANCE ItMi_Stuff_Cup_01 (C_Item)
 {
 	name 				=	"Kubek";
@@ -706,7 +708,8 @@ INSTANCE ItMi_Stuff_Cup_01 (C_Item)
 	material 			=	MAT_CLAY;
 
 	description			= name;
-	TEXT[5]				= ItMi_Stuff_Cup_01_description;
+	TEXT[4]				= ItMi_Stuff_Cup_01_description_1;
+	TEXT[5]				= ItMi_Stuff_Cup_01_description_2;
 };
 
 /******************************************************************************************/
@@ -881,7 +884,7 @@ INSTANCE ItMi_Alchemy_Syrianoil_01 (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	Value_Öl;
+	value 				=	Value_Ol;
 
 	visual 				=	"ItMi_Alchemy_Syrianoil_01.3DS";
 	material 			=	MAT_CLAY;
@@ -945,7 +948,7 @@ INSTANCE ItMiLuteIE (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiBluepipe(C_Item)
@@ -960,7 +963,7 @@ INSTANCE ItMiBluepipe(C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiYellowpipe (C_Item)
@@ -975,7 +978,7 @@ INSTANCE ItMiYellowpipe (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiDrumscheit (C_Item)
@@ -990,7 +993,7 @@ INSTANCE ItMiDrumscheit (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiDrumstick (C_Item)
@@ -1005,7 +1008,7 @@ INSTANCE ItMiDrumstick (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiCello (C_Item)
@@ -1020,7 +1023,7 @@ INSTANCE ItMiCello (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiCellobow (C_Item)
@@ -1035,7 +1038,7 @@ INSTANCE ItMiCellobow (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 INSTANCE ItMiHarp (C_Item)
@@ -1050,7 +1053,7 @@ INSTANCE ItMiHarp (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlüssel;
+	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_Schlussel;
 };
 
 */

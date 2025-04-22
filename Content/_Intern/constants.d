@@ -439,4 +439,6 @@ const int NPC_VOICE_VARIATION_MAX						= 10					;
 const int AI_SHADOWBEAST_FIGHT_NOTSEE_WAIT = 5; // How long a shadowbeast wait, if can't attack player
 const int AI_SHADOWBEAST_FIGHT_BLOCKED_RESET = 5; // How much time can `AI` action be performed
 
-																				
+// To not corrupt the stack
+const int _ = 0;
+const string __ = "";																				

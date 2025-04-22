@@ -10,7 +10,7 @@ func void ZS_Smith_Cool ()
 	B_StartUseMob	(self,	"BSCOOL");	
 };
 
-func void ZS_Smith_Cool_Loop ()
+func int ZS_Smith_Cool_Loop ()
 {
     PrintDebugNpc	(PD_TA_LOOP,"ZS_Smith_Cool_Loop");
    
@@ -21,6 +21,8 @@ func void ZS_Smith_Cool_Loop ()
     	B_InterruptMob ("BSCOOL");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smith_Cool_End ()

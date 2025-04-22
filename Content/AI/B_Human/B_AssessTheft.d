@@ -34,7 +34,10 @@ func void B_AssessTheft ()
 // 8.5.00 Inklusive Gildenbesitzflag umgesetzt
 {
 	// NyrasPrologueDemake: not theft detecting in Nyras Prologue
-	return;
+	if (true)
+	{
+		return;
+	};
 	
 	// MH: Itemschweine behmen IMMER DIEBSTAHL AN (wenn nicht Taschendiebstahl)
 	if (self.aivar[AIV_ITEMSCHWEIN] == TRUE)
@@ -70,7 +73,7 @@ func void B_AssessTheft ()
 			{
 				PrintDebugNpc		(PD_ZS_CHECK, "...Item gehört NSC!");
 				Npc_ClearAIQueue 	(self);
-				C_LookAtNpc 		(self, other);
+				_ = C_LookAtNpc 		(self, other);
 				AI_StartState 		(self, ZS_CatchThief, 0, "");
 				return;
 			}
@@ -78,7 +81,7 @@ func void B_AssessTheft ()
 			{
 				B_FullStop		 	(self);
 				PrintDebugNpc		(PD_ZS_CHECK, "Gilden-Bes.");
-				C_LookAtNpc 		(self, other);
+				_ = C_LookAtNpc 		(self, other);
 				AI_StartState 		(self, ZS_CatchThief, 0, "");
 				return;
 			}
@@ -117,7 +120,7 @@ func void B_AssessTheft ()
 			{	
 				PrintDebugNpc		(PD_ZS_CHECK, "...Opfer FRIENDLY/NEUTRAL oder Dieb ANGRY");
 				B_FullStop			(self);
-				C_LookAtNpc 		(self, other);
+				_ = C_LookAtNpc 		(self, other);
 				AI_PointAtNpc 		(self, other);
 				// B_Say 				(self, other, "$BEHINDYOU");
 				B_AssessAndMemorize	(NEWS_THEFT, NEWS_SOURCE_WITNESS, self, other, victim); 

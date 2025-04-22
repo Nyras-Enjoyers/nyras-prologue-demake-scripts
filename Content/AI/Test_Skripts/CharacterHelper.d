@@ -35,9 +35,11 @@ func void ZS_CH_Hangaround ()
 	Npc_PercEnable  	(self,	PERC_ASSESSTALK			,	B_AssessTalk		);
 };
 
-func void ZS_CH_Hangaround_Loop ()
+func int ZS_CH_Hangaround_Loop ()
 {
 	PrintDebugNpc	(PD_ZS_LOOP,	"ZS_CH_Hangaround_Loop");
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_CH_Hangaround_End ()
@@ -58,7 +60,7 @@ func void B_SetHeroExp()
     Attributes = ConcatStrings(Attributes, "Hitpoints:");
     Attributes = ConcatStrings(Attributes, IntToString(hero.attribute[ATR_HITPOINTS_MAX]));
     
-    PrintScreen	(Attributes, -1,-1,"font_old_20_white.tga",3);
+    _ = PrintScreen	(Attributes, -1,-1,"font_old_20_white.tga",3);
     Snd_Play ("LEVELUP");    
 };
 
@@ -94,11 +96,11 @@ func void B_SetHeroAttributes(VAR INT selection, var int increase, var int LP_co
         Attributes = ConcatStrings(Attributes, "Mana:");
         Attributes = ConcatStrings(Attributes, IntToString(hero.attribute[ATR_MANA_MAX]));
 		
-		PrintScreen	(Attributes, -1,-1,"font_old_20_white.tga",3);
+		_ = PrintScreen	(Attributes, -1,-1,"font_old_20_white.tga",3);
 	}
 	else 
 	{
-		PrintScreen	("Zu wenig Lernpunkte!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+		_ = PrintScreen	("Zu wenig Lernpunkte!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		// B_Say (self, other, "$NOLEARNNOPOINTS");
 	};	
 };
@@ -111,21 +113,21 @@ func void B_SetHeroWeapon()
         CreateInvItem(hero,ItRw_Bow_Small_04);
  	    
 	        
-        PrintScreen	("nötig STR 11  DEX 16", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig STR 11  DEX 16", -1,-1,"font_old_20_white.tga",10);
     }   
     else if hero.level <= 10
     {
         CreateInvItem(hero,ItMw_1H_Sword_Long_01);
         CreateInvItem(hero,ItRw_Bow_Long_02);
  	    
-        PrintScreen	("nötig STR 17  DEX 22", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig STR 17  DEX 22", -1,-1,"font_old_20_white.tga",10);
     }
     else if hero.level <= 15
     {
         CreateInvItem(hero,ItMw_1H_Sword_Broad_01);
         CreateInvItem(hero,ItRw_Bow_Long_05);
    	    
-        PrintScreen	("nötig: STR 26  DEX 28", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig: STR 26  DEX 28", -1,-1,"font_old_20_white.tga",10);
     }
     else if hero.level <= 20
     {
@@ -133,7 +135,7 @@ func void B_SetHeroWeapon()
 		CreateInvItem(hero,ItMw_1H_Sword_Broad_04);
         CreateInvItem(hero,ItRw_Bow_Long_08);
  	    
-        PrintScreen	("nötig STR 52  DEX 34", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig STR 52  DEX 34", -1,-1,"font_old_20_white.tga",10);
     }
     else if hero.level <= 25
     {
@@ -141,7 +143,7 @@ func void B_SetHeroWeapon()
 		CreateInvItem(hero,ItMw_1H_Sword_Broad_04);
         CreateInvItem(hero,ItRw_Bow_War_02);
   	    
-        PrintScreen	("nötig STR 62  DEX 40", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig STR 62  DEX 40", -1,-1,"font_old_20_white.tga",10);
     }
     else if hero.level <= 30
     {
@@ -149,10 +151,10 @@ func void B_SetHeroWeapon()
 		CreateInvItem(hero,ItMw_1H_Sword_Broad_04);
         CreateInvItem(hero,ItRw_Bow_War_05);
         
-        PrintScreen	("nötig STR 78  DEX 50", -1,-1,"font_old_20_white.tga",10);
+        _ = PrintScreen	("nötig STR 78  DEX 50", -1,-1,"font_old_20_white.tga",10);
     };
-    AI_EquipBestMeleeWeapon(hero);
-    AI_EquipBestRangedWeapon(hero);
+    _ = AI_EquipBestMeleeWeapon(hero);
+    _ = AI_EquipBestRangedWeapon(hero);
     
     B_SetHeroEquipment();
 };
@@ -205,6 +207,9 @@ FUNC INT CH_Level_Condition()
 	if (hero.level == 0)
 	{
 		return TRUE;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -679,6 +684,9 @@ FUNC INT CH_Guild_Condition()
 	&&	(Npc_GetTrueGuild(hero) == GIL_NONE)
 	{
 		return TRUE;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -726,7 +734,7 @@ func void CH_Templar()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_TPL;
-	Npc_SetTrueGuild(hero, GIL_TPL);
+	_ = Npc_SetTrueGuild(hero, GIL_TPL);
 	
 	if hero.level <= 15
 	{
@@ -745,7 +753,7 @@ func void CH_Novice()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_NOV;
-	Npc_SetTrueGuild(hero, GIL_NOV);
+	_ = Npc_SetTrueGuild(hero, GIL_NOV);
 	
 	if hero.level <= 5
 	{
@@ -764,7 +772,7 @@ func void CH_Watermage()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_KDW;
-	Npc_SetTrueGuild(hero, GIL_KDW);
+	_ = Npc_SetTrueGuild(hero, GIL_KDW);
 	
 	if hero.level <= 20
 	{
@@ -783,7 +791,7 @@ func void CH_Mercenary()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_SLD;
-	Npc_SetTrueGuild(hero, GIL_SLD);
+	_ = Npc_SetTrueGuild(hero, GIL_SLD);
 	
 	if hero.level <= 15
 	{
@@ -802,7 +810,7 @@ func void CH_Bandit()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_ORG;
-	Npc_SetTrueGuild(hero, GIL_ORG);
+	_ = Npc_SetTrueGuild(hero, GIL_ORG);
 	
     CreateInvItem(hero,ORG_ARMOR_H);
     AI_EquipArmor(hero,ORG_ARMOR_H);
@@ -813,7 +821,7 @@ func void CH_Firemage()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_KDF;
-	Npc_SetTrueGuild(hero, GIL_KDF);
+	_ = Npc_SetTrueGuild(hero, GIL_KDF);
 	
 	CreateInvItem(hero,KDF_ARMOR_H);
 	AI_EquipArmor(hero,KDF_ARMOR_H);
@@ -824,7 +832,7 @@ func void CH_Guard()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_GRD;
-	Npc_SetTrueGuild(hero, GIL_GRD);
+	_ = Npc_SetTrueGuild(hero, GIL_GRD);
 	
 	if hero.level <= 15
 	{
@@ -843,7 +851,7 @@ func void CH_Shadow()
 	Info_ClearChoices	(CH_Guild);
 	
 	hero.guild = GIL_STT;
-	Npc_SetTrueGuild(hero, GIL_STT);
+	_ = Npc_SetTrueGuild(hero, GIL_STT);
 	
 	CreateInvItem(hero,STT_ARMOR_H);
 	AI_EquipArmor(hero,STT_ARMOR_H);

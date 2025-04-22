@@ -22,7 +22,7 @@ func void ZS_PracticeMagic	()
 	self.aivar[AIV_ITEMFREQ] = (Hlp_Random (6) + 4);
 };
 
-func void ZS_PracticeMagic_Loop ()
+func int ZS_PracticeMagic_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_PracticeMagic_Loop");
 	var int magereaktion;
@@ -69,6 +69,8 @@ func void ZS_PracticeMagic_Loop ()
 	
 	AI_Wait(self,1);
 	//AI_AlignToFP(self);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_PracticeMagic_End ()

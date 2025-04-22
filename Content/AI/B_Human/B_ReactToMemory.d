@@ -35,7 +35,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile// EBR");
 //						B_Say 	( self, other, "$YOUKILLEDEBR");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_GUR)
@@ -43,7 +43,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // GUR");
 //						B_Say	( self, other, "$YOUKILLEDGUR");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_KDW || murdernews_victim.guild == GIL_KDF)
@@ -51,7 +51,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // KDF");
 //						B_Say	( self, other, "$YOUKILLEDMAGE");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 
@@ -61,7 +61,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // GRD");
 //						B_Say	( self, other, "$YOUKILLEDOCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_STT)
@@ -69,7 +69,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // STT");
 //						B_Say 	( self, other, "$YOUKILLEDOCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild ==GIL_VLK)
@@ -77,7 +77,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // VLK");
 //						B_Say	( self, other , "$YOUKILLEDOCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 
@@ -87,7 +87,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // SLD");
 //						B_Say	( self, other, "$YOUKILLEDNCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_ORG )
@@ -95,7 +95,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // ORG");
 //						B_Say	(self, other, "$YOUKILLEDNCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_BAU)
@@ -103,7 +103,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // BAU");
 //						B_Say	( self, other, "$YOUKILLEDNCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_SFB)
@@ -111,7 +111,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile //SFB");
 //						B_Say 	( self, other, "$YOUKILLEDNCFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 
@@ -121,7 +121,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // NOV");
 //						B_Say	( self, other, "$YOUKILLEDPSIFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 					if ( murdernews_victim.guild == GIL_TPL)
@@ -129,7 +129,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News // Friendly/Neutral offender SC victim  NOT hostile // TPL");
 //						B_Say	( self, other, "$YOUKILLEDPSIFOLK");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 
@@ -140,7 +140,7 @@ func void B_ReactToMemory ()
 				PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News// SC Offender(angry) victim(Friendly)");
 //				B_Say	( self, other, "$YOUKILLEDMYFRIEND");
 				// JP: Neue Funktion, um erteilte News zu löschen
-				Npc_DeleteNews  ( self,murdernews); 
+				_ = Npc_DeleteNews  ( self,murdernews); 
 				return;
 			};
 		}
@@ -160,13 +160,13 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Murder_News// SC Not Victim and not offender and ok guy victim was a friend");
 //						B_Say	( self, other, "$THEYKILLEDMYFRIEND");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,murdernews); 
+						_ = Npc_DeleteNews  ( self,murdernews); 
 						return;
 					};
 				};
 			};	
 		 };
-		 Npc_DeleteNews  ( self,murdernews); 
+		 _ = Npc_DeleteNews  ( self,murdernews); 
 	};
 	
 	//-------------------------------------------ReactToAttackNews--------------------------------------------------------
@@ -226,7 +226,7 @@ func void B_ReactToMemory ()
 					PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC(angry) offender// victim is me");
 //					B_Say	( self, other, "$LookingForTroubleAgain");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,defeat_news); 
+					_ = Npc_DeleteNews  ( self,defeat_news); 
 					return;
 				}; 
 				if (Npc_GetPermAttitude	( self, defeat_news_offender) == ATT_NEUTRAL || Npc_GetPermAttitude	( self, defeat_news_offender) == ATT_FRIENDLY)
@@ -234,7 +234,7 @@ func void B_ReactToMemory ()
 					PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC(friend/neutr) offender// victim is me");
 //					B_Say	( self, other, "$YOUDEFEATEDMEWELL");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,defeat_news); 
+					_ = Npc_DeleteNews  ( self,defeat_news); 
 					return;
 				};
 			}
@@ -252,14 +252,14 @@ func void B_ReactToMemory ()
 							PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (Angry)  offender // victimguild (friendly) EBR");
 //							B_Say	( self, other, "$SUCKERDEFEATEDEBR");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 						}
 						else if ( defeat_news_victim_guild == GIL_GUR)
 						{
 							PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (Angry)  offender //victimguild (friendly) GUR");
 //							B_Say	( self, other, "$SUCKERDEFEATEDGUR");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						}
 						else if ( defeat_news_victim_guild	== GIL_KDF || defeat_news_victim_guild	== GIL_KDW)
@@ -267,21 +267,21 @@ func void B_ReactToMemory ()
 							PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (Angry)  offender// victimguild (friendly) MAGE");
 //							B_Say	( self, other, "SUCKERDEFEATEDMAGE");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						}
 						else if	(self_guild == GIL_GRD && ( defeat_news_victim_guild == GIL_VLK || defeat_news_victim_guild == GIL_STT))
 						{
 //							B_Say	( self, other, "$SUCKERDEFEATEDVLK_GUARD");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						}
 						else if (self_guild == GIL_TPL	&& defeat_news_victim_guild	== GIL_NOV)
 						{
 //							B_Say	( self, other, "$SUCKERDEFEATEDNOV_GUARD");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						}
 						else
@@ -292,7 +292,7 @@ func void B_ReactToMemory ()
 								PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (Angry / guild-angry/neutral)  offender //victimguild (friendly) all others");
 //								B_Say	( self, other, "$YOUATTACKEDMYFRIEND");
 								// JP: Neue Funktion, um erteilte News zu löschen
-								Npc_DeleteNews  ( self,defeat_news); 
+								_ = Npc_DeleteNews  ( self,defeat_news); 
 								return;
 							};
 						};
@@ -307,7 +307,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (friendly/neutral) offender// victim is an other EBR me not EBR");
 //						B_Say	( self, other, "$YOUATTACKEDEBR");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,defeat_news); 
+						_ = Npc_DeleteNews  ( self,defeat_news); 
 						return;
 					}
 					else if ( defeat_news_victim_guild == GIL_GUR && self_guild != GIL_GUR)
@@ -315,7 +315,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (friendly/neutral) offender// victim is an other GUR me not GUR");
 //						B_Say	( self, other, "YOUATTACKEDGUR");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,defeat_news); 
+						_ = Npc_DeleteNews  ( self,defeat_news); 
 						return;
 					}
 					else if	( defeat_news_victim_guild	== GIL_KDW || defeat_news_victim_guild	== GIL_KDF)
@@ -323,7 +323,7 @@ func void B_ReactToMemory ()
 						PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // SC (friendly/neutral) offender// victim is an other MAGE me not MAGE");
 //						B_Say	( self, other, "$YOUATTACKEDMAGE");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,defeat_news); 
+						_ = Npc_DeleteNews  ( self,defeat_news); 
 						return;
 					}
 					else
@@ -332,14 +332,14 @@ func void B_ReactToMemory ()
 						{
 //							B_Say	( self, other, "$YOUDFEATEDVLK_GUARD");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						};
 						if (defeat_news_victim_guild == GIL_NOV && self_guild == GIL_TPL)
 						{
 //							B_Say	( self, other, "$YOUDEFEATEDNOV_GUARD");
 							// JP: Neue Funktion, um erteilte News zu löschen
-							Npc_DeleteNews  ( self,defeat_news); 
+							_ = Npc_DeleteNews  ( self,defeat_news); 
 							return;
 						};
 
@@ -349,7 +349,7 @@ func void B_ReactToMemory ()
 							if ( C_NpcIsGuard (defeat_news_victim))
 							{
 //								B_Say	( self, other, "$YouDefeatedMyComrade");
-								Npc_DeleteNews  ( self,defeat_news); 
+								_ = Npc_DeleteNews  ( self,defeat_news); 
 								return;
 							};
 							if (Wld_GetGuildAttitude	( self_guild, defeat_news_victim_guild) == ATT_FRIENDLY)
@@ -358,14 +358,14 @@ func void B_ReactToMemory ()
 								{
 //									B_Say	( self, other, "$YOUDFEATEDVLK_GUARD");
 									// JP: Neue Funktion, um erteilte News zu löschen
-									Npc_DeleteNews  ( self,defeat_news); 
+									_ = Npc_DeleteNews  ( self,defeat_news); 
 									return;
 								};
 								if (defeat_news_victim_guild == GIL_NOV && self_guild == GIL_TPL)
 								{
 //									B_Say	( self, other, "$YOUDEFEATEDNOV_GUARD");
 									// JP: Neue Funktion, um erteilte News zu löschen
-									Npc_DeleteNews  ( self,defeat_news); 
+									_ = Npc_DeleteNews  ( self,defeat_news); 
 									return;
 								};
 							};
@@ -382,7 +382,7 @@ func void B_ReactToMemory ()
 				PrintDebugNpc ( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // victim is player/ me is aggressor");
 //				B_Say	( self, other, "$LOOKINGFORTROUBLEAGAIN");
 				// JP: Neue Funktion, um erteilte News zu löschen
-				Npc_DeleteNews  ( self,defeat_news); 
+				_ = Npc_DeleteNews  ( self,defeat_news); 
 				return;
 			}
 			else
@@ -392,12 +392,12 @@ func void B_ReactToMemory ()
 				{
 					PrintDebugNpc 	( PD_ZS_FRAME,"B_ReactToMemory // Defeat_News // victim is player(angry)/ me is NOT aggressor");
 //					B_Say			( self, other, "$SUCKERGOTSOME");
-					Npc_DeleteNews  ( self,defeat_news); 
+					_ = Npc_DeleteNews  ( self,defeat_news); 
 					return;
 				};
 			};
 		};
-		Npc_DeleteNews  ( self,defeat_news); 
+		_ = Npc_DeleteNews  ( self,defeat_news); 
 	};
 	
 	//-------------------------------------------ReactToTheftNews--------------------------------------------------------
@@ -422,21 +422,21 @@ func void B_ReactToMemory ()
 				{
 //					B_Say	( self, other, "$YOUSTOLEFROMEBR");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,theft_news); 
+					_ = Npc_DeleteNews  ( self,theft_news); 
 					return;
 				};
 				if ( theft_news_victim.guild == GIL_GUR && self.guild != GIL_GUR)
 				{
 //					B_Say	( self, other, "$YOUSTOLEFROMGUR");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,theft_news); 
+					_ = Npc_DeleteNews  ( self,theft_news); 
 					return;
 				};
 				if ( theft_news_victim.guild == GIL_KDW || theft_news_victim.guild == GIL_KDF)
 				{
 //					B_Say	( self, other, "$YOUSTOLEFROMMAGE");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,theft_news); 
+					_ = Npc_DeleteNews  ( self,theft_news); 
 					return;
 				};
 			};
@@ -446,7 +446,7 @@ func void B_ReactToMemory ()
 				{
 //					B_Say	( self, other, "$YOUSTOLEFROMME");
 					// JP: Neue Funktion, um erteilte News zu löschen
-					Npc_DeleteNews  ( self,theft_news); 
+					_ = Npc_DeleteNews  ( self,theft_news); 
 					return;
 				}
 				else
@@ -455,13 +455,13 @@ func void B_ReactToMemory ()
 					{
 //						B_Say	( self, other, "$YOUSTOLEFROMUS");
 						// JP: Neue Funktion, um erteilte News zu löschen
-						Npc_DeleteNews  ( self,theft_news); 
+						_ = Npc_DeleteNews  ( self,theft_news); 
 						return;
 					};
 				};
 			};
 		};
-		Npc_DeleteNews  ( self,theft_news); 
+		_ = Npc_DeleteNews  ( self,theft_news); 
 	};
 };
 

@@ -13,7 +13,7 @@ func void ZS_Charlotte_Dance ()  //### Wahrnehmungen?
 	AI_AlignToWP (self);
 };
 
-func void ZS_Charlotte_Dance_Loop()
+func int ZS_Charlotte_Dance_Loop()
 {
 	PrintDebugNpc		(PD_TA_LOOP,	"ZS_Charlotte_Dance_Loop");
 
@@ -58,6 +58,8 @@ func void ZS_Charlotte_Dance_Loop()
 		};
 	AI_GotoWP (self, self.wp);
 //	AI_AlignToWP (self);
+	
+	return LOOP_CONTINUE;
 
 };
 

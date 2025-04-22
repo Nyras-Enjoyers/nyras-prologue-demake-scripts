@@ -43,6 +43,9 @@ func int DIA_GRD_254_Orry_Hello_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -76,6 +79,9 @@ func int DIA_GRD_254_Orry_What_Did_You_Do_Condition()
 	if (Npc_KnowsInfo (hero, DIA_GRD_254_Orry_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -145,6 +151,9 @@ func int DIA_GRD_254_Orry_Let_Me_Ask_You_Something_Condition()
 	if (Npc_KnowsInfo (hero, DIA_GRD_254_Orry_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -214,6 +223,9 @@ func int DIA_GRD_254_Orry_About_Kirgo_Death_Condition()
 	if (Npc_KnowsInfo (hero, DIA_GRD_254_Orry_Hello)) && (Kirgo_Killed == true) && (Kirgo_IntroducedHimself == true)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -274,6 +286,9 @@ func int DIA_GRD_254_Orry_Your_Beer_Condition()
 	if (Npc_KnowsInfo (hero, DIA_GRD_254_Orry_Let_Me_Ask_You_Something)) && (Npc_HasItems (hero, ItFoBeer) >= 1)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 

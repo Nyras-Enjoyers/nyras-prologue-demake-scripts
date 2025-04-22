@@ -10,7 +10,7 @@ func void ZS_Smith_Fire ()
 	B_StartUseMob	(self,	"BSFIRE");	
 };
 
-func void ZS_Smith_Fire_Loop ()
+func int ZS_Smith_Fire_Loop ()
 {
     PrintDebugNpc (PD_TA_LOOP,"ZS_Smith_Fire_Loop");
   
@@ -21,6 +21,8 @@ func void ZS_Smith_Fire_Loop ()
     	B_InterruptMob ("BSFIRE");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smith_Fire_End ()

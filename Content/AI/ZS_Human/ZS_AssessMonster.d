@@ -71,7 +71,7 @@ func void ZS_AssessMonster	()
 			Npc_SetTarget	(self,	other);
 //			B_SayOverlay	(self,	NULL,	"$ShitWhatAMonster");
 			
-			Npc_GetTarget	( self);
+			_ = Npc_GetTarget	( self);
 			AI_StartState	(self,	ZS_Flee,	0, "");
 		};	
 	};
@@ -127,6 +127,8 @@ func int ZS_AssessMonster_Loop ()
 	{
 		return				LOOP_CONTINUE;
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_AssessMonster_End ()

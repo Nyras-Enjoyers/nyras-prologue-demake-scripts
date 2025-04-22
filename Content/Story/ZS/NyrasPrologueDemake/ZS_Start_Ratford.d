@@ -25,7 +25,7 @@ func void ZS_Start_Ratford()
 	self.aivar[AIV_SPECIALANILASTPLAYED] = false;
 };
 
-func void ZS_Start_Ratford_loop()
+func int ZS_Start_Ratford_loop()
 {
 	var int zufall;
 	zufall = Hlp_Random(100);
@@ -55,6 +55,8 @@ func void ZS_Start_Ratford_loop()
 	};
 	
 	AI_Wait		(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Start_Ratford_end()

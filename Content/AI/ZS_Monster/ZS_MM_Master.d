@@ -77,6 +77,8 @@ func int B_MM_DeSynchronize()
 	var int msec;
 	msec = Hlp_Random (1000);
 	AI_Waitms (self, msec);
+	
+	return true;
 };
 
 
@@ -315,7 +317,7 @@ func void B_MM_ReactToOthersDamage ()
 {
     PrintDebugNpc(PD_MST_FRAME,"B_MM_ReactToOthersDamage");
     
-	B_MM_DeSynchronize();
+	_ = B_MM_DeSynchronize();
 	
 	if (C_PreyToPredator(self,other))
 	{
@@ -408,7 +410,7 @@ func void ZS_MM_Attack ()
 	AI_StandUp		(self);
 	AI_SetWalkmode 	(self, NPC_RUN);
 	
-	Npc_GetTarget	(self);
+	_ = Npc_GetTarget	(self);
 	
 	Npc_SendPassivePerc	(self, PERC_ASSESSWARN,	other, self); //Opfer,Täter
 	
@@ -436,7 +438,7 @@ func void ZS_MM_Attack ()
 					// Change a routine, if not changed
 					if (Npc_IsInRoutine(DraxNpc, Rtn_Hunting_819) == false)
 					{
-						B_ExchangeRoutine(DraxNpc, "HUNTING");
+						B_ExchangeRoutine_C_NPC(DraxNpc, "HUNTING");
 						
 						// Save that hero attacked alone in both cases: if player said "maybe later" and if wanted to start, but hadn't an equipped weapon before.
 						if (Drax_HeroWeaponCheck == false)
@@ -462,7 +464,7 @@ func int ZS_MM_Attack_Loop ()
 		return 1;			// oder beendet Loop
 	};
 		
-	Npc_GetTarget(self);	//other = target
+	_ = Npc_GetTarget(self);	//other = target
 	if (Hlp_IsValidNpc(other) && !C_NpcIsDown(other)) 
 	{
 		PrintDebugNpc		(PD_MST_LOOP, "...Ziel vorhanden!");
@@ -583,7 +585,7 @@ func int ZS_MM_Attack_Loop ()
 		else	// Monster NICHT auf der Jagd - weitere Feinde Attacken
 		{
 			Npc_PerceiveAll		(self);		// nötig, da Npc_GetNextTarget() auf der Liste der zuletzt Wahrgenommenen VOBs beruht
-			Npc_GetNextTarget	(self);
+			_ = Npc_GetNextTarget	(self);
 			PrintGlobals		(PD_ZS_DETAIL);
 			if (Hlp_IsValidNpc(other) && !C_NpcIsDown(other))
 			{
@@ -673,7 +675,8 @@ func void B_MM_AssessWarn ()
 		{
 			AI_SetWalkmode	(self, NPC_RUN);
 			AI_GotoNpc 		(self, other);		// Gehe zu Jäger-Freund
-			if (Wld_DetectNpc   (self, victim, NOFUNC, -1))	// victim --> other
+			var int victimID; victimID = Hlp_GetInstanceID(victim);
+			if (Wld_DetectNpc   (self, victimID, NOFUNC, -1))	// victim --> other
 			{
 				AI_StartState	(self, ZS_MM_AssessEnemy, 0, "");
 			};
@@ -737,9 +740,11 @@ func void ZS_MM_Rtn_Default()	// Immobile
 
 	AI_AlignToWP		(self);		// SN: Monster am Start am Wegpunkt ausrichten
 };
-func void ZS_MM_Rtn_Default_loop()
+func int ZS_MM_Rtn_Default_loop()
 {
-    PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Default_loop");
+    PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Default_loop");    
+	
+	return LOOP_CONTINUE;
 };
 func void ZS_MM_Rtn_Default_end()
 {
@@ -805,7 +810,7 @@ func void ZS_MM_Rtn_Sleep()
 	//self.aivar[AIV_MM_SchonmalGeglotzt] = FALSE;
 	AI_SetWalkmode 	(self, NPC_WALK);
 	
-	B_MM_DeSynchronize();
+	_ = B_MM_DeSynchronize();
 	
 	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE) //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
 	{
@@ -820,14 +825,16 @@ func void ZS_MM_Rtn_Sleep()
 	AI_PlayAniBS		(self,	"T_STAND_2_SLEEP", BS_LIE);
 };
 
-func void ZS_MM_Rtn_Sleep_loop()
+func int ZS_MM_Rtn_Sleep_loop()
 {
     PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Sleep_loop");
     
 	if ((!Wld_IsTime (self.aivar[AIV_MM_SleepStart],00,self.aivar[AIV_MM_SleepEnd],00)) && (self.aivar[AIV_MM_SleepStart] != OnlyRoutine))
 	{
 		AI_StartState (self, ZS_MM_AllScheduler, 1, "");
-	};
+	};    
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Rtn_Sleep_end()
@@ -852,14 +859,14 @@ func void ZS_MM_Rtn_Roam()
 	Npc_PercEnable		(self, PERC_ASSESSBODY,			B_MM_AssessBody);
 
 	AI_SetWalkmode 	(self, NPC_WALK);
-	B_MM_DeSynchronize();
+	_ = B_MM_DeSynchronize();
 	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE)  //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
 	{
 		AI_GotoWP (self, self.WP);
 	};	
 };
 
-func void ZS_MM_Rtn_Roam_loop()
+func int ZS_MM_Rtn_Roam_loop()
 {
     PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Roam_loop");
     
@@ -887,7 +894,9 @@ func void ZS_MM_Rtn_Roam_loop()
 		if (randomMove == 0) {AI_PlayAni(self, "R_ROAM1");};
 		if (randomMove == 1) {AI_PlayAni(self, "R_ROAM2");};
 		if (randomMove == 2) {AI_PlayAni(self, "R_ROAM3");};
-	};
+	};    
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Rtn_Roam_end()
@@ -912,7 +921,7 @@ func void ZS_MM_Rtn_Rest()
 	Npc_PercEnable 		(self, PERC_ASSESSBODY, 		B_MM_AssessBody);
 
 	AI_SetWalkmode 	(self, NPC_WALK);
-	B_MM_DeSynchronize();
+	_ = B_MM_DeSynchronize();
 	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE) //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
 	{
 		AI_GotoWP (self, self.WP);
@@ -924,7 +933,7 @@ func void ZS_MM_Rtn_Rest()
 	};
 };
 
-func void ZS_MM_Rtn_Rest_Loop ()
+func int ZS_MM_Rtn_Rest_Loop ()
 {
     PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Rest_Loop");
     
@@ -941,7 +950,9 @@ func void ZS_MM_Rtn_Rest_Loop ()
 		if (randomMove == 0) {AI_PlayAni(self, "R_ROAM1");};
 		if (randomMove == 1) {AI_PlayAni(self, "R_ROAM2");};
 		if (randomMove == 2) {AI_PlayAni(self, "R_ROAM3");};
-	};
+	};    
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Rtn_Rest_End ()
@@ -969,7 +980,7 @@ func void ZS_MM_Rtn_EatGround()
 	Npc_PercEnable 		(self, PERC_ASSESSBODY, 		B_MM_AssessBody);
 
 	AI_SetWalkmode 	(self, NPC_WALK);
-	B_MM_DeSynchronize();
+	_ = B_MM_DeSynchronize();
 	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE) //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
 	{
 		AI_GotoWP (self, self.WP);
@@ -987,14 +998,16 @@ func void ZS_MM_Rtn_EatGround()
 	Mdl_ApplyRandomAniFreq	(self,	"S_EAT",	8.0);
 };
 
-func void ZS_MM_Rtn_EatGround_Loop ()
+func int ZS_MM_Rtn_EatGround_Loop ()
 {
     PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_EatGround_Loop");
     
 	if ((!Wld_IsTime	(self.aivar[AIV_MM_EatGroundStart],00,self.aivar[AIV_MM_EatGroundEnd],00)) && (self.aivar[AIV_MM_EatGroundStart] != OnlyRoutine))
 	{
 		AI_StartState (self, ZS_MM_AllScheduler, 1, "");
-	};
+	};    
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Rtn_EatGround_End ()
@@ -1026,7 +1039,7 @@ func void ZS_MM_Rtn_Wusel()
 	};		
 };
 
-func void ZS_MM_Rtn_Wusel_loop()
+func int ZS_MM_Rtn_Wusel_loop()
 {
     PrintDebugNpc		(PD_MST_LOOP, "ZS_MM_Rtn_Wusel_loop");
     
@@ -1054,7 +1067,9 @@ func void ZS_MM_Rtn_Wusel_loop()
 		if (randomMove == 0) {AI_PlayAni(self, "R_ROAM1");};
 		if (randomMove == 1) {AI_PlayAni(self, "R_ROAM2");};
 		if (randomMove == 2) {AI_PlayAni(self, "R_ROAM3");};
-	};
+	};    
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Rtn_Wusel_end()
@@ -1102,6 +1117,8 @@ func int ZS_MM_Summoned_loop()
 			return LOOP_CONTINUE;
 		};
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_Summoned_End()
@@ -1191,7 +1208,7 @@ func void ZS_MM_Shadowbeast()
 		if (hero.attribute[ATR_HITPOINTS] > 0)
 		{
 			Npc_SetTarget(self,her);
-			Npc_GetTarget(self);
+			_ = Npc_GetTarget(self);
 			Npc_ClearAIQueue(self);
 			AI_StartState(self, ZS_MM_Attack, 0, "");
 		} else

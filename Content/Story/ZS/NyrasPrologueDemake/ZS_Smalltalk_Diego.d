@@ -46,7 +46,7 @@ func void ZS_Smalltalk_Diego ()
 		Diego_Smalltalk_IsSaying = false;
 	};
 };
-func void ZS_Smalltalk_Diego_Loop()
+func int ZS_Smalltalk_Diego_Loop()
 {
 	// Make sure, that Diego is enough close to Whistler
 	
@@ -170,12 +170,12 @@ func void ZS_Smalltalk_Diego_Loop()
 	// The smalltalk finished
 	if (Smalltalk_Finished == true)
 	{
-		B_ExchangeRoutine(self, "AfterSmalltalk");
+		B_ExchangeRoutine_C_NPC(self, "AfterSmalltalk");
 	};
 	
 	AI_Wait(self, 0.5);
 	
-	return;
+	return LOOP_CONTINUE;
 };
 func void ZS_Smalltalk_Diego_End()
 {

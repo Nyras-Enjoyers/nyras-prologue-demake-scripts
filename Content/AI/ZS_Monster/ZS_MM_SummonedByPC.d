@@ -64,6 +64,8 @@ func int ZS_MM_SummonedByPC_Loop()
 		//AI_Wait				(self,	1);
 		return				LOOP_CONTINUE;
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MM_SummonedByPC_End()

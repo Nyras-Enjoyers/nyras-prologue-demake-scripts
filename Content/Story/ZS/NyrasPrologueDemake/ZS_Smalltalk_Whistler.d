@@ -42,7 +42,7 @@ func void ZS_Smalltalk_Whistler ()
 	};
 };
 
-func void ZS_Smalltalk_Whistler_Loop()
+func int ZS_Smalltalk_Whistler_Loop()
 {
 	if (Whistler_Smalltalk_HasSVMToSay == true)
 	{
@@ -126,14 +126,14 @@ func void ZS_Smalltalk_Whistler_Loop()
 				Smalltalk_HasToBeFinished = false;
 				Smalltalk_Finished = true;
 				
-				B_ExchangeRoutine(self, "AfterSmalltalk");
+				B_ExchangeRoutine_C_NPC(self, "AfterSmalltalk");
 			};
 		};
 	};
 	
 	AI_Wait(self, 0.5);
-
-	return;
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smalltalk_Whistler_End()

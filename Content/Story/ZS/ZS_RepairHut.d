@@ -15,11 +15,11 @@ FUNC VOID ZS_RepairHut ()
 	{
 	    AI_GotoWP		(self, 	self.wp);
 	    PrintDebugNpc	(PD_TA_CHECK,	"...befindet sich nicht im MobInteract!");
-		AI_UseMob 		(self,	"REPAIR",1);		// Benutze den Mob einmal bis zum angegebenen State
+		_ = AI_UseMob 		(self,	"REPAIR",1);		// Benutze den Mob einmal bis zum angegebenen State
 	};
 };
 
-FUNC VOID ZS_RepairHut_Loop ()
+FUNC int ZS_RepairHut_Loop ()
 {
     PrintDebugNpc 		(PD_TA_LOOP,"ZS_RepairHut_Loop");
 
@@ -46,12 +46,14 @@ FUNC VOID ZS_RepairHut_Loop ()
     	B_InterruptMob ("REPAIR");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 FUNC VOID ZS_RepairHut_End()
 {
     PrintDebugNpc 		(PD_TA_FRAME,	"ZS_RepairHut_End");
 
-	AI_UseMob			(self,	"REPAIR",	-1);		// Verlasse das Mobsi, um den State zu wechseln
+	_ = AI_UseMob			(self,	"REPAIR",	-1);		// Verlasse das Mobsi, um den State zu wechseln
 };
 

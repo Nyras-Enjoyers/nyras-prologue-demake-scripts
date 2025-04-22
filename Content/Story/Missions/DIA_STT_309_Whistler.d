@@ -16,6 +16,9 @@ func int DIA_STT_309_Whistler_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (other, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 

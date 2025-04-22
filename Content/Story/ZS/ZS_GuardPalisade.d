@@ -14,7 +14,7 @@ func void ZS_GuardPalisade()
 	B_InitArmor 	();//CS: nur bei nichtgezogener Waffe
 };
 
-func void ZS_GuardPalisade_Loop()
+func int ZS_GuardPalisade_Loop()
 {
 	PrintDebugNpc	(PD_TA_LOOP,"ZS_GuardPalisade_Loop");
 	
@@ -30,6 +30,8 @@ func void ZS_GuardPalisade_Loop()
 	};
 	
 	AI_Wait			(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_GuardPalisade_End ()

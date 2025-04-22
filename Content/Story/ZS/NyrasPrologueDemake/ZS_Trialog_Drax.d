@@ -124,7 +124,7 @@ func int ZS_Trialog_Drax_Loop ()
 	if (!C_BodyStateContains(self, BS_SIT))
 	&& (Wld_IsMobAvailable(self, "CRATE"))
 	{
-		AI_UseMob		(self,"CRATE",1);					// Benutze den Mob einmal bis zum angegebenen State
+		_ = AI_UseMob		(self,"CRATE",1);					// Benutze den Mob einmal bis zum angegebenen State
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 		return 	LOOP_CONTINUE;
 	}
@@ -161,6 +161,6 @@ func int ZS_Trialog_Drax_Loop ()
 func void ZS_Trialog_Drax_End ()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_Trialog_Drax_End");
-    AI_UseMob (self,"CRATE",-1);
+    _ = AI_UseMob (self,"CRATE",-1);
 };
 

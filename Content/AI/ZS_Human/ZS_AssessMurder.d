@@ -42,7 +42,7 @@ FUNC VOID ZS_AssessMurder ()
 			PrintDebugNpc		(PD_ZS_CHECK,	"...Mord von Monster!");
 			Npc_SetTarget		(self,	other);
 			
-			Npc_GetTarget		( self);
+			_ = Npc_GetTarget		( self);
 			AI_StartState		(self,	ZS_AssessMonster,	0,	"");
 			return;
 		}
@@ -85,7 +85,7 @@ FUNC VOID ZS_AssessMurder ()
 			{
 				PrintDebugNpc(PD_ZS_CHECK,	"...angry/hostile zu Opfer!");
 //				B_Say 		(self,	other,	"$YEAHWELLDONE");
-				C_StopLookAt(self);
+				_ = C_StopLookAt(self);
 			};
 		};
 	};

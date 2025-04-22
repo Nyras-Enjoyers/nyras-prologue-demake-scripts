@@ -14,7 +14,7 @@ func void ZS_MCHunting	()
 	AI_GotoWP (self,self.wp);			// Gehe zum Tagesablaufstart
 };
 
-func void ZS_MCHunting_Loop ()
+func int ZS_MCHunting_Loop ()
 {
     PrintDebugNpc (PD_TA_LOOP,"ZS_MCHunting_End" );
 
@@ -24,7 +24,7 @@ func void ZS_MCHunting_Loop ()
 		PrintDebugNpc(PD_TA_CHECK,"MineCrawler detect");
 		Npc_SetTarget (self,other);
 		
-		Npc_GetTarget	( self);
+		_ = Npc_GetTarget	( self);
 		AI_StartState (self,ZS_AssessMonster, 0,"");	// SN: der korrekte Zustand, um Monster zu erkennen ist 'ZS_AssessMonster' -> ich habe das korrigiert! (wenn gelesen, dann Kommentar löschen)
 	}
 	else 
@@ -32,6 +32,8 @@ func void ZS_MCHunting_Loop ()
 		AI_GotoWP (self, Npc_GetNextWP (self));
 		AI_GotoWP (self, Npc_GetNearestWP (self));
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_MCHunting_End ()

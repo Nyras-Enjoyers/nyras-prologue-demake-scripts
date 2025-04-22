@@ -17,7 +17,7 @@ func void ZS_Listen()
 	};
 };
 
-func void ZS_Listen_Loop()
+func int ZS_Listen_Loop()
 {
     PrintDebugNpc			(PD_TA_LOOP,"ZS_LISTEN");
 
@@ -36,13 +36,15 @@ func void ZS_Listen_Loop()
 				PrintDebugNpc(PD_TA_CHECK,	"...der nah genug ist!");
 				AI_TurnToNpc(self,	other);
 				AI_PlayAniBS(self,	"T_STAND_2_SIT", BS_SIT); 
-				C_LookAtNpc	(self,	other);
+				_ = C_LookAtNpc	(self,	other);
 				self.aivar	[AIV_FOUNDPERSON] = TRUE;
 			};	
 		};
 	};
 
     AI_Wait					(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Listen_End ()
@@ -52,7 +54,7 @@ func void ZS_Listen_End ()
 	if (C_BodyStateContains(self, BS_SIT))
 	{
 		AI_PlayAniBS 		(self,	"T_SIT_2_STAND",	BS_STAND);
-		C_StopLookAt 		(self);
+		_ = C_StopLookAt 		(self);
 	};
 };
 

@@ -59,7 +59,7 @@ func int B_EquipAndDrawBestMeleeWeapon(var C_NPC slf)
 			AI_StopAim				(slf);
 			B_FullStop 				(slf);
 			AI_RemoveWeapon			(slf);
-			AI_EquipBestMeleeWeapon	(slf);	
+			_ = AI_EquipBestMeleeWeapon	(slf);	
 			AI_ReadyMeleeWeapon		(slf);
 		};
 
@@ -96,7 +96,7 @@ func int B_EquipAndDrawBestRangedWeapon(var C_NPC slf)
 			PrintDebugNpc			(PD_ZS_CHECK,	"...noch keine Fernkampfwaffe gezogen!");
 			B_FullStop 				(slf);
 			AI_RemoveWeapon			(slf);
-			AI_EquipBestRangedWeapon(slf);	
+			_ = AI_EquipBestRangedWeapon(slf);	
 			AI_ReadyRangedWeapon	(slf);
 		}
 		else
@@ -213,7 +213,7 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 					return;
 				} else 
 				{
-					B_EquipAndDrawBestRangedWeapon(slf);
+					_ = B_EquipAndDrawBestRangedWeapon(slf);
 					
 					return;
 				};
@@ -226,7 +226,7 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 				return;
 			} else
 			{
-				B_EquipAndDrawBestRangedWeapon(slf);
+				_ = B_EquipAndDrawBestRangedWeapon(slf);
 				
 				return;
 			};

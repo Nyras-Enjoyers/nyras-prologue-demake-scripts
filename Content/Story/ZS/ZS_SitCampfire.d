@@ -24,8 +24,9 @@ func void ZS_SitCampfire()
 	AI_AlignToFP( self );				//Richte Dich aus
 };
 
-func void ZS_SitCampfire_loop()
+func int ZS_SitCampfire_loop()
 {
+	return LOOP_CONTINUE;
 };
 
 func void ZS_SitCampfire_end()

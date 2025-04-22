@@ -4,7 +4,7 @@ FUNC VOID B_RefuseTalk()
 	PrintDebugNpc	(PD_ZS_FRAME,"B_RefuseTalk");
 	B_SmartTurnToNpc(self,other);
 	// B_Say			(self,other,"$NOTNOW");
-	C_StopLookAt	(self);
+	_ = C_StopLookAt	(self);
 };
 
 // **********************************************************
@@ -250,7 +250,7 @@ FUNC VOID ZS_Talk_End ()
 				// Print a message about giving a talent
 				var string txt; txt = ConcatStrings(UI_Notification_SkillIncreasedFormat, Skill_Melee_OneHanded);
 				txt = ConcatStrings(txt, " II");
-				PrintScreen(txt, -1,-1,"FONT_OLD_20_WHITE.TGA", _TIME_MESSAGE_GIVEN);
+				_ = PrintScreen(txt, -1,-1,"FONT_OLD_20_WHITE.TGA", _TIME_MESSAGE_GIVEN);
 
 				GRD_251_Kirgo_After_Fight = true;
 			};

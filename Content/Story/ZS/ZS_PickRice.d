@@ -28,7 +28,7 @@ func void ZS_PickRice ()
 	self.aivar[AIV_ITEMFREQ] = (Hlp_Random (5) + 5);
 };
 
-func void ZS_PickRice_Loop ()
+func int ZS_PickRice_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_PickRice_Loop");
 	
@@ -85,6 +85,8 @@ func void ZS_PickRice_Loop ()
 	    AI_GotoFP (self, "PICKRICE");
 	};
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_PickRice_End ()

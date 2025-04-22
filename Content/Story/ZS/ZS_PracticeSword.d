@@ -18,13 +18,15 @@ func void ZS_PracticeSword ()
 	AI_DrawWeapon		(self);
 };
 
-func void ZS_PracticeSword_Loop()
+func int ZS_PracticeSword_Loop()
 {	
     PrintDebugNpc		(PD_TA_LOOP,	"ZS_PracticeSword_Loop");
 	
 	AI_PlayAni			(self,"T_1HSFREE");
 	AI_GotoWP			(self, self.wp); 
 	AI_AlignToWP    	(self);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_PracticeSword_End ()

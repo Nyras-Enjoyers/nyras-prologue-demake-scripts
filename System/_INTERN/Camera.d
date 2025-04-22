@@ -86,8 +86,8 @@ PROTOTYPE CCamSys_Def(CCamSys) {
 	collision			= 1;	// disable collision for this mode (ideal pos must be near player)
 
 	// dynamic 
-	veloTrans			= 30;				  	// velocity while easing   to best position
-	veloRot				= 2;			  		// velocity while rotating to best orientation
+	veloTrans			= 30.0;				  	// velocity while easing   to best position
+	veloRot				= 2.0;			  		// velocity while rotating to best orientation
 
 };
 

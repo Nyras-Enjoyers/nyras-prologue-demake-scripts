@@ -16,7 +16,7 @@ func void ZS_GuardPatrol ()
 	};		
 };
 
-func void ZS_GuardPatrol_Loop ()
+func int ZS_GuardPatrol_Loop ()
 /* 	in die Funktionen soll noch ein Zählglied, daß aber von der Funktionsweise der 
 	Begin-Loop-End-Struktur abhängig, wo das Zählglied eingeführt und verwendet wird;
 	mit diesem Glied wird nach einer Anzahl "rumlaufen" Vorgängen der Nsc wieder zu seinem self.wp 
@@ -67,6 +67,8 @@ func void ZS_GuardPatrol_Loop ()
 	};
 	
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_GuardPatrol_End ()

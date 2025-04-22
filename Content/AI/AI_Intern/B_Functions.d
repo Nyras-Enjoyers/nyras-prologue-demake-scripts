@@ -96,7 +96,7 @@ func void B_SmartTurnToNpc (var C_NPC slf, var C_NPC oth)
 		}
 		else
 		{
-			C_LookAtNpc 	(slf, 	oth);
+			_ = C_LookAtNpc 	(slf, 	oth);
 		};
 	};
 };
@@ -157,17 +157,17 @@ func void B_StandUp (var C_NPC slf)
     	}
     	else if (slf.aivar[AIV_HangAroundStatus] == 4)
     	{
-    		AI_UseMob (slf,"SMALL THRONE",-1);
+    		_ = AI_UseMob (slf,"SMALL THRONE",-1);
     		slf.aivar[AIV_HangAroundStatus] = 0;
     	}
     	else if (slf.aivar[AIV_HangAroundStatus] == 2)
     	{
-    		AI_UseMob (slf,"BENCH",-1);
+    		_ = AI_UseMob (slf,"BENCH",-1);
     		slf.aivar[AIV_HangAroundStatus] = 0;
     	}
     	else if (slf.aivar[AIV_HangAroundStatus] == 3)
     	{
-    		AI_UseMob (slf,"CHAIR",-1);
+    		_ = AI_UseMob (slf,"CHAIR",-1);
     		slf.aivar[AIV_HangAroundStatus] = 0;
         };
 	};
@@ -305,8 +305,8 @@ func void B_RegainDroppedWeapon(var C_NPC slf)
 		{
 			PrintDebugNpc(PD_ZS_CHECK, "...NSC hebt seine Waffen wieder auf!" );				
 			AI_TakeItem (slf, item);
-			AI_EquipBestMeleeWeapon(slf);
-			AI_EquipBestRangedWeapon(slf);
+			_ = AI_EquipBestMeleeWeapon(slf);
+			_ = AI_EquipBestRangedWeapon(slf);
 		};
 	};
 };
@@ -435,14 +435,14 @@ func void B_KillNpc(var int npcInstance)
 	{
 		PrintDebugNpc		(PD_ZS_DETAIL,	"...Waffe in Slot 1 gefunden!");
 		itemInstance = 	Hlp_GetInstanceID(item);
-		Npc_RemoveInvItem	(npc,	itemInstance);
+		_ = Npc_RemoveInvItem	(npc,	itemInstance);
 	};
 
 	if (Npc_GetInvItemBySlot(npc,INV_WEAPON,2))
 	{
 		PrintDebugNpc		(PD_ZS_DETAIL,	"...Waffe in Slot 2 gefunden!");
 		itemInstance = 	Hlp_GetInstanceID(item);
-		Npc_RemoveInvItem	(npc,	itemInstance);
+		_ = Npc_RemoveInvItem	(npc,	itemInstance);
 	};
 };
 
@@ -458,7 +458,7 @@ func void B_ChangeGuild(var int npcInstance, var int newGuild)
 	var C_NPC	npc;
 	npc = Hlp_GetNpc(npcInstance);
 	
-	Npc_SetTrueGuild(npc,newGuild);
+	_ = Npc_SetTrueGuild(npc,newGuild);
 	npc.guild = newGuild;
 };
 
@@ -477,6 +477,22 @@ func void B_ExchangeRoutine(var int npcInstance, var string newRoutine)
 	var C_NPC	npc;
 	npc = Hlp_GetNpc(npcInstance);
 	
+	Npc_ExchangeRoutine(npc,	newRoutine);
+	AI_ContinueRoutine (npc);
+};
+
+//////////////////////////////////////////////////////////////////////////
+//	B_ExchangeRoutine_C_NPC
+//	=================
+//	Ändert den Tagesablauf des angegebenen NSCs
+//
+//	VORSICHT:	Auf KEINEN Fall für 'self' innerhalb eines Dialoges
+//				benutzen, da AI_ContinueRoutine() den Dialog freezed!!!
+//////////////////////////////////////////////////////////////////////////
+func void B_ExchangeRoutine_C_NPC(var C_NPC npc, var string newRoutine)
+{
+	PrintDebugNpc			(PD_ZS_DETAIL,	"B_ExchangeRoutine_C_NPC");
+
 	Npc_ExchangeRoutine(npc,	newRoutine);
 	AI_ContinueRoutine (npc);
 };
@@ -506,7 +522,7 @@ func void B_LogEntry_Fake()
 {
 	PrintDebugNpc	(PD_ZS_DETAIL,	"B_LogEntry_Fake");
 
-	PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
+	_ = PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
 	Snd_Play 		("LogEntry");
 };
 
@@ -521,7 +537,7 @@ func void B_LogEntry_Silent(var string topic, var string entry)
 
 	Log_AddEntry	(topic, entry);
 
-	PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
+	_ = PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -537,7 +553,7 @@ func void B_LogEntry(var string topic, var string entry)
 
 	Log_AddEntry	(topic, entry);
 
-	PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
+	_ = PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
 	Snd_Play 		("LogEntry");
 	
 	B_LogEntry_AlreadyAdded = true;
@@ -584,7 +600,7 @@ func void B_GiveInvItems(var C_NPC giver, var C_NPC taker, var int itemInstance,
 	PrintDebugNpc	(PD_ZS_DETAIL,	"B_GiveInvItems");
 
 	//-------- Gegenstand übertragen --------
-	Npc_RemoveInvItems	(giver,	itemInstance,	amount);
+	_ = Npc_RemoveInvItems	(giver,	itemInstance,	amount);
 	CreateInvItems		(taker,	itemInstance,	amount);
 
 	//-------- Meldung ausgeben --------
@@ -595,19 +611,19 @@ func void B_GiveInvItems(var C_NPC giver, var C_NPC taker, var int itemInstance,
 		if (itemInstance == ItMiNugget)
 		{
 			msg = ConcatStrings(_STR_MESSAGE_ORE_GIVEN, IntToString(amount));
-			PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
+			_ = PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
 		}
 		else
 		{
 		    if amount == 1
 		    {
 			    msg = ConcatStrings(IntToString(amount), _STR_MESSAGE_ITEM_GIVEN);
-			    PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
+			    _ = PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
 			}   
 			else
 		    {
 			    msg = ConcatStrings(_STR_MESSAGE_ITEMS_GIVEN, IntToString(amount));
-			    PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
+			    _ = PrintScreen	(msg, -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_GIVEN);
 			};   
 		};
 	}
@@ -616,19 +632,19 @@ func void B_GiveInvItems(var C_NPC giver, var C_NPC taker, var int itemInstance,
 		if (itemInstance == ItMiNugget)
 		{
 			msg = ConcatStrings(_STR_MESSAGE_ORE_TAKEN, IntToString(amount));
-			PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
+			_ = PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
 		}
 		else
 		{
 		    if amount == 1
 		    {
 			    msg = ConcatStrings(IntToString(amount), _STR_MESSAGE_ITEM_TAKEN);
-			    PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
+			    _ = PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
 			}   
 			else
 		    {
 			    msg = ConcatStrings(_STR_MESSAGE_ITEMS_TAKEN, IntToString(amount));
-			    PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
+			    _ = PrintScreen	(msg, -1,_YPOS_MESSAGE_TAKEN,"FONT_OLD_10_WHITE.TGA",_TIME_MESSAGE_TAKEN);
 			}; 
 		};
 	};	
@@ -745,7 +761,7 @@ func void B_PracticeCombat (var string waypoint)
 		AI_SetWalkmode			(hero,	NPC_WALK);
 		AI_GotoWP				(hero,	waypoint);
 		AI_TurnToNpc			(self,	hero);
-		AI_EquipBestMeleeWeapon	(hero);
+		_ = AI_EquipBestMeleeWeapon	(hero);
 		AI_DrawWeapon			(hero);	
 		AI_PlayAni				(hero,	"T_1HSFREE");
 		AI_RemoveWeapon			(hero);
@@ -769,7 +785,7 @@ func void B_PrintGuildCondition (var int level)
 	
 	msg = ConcatStrings(_STR_MESSAGE_Joincamp, IntToString(level));
 
-	PrintScreen		(msg, -1,_YPOS_MESSAGE_Joincamp,"font_old_10_white.tga",_TIME_MESSAGE_Joincamp);
+	_ = PrintScreen		(msg, -1,_YPOS_MESSAGE_Joincamp,"font_old_10_white.tga",_TIME_MESSAGE_Joincamp);
 };
 
 //////////////////////////////////////////////////////////////////////////

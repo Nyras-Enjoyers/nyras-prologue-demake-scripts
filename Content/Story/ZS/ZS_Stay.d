@@ -26,11 +26,13 @@ func void ZS_Stay ()
 	AI_AlignToWP			(self);
 };
 
-func void ZS_Stay_Loop ()
+func int ZS_Stay_Loop ()
 {
 	PrintDebugNpc			(PD_TA_LOOP,	"ZS_Stay_Loop");
 	
 	AI_Wait					(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Stay_End ()
@@ -38,5 +40,5 @@ func void ZS_Stay_End ()
 	PrintDebugNpc			(PD_TA_FRAME,	"ZS_Stay_End");
 	self.senses	=			hero.senses;
 	
-	C_StopLookAt			(self);
+	_ = C_StopLookAt			(self);
 };

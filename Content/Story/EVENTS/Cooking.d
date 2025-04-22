@@ -66,13 +66,16 @@ FUNC INT PC_MuttonAll_Start_Condition ()
 	&& (Npc_HasItems(self, ItFoMuttonRaw) > 1)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 FUNC VOID PC_MuttonAll_Start_Info()
 {
 	// Fry
 	var int amount; amount = Npc_HasItems(self, ItFoMuttonRaw); 
-	Npc_RemoveInvItems(self, ItFoMuttonRaw, amount);
+	_ = Npc_RemoveInvItems(self, ItFoMuttonRaw, amount);
 	CreateInvItems(self, ItFoMutton, amount);
 
 	// Leave the dialogue
@@ -96,7 +99,7 @@ FUNC INT PC_Mutton_Start_Condition ()
 };
 FUNC VOID PC_Mutton_Start_Info()
 {
-	Npc_RemoveInvItem(self, ItFoMuttonRaw);
+	_ = Npc_RemoveInvItem(self, ItFoMuttonRaw);
 	CreateInvItem(self, ItFoMutton);
 	
 	var int amount; amount = Npc_HasItems(self, ItFoMuttonRaw);

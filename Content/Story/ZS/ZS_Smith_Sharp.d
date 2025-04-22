@@ -10,7 +10,7 @@ func void ZS_Smith_Sharp ()
 	B_StartUseMob	(self, "BSSHARP");	
 };
 
-func void ZS_Smith_Sharp_Loop ()
+func int ZS_Smith_Sharp_Loop ()
 {
 	PrintDebugNpc 	(PD_TA_LOOP,	"ZS_Smith_Sharp_Loop");
 
@@ -21,6 +21,8 @@ func void ZS_Smith_Sharp_Loop ()
     	B_InterruptMob ("BSSHARP");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smith_Sharp_End ()
@@ -33,6 +35,6 @@ func void ZS_Smith_Sharp_End ()
 	amount = Npc_HasItems(self, ItMw_1H_Sword_01);
 	if (amount > 1)
 	{
-		Npc_RemoveInvItems(self,ItMw_1H_Sword_01, amount-1);
+		_ = Npc_RemoveInvItems(self,ItMw_1H_Sword_01, amount-1);
 	};
 };

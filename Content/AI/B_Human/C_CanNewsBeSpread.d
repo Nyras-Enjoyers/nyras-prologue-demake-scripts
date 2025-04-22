@@ -48,7 +48,7 @@ B_AssessAndMemorize <NSC> <GOSSIP> <Täter-SC> <Ereignis ID> <Opfer/Besitzer>
 				if (B_CompareNpcInstance (murder_news_offender,defeat_news_offender))
 				{
 					PrintDebugNpc 	(PD_ZS_CHECK, "...und gleicher Täter");
-					Npc_DeleteNews	(self,defeat_news);
+					_ = Npc_DeleteNews	(self,defeat_news);
 				};
 			};
 		};
@@ -117,4 +117,6 @@ B_AssessAndMemorize <NSC> <GOSSIP> <Täter-SC> <Ereignis ID> <Opfer/Besitzer>
 			
 	};
 	*/
+	
+	return true;
 };	

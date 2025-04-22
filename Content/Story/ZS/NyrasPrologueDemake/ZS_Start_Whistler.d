@@ -22,7 +22,7 @@ func void ZS_Start_Whistler()
     AI_PlayAni (self,"T_STAND_2_LGUARD");
 };
 
-func void ZS_Start_Whistler_loop()
+func int ZS_Start_Whistler_loop()
 {
 	var int zufall;
 	zufall = Hlp_Random(100);
@@ -46,6 +46,8 @@ func void ZS_Start_Whistler_loop()
 	};
 	
 	AI_Wait(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Start_Whistler_end()

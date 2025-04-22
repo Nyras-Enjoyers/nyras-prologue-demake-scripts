@@ -21,7 +21,10 @@
 func void ZS_AssessDefeat ()
 {	
 	// NyrasPrologDemake: to not comment
-	return;
+	if (true)
+	{
+		return;
+	};
 
 	PrintDebugNpc			(PD_ZS_FRAME,	"ZS_AssessDefeat" );
 
@@ -57,7 +60,7 @@ func void ZS_AssessDefeat ()
 		//-------- Schauen und Merken ! --------
 		B_FullStop				( self);
 		AI_TurnToNpc			( self,	other);
-		C_LookAtNpc 			( self, other);
+		_ = C_LookAtNpc 			( self, other);
 		B_AssessAndMemorize		( NEWS_DEFEAT, NEWS_SOURCE_WITNESS, self, other, victim); 
 		
 
@@ -82,7 +85,7 @@ func void ZS_AssessDefeat ()
 		{
 			PrintDebugNpc		(PD_ZS_CHECK,	"...NSC ist angry/hostile zu Besiegtem!" );
 //			B_Say				(self,	NULL,	"$HEDESERVEDIT");
-			C_StopLookAt		(self);
+			_ = C_StopLookAt		(self);
 		}
 		
 		//-------- FRIENDLY/NEUTRAL zum Sieger ! --------
@@ -100,7 +103,7 @@ func void ZS_AssessDefeat ()
 		};
 	
 		AI_Wait					(self,	1);	
-		C_StopLookAt			(self);
+		_ = C_StopLookAt			(self);
 	 };
 	 
 }; 

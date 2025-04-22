@@ -44,7 +44,7 @@ instance MENUITEM_GRA_TEXQUAL_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_GRAPHICS_Y + (MENU_DY * 0);
 	onchgsetoption = "texDetailIndex";
 	onchgsetoptionsection = "INTERNAL";
-	userfloat[0] = 5;
+	userfloat[0] = 5.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags | IT_TXT_CENTER | IT_PERF_OPTION | IT_NEEDS_RESTART;
@@ -67,7 +67,7 @@ instance MENUITEM_GRA_MODEL_DETAIL_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_GRAPHICS_Y + (MENU_DY * 1);
 	onchgsetoption = "modelDetail";
 	onchgsetoptionsection = "PERFORMANCE";
-	userfloat[0] = 10;
+	userfloat[0] = 10.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags | IT_PERF_OPTION;

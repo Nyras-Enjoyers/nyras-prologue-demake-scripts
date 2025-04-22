@@ -37,9 +37,9 @@ func void G_CanNotUse( var int bIsPlayer, var int nAttribute, var int nValue )
 	else
 	{
 		return;	//SN: Nur für Debugzwecke!
-		strMessage = ConcatStrings( self.name, _STR_CANNOTUSE_PRE_NPC	);
-		strMessage = ConcatStrings( strMessage, IntToString(self.id)	);
-		strMessage = ConcatStrings( strMessage, _STR_CANNOTUSE_POST_NPC	);
+		// strMessage = ConcatStrings( self.name, _STR_CANNOTUSE_PRE_NPC	);
+		// strMessage = ConcatStrings( strMessage, IntToString(self.id)	);
+		// strMessage = ConcatStrings( strMessage, _STR_CANNOTUSE_POST_NPC	);
 	};
 	
 	strMessage = ConcatStrings( strMessage, strDifference 			);

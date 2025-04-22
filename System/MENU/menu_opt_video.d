@@ -98,7 +98,7 @@ instance MENUITEM_VID_BRIGHTNESS_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_VIDEO_Y + (MENU_DY * 3);
 	onchgsetoption = "zVidBrightness";
 	onchgsetoptionsection = "VIDEO";
-	userfloat[0] = 35;
+	userfloat[0] = 35.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -120,7 +120,7 @@ instance MENUITEM_VID_CONTRAST_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_VIDEO_Y + (MENU_DY * 4);
 	onchgsetoption = "zVidContrast";
 	onchgsetoptionsection = "VIDEO";
-	userfloat[0] = 35;
+	userfloat[0] = 35.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -142,7 +142,7 @@ instance MENUITEM_VID_GAMMA_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_VIDEO_Y + (MENU_DY * 5);
 	onchgsetoption = "zVidGamma";
 	onchgsetoptionsection = "VIDEO";
-	userfloat[0] = 35;
+	userfloat[0] = 35.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 };

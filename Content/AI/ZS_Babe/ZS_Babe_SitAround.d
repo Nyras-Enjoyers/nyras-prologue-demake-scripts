@@ -18,19 +18,21 @@ func void ZS_Babe_SitAround()
 		{
 			AI_GotoWP	(self, self.wp);
 		};
-		AI_UseMob(self,"CHAIR",1);
+		_ = AI_UseMob(self,"CHAIR",1);
 	};
 };
 
-func void ZS_Babe_SitAround_Loop()
+func int ZS_Babe_SitAround_Loop()
 {
 	PrintDebugNpc (PD_TA_LOOP,"ZS_BabeSitAround_Loop");
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Babe_SitAround_End()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_BabeSitAround_End");
-	AI_UseMob(self,"CHAIR",-1);
+	_ = AI_UseMob(self,"CHAIR",-1);
 };
 

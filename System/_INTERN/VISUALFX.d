@@ -107,25 +107,25 @@ CLASS CFx_Base {
 PROTOTYPE CFx_Base_Proto(CFx_Base) {
 
 	visName_S			= "";
-	visAlpha			= 1;
+	visAlpha			= 1.0;
 	emTrjMode_S			= "FIXED";		// none, target, line, spline, random
 	emTrjOriginNode			= "ZS_RIGHTHAND";
 	emTrjTargetNode			= "";
-	emTrjTargetRange		= 10;
-	emTrjTargetAzi			= 0;
-	emTrjTargetElev			= 0;
+	emTrjTargetRange		= 10.0;
+	emTrjTargetAzi			= 0.0;
+	emTrjTargetElev			= 0.0;
 	emTrjNumKeys			= 10;
 	emTrjNumKeysVar			= 0;
-	emTrjAngleElevVar		= 0;
-	emTrjAngleHeadVar		= 0;
-	emTrjKeyDistVar			= 0;
+	emTrjAngleElevVar		= 0.0;
+	emTrjAngleHeadVar		= 0.0;
+	emTrjKeyDistVar			= 0.0;
 	emTrjLoopMode_S			= "NONE";
 	emTrjEaseFunc_S			= "LINEAR";
-	emTrjEaseVel			= 100;
-	emTrjDynUpdateDelay		= 2000000;
+	emTrjEaseVel			= 100.0;
+	emTrjDynUpdateDelay		= 2000000.0;
 	emTrjDynUpdateTargetOnly	= 0;
 	emFXCreate_S			= "";
-	emFXTriggerDelay		= 0;
+	emFXTriggerDelay		= 0.0;
 	emFXCreatedOwnTrj		= 0;
 	emActionCollDyn_S		= "";			// CREATE, BOUNCE
 	emActionCollStat_S		= "";			// CREATE, BOUNCE
@@ -135,13 +135,13 @@ PROTOTYPE CFx_Base_Proto(CFx_Base) {
 	emFXCollDynAlign_S		= "";
 	emCheckCollision		= 0;
 	emAdjustShpToOrigin		= 0;
-	emInvestNextKeyDuration		= 0;
-	emFlyGravity			= 0;
-	emFXLifeSpan			= -1;			// -1: forever 
+	emInvestNextKeyDuration		= 0.0;
+	emFlyGravity			= 0.0;
+	emFXLifeSpan			= -1.0;			// -1: forever 
 	emSelfRotVel_S			= "0 0 0";
 	lightPresetName			= "";
 	sfxID					= "";
 	sendAssessMagic			= 0;
-	secsPerDamage			= -1;
+	secsPerDamage			= -1.0;
 };
 

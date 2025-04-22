@@ -33,6 +33,8 @@ func int ZS_GetBackItem_Loop ()
 	{
 		return 1;
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_GetBackItem_End ()

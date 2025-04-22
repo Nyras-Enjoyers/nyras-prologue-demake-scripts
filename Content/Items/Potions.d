@@ -465,7 +465,7 @@ INSTANCE ItFo_Potion_Master_01(C_Item)
 		
 		var string msg;
 		msg = ConcatStrings(NAME_RaiseStrDex , IntToString(StrDex_Macht));
-		PrintScreen	(msg, -1,-1,"FONT_OLD_20_WHITE.TGA",_TIME_MESSAGE_RAISEATTRIBUTE);
+		_ = PrintScreen	(msg, -1,-1,"FONT_OLD_20_WHITE.TGA",_TIME_MESSAGE_RAISEATTRIBUTE);
 	};
 
 /******************************************************************************************/
@@ -496,7 +496,7 @@ INSTANCE ItFo_Potion_Master_02(C_Item)
 
 		var string msg;
 		msg = ConcatStrings(NAME_RaiseStrDex , IntToString(StrDex_Herrschaft));
-		PrintScreen	(msg, -1,-1,"FONT_OLD_20_WHITE.TGA",_TIME_MESSAGE_RAISEATTRIBUTE);
+		_ = PrintScreen	(msg, -1,-1,"FONT_OLD_20_WHITE.TGA",_TIME_MESSAGE_RAISEATTRIBUTE);
 	};
 
 

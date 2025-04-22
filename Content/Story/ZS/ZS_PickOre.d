@@ -18,7 +18,7 @@ func void ZS_PickOre()
 	};
 };
 
-func void ZS_PickOre_Loop ()
+func int ZS_PickOre_Loop ()
 {
     PrintDebugNpc (PD_TA_LOOP,"ZS_PickOre_Loop");    
 	PrintAttitudes (PD_TA_LOOP);
@@ -30,6 +30,8 @@ func void ZS_PickOre_Loop ()
     	B_InterruptMob ("ORE");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_PickOre_End ()

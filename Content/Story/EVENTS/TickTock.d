@@ -177,7 +177,7 @@ func void TICKTOCK_FUNC()
 						Npc_ClearAIQueue(hero);
 						hero.aivar[AIV_INVINCIBLE] = true;
 						AI_RemoveWeapon(hero);
-						AI_UseMob(hero,"BENCH",1);
+						_ = AI_UseMob(hero,"BENCH",1);
 						AI_LookAtNpc(hero, RatfordNpc);
 					};
 

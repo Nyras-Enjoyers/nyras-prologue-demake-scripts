@@ -1,4 +1,4 @@
-func int ZS_AssessQuietSound ()
+func void ZS_AssessQuietSound ()
 {	
 	PrintDebugNpc			(PD_ZS_FRAME, "ZS_AssessQuietSound" );	
 	C_ZSInit();
@@ -6,7 +6,7 @@ func int ZS_AssessQuietSound ()
 	if ( self.guild == GIL_MEATBUG )
 	{
 		AI_ContinueRoutine(self);
-		return(0);
+		return;
 	};
 	
 	Npc_PercEnable  		(self,	PERC_ASSESSDAMAGE 		,	ZS_ReactToDamage	);
@@ -65,9 +65,11 @@ func int ZS_AssessQuietSound_Loop ()
 			return 0;												//...weiter warten
 		};
 	};
+	
+	return LOOP_CONTINUE;
 };
 
-func int ZS_AssessQuietSound_End ()
+func void ZS_AssessQuietSound_End ()
 {
 	PrintDebugNpc			(PD_ZS_FRAME, "ZS_AssessQuietSound_End" );	
 };

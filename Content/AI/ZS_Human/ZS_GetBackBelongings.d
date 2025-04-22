@@ -49,7 +49,7 @@ func void  ZS_GetBackBelongingsWait ()
 	Npc_PercEnable  ( self,	PERC_ASSESSTHREAT		,	B_GetBackBelongingsThreat);		
 };	
 
-func void  ZS_GetBackBelongingsWait_Loop ()
+func int  ZS_GetBackBelongingsWait_Loop ()
 {
 	PrintDebugNpc( PD_ZS_LOOP, "ZS_GetBackBelongingsWait_Loop" );			
 	if (Npc_GetDistToNpc ( self, other) > PERC_DIST_INTERMEDIAT)
@@ -62,12 +62,12 @@ func void  ZS_GetBackBelongingsWait_Loop ()
 			PrintDebugNpc( PD_ZS_CHECK, "...NSC nicht HOSTILE zum Dieb!" );			
 			Npc_SetTempAttitude ( self, ATT_ANGRY);
 			AI_ContinueRoutine 	( self);
-			return;
+			return LOOP_END;
 		};
 		AI_ContinueRoutine ( self);
-		return;
+		return LOOP_END;
 	};
-	return;
+	return LOOP_END;
 };
 
 func void  ZS_GetBackBelongingsWait_End ()

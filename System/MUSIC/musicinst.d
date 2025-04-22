@@ -10,7 +10,7 @@
 
 INSTANCE musicSysConfig		(C_MUSICSYS_CFG)
 {
-	volume 				= 1;   		// 0..1
+	volume 				= 1.0;   		// 0..1
 	bitResolution		= 16;		// 8 / 16
 	globalReverbEnabled = 1;
 	sampleRate			= 44100;	// 11050 - 44100 prefered
@@ -44,8 +44,8 @@ INSTANCE SYS_Menu			(C_MUSICTHEME_DEF)
 	file				= "menu.sgt";
 	transType			= TRANSITION_TYPE_NONE;
 	transSubType		= TRANSITION_SUB_TYPE_BEAT;	
-	ReverbMix			= -10;
-	ReverbTime			= 8500;
+	ReverbMix			= -10.0;
+	ReverbTime			= 8500.0;
 };
 
 INSTANCE SYS_Loading		(C_MUSICTHEME_DEF)
@@ -53,8 +53,8 @@ INSTANCE SYS_Loading		(C_MUSICTHEME_DEF)
 	file				= "menu.sgt";
 	transType			= TRANSITION_TYPE_NONE;
 	transSubType		= TRANSITION_SUB_TYPE_BEAT;	
-	ReverbMix			= -12;
-	ReverbTime			= 8500;
+	ReverbMix			= -12.0;
+	ReverbTime			= 8500.0;
 };
 
 

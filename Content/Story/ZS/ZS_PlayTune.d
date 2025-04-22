@@ -14,7 +14,7 @@ FUNC VOID ZS_PlayTune()
 	};
 };
 
-FUNC VOID ZS_PlayTune_Loop ()
+FUNC int ZS_PlayTune_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_PlayTune_Loop");
 	
@@ -48,6 +48,8 @@ FUNC VOID ZS_PlayTune_Loop ()
     };	
 	//AI_AlignToFP(self);
 */	
+	
+	return LOOP_CONTINUE;
 };
 
 FUNC VOID ZS_PlayTune_End() 

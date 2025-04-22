@@ -19,6 +19,9 @@ func int DIA_ORG_819_Drax_Hello_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -174,6 +177,9 @@ func int DIA_ORG_819_Drax_Lets_Hunt_Condition()
 	if (Drax_HuntingYes == true) && (Drax_HeroWeaponCheck == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -220,6 +226,9 @@ func int DIA_ORG_819_Drax_Hunting_Maybe_Later_Condition()
 	if (Drax_HuntingYes == true) && (Drax_HeroWeaponCheck == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -257,8 +266,17 @@ func int DIA_ORG_819_Drax_After_Hunting_Condition()
 			if (Drax_AllScavengersKilled == true)
 			{
 				return true;
+			} else
+			{
+				return false;
 			};
+		} else
+		{
+			return false;
 		};
+	} else
+	{
+		return false;
 	};
 };
 

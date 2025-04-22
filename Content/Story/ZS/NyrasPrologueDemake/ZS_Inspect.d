@@ -15,7 +15,7 @@ func void ZS_Inspect ()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func void ZS_Inspect_Loop ()
+func int ZS_Inspect_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_Inspect_Loop");
 	
@@ -45,6 +45,8 @@ func void ZS_Inspect_Loop ()
 	};
 
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Inspect_End ()

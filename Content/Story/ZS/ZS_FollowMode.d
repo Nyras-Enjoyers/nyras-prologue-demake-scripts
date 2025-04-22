@@ -38,13 +38,15 @@ func void ZS_Position ()
 	AI_AlignToWP 		(self);										// Richte Dich aus
 };
 
-func void ZS_Position_Loop ()
+func int ZS_Position_Loop ()
 {
 	PrintDebugNpc		(PD_ZS_LOOP,	"ZS_Position_Loop");	
  	//PrintGlobals		(PD_ZS_CHECK);
 
     AI_Wait				(self,	1);
 	B_SmartTurnToNpc	(self,	hero);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Position_End ()
@@ -105,16 +107,16 @@ func void ZS_FriendlyAttack ()
 	Npc_PercEnable  	(self,	PERC_ASSESSMAGIC		,	B_AssessMagic		 			);			
 	Npc_PercEnable  	(self,	PERC_ASSESSREMOVEWEAPON	,	B_FriendlyAttackRemoveWeapon	);			
 
-	Npc_GetTarget		(self);
+	_ = Npc_GetTarget		(self);
 	B_DrawWeapon		(self,	other);
-	C_LookAtNpc			(self,	other);
+	_ = C_LookAtNpc			(self,	other);
 };
 
 func int ZS_FriendlyAttack_Loop()
 {
 	PrintDebugNpc		(PD_ZS_LOOP,	"ZS_FriendlyAttack_Loop");		
 
-	Npc_GetTarget		(self);
+	_ = Npc_GetTarget		(self);
 	
 	//-------- Ist SC bereits bewußtlos ? --------
 	if (Npc_IsInState	(other, ZS_Unconscious)) 
@@ -127,13 +129,13 @@ func int ZS_FriendlyAttack_Loop()
 
 	//-------- Anschmeißen der FAI für diesen Frame --------
 	//PrintGlobals		(PD_ZS_CHECK);
-	Npc_GetNextTarget	(self);
+	_ = Npc_GetNextTarget	(self);
 	//PrintDebugNpc		(PD_ZS_CHECK,	"...Npc_GetNextTarget() done!");
 	//PrintGlobals		(PD_ZS_CHECK);
 	AI_Attack			(self);
 	//PrintDebugNpc		(PD_ZS_CHECK,	"...AI_Attack() done!");
 	//PrintGlobals		(PD_ZS_CHECK);
-	Npc_GetTarget		(self);
+	_ = Npc_GetTarget		(self);
 	//PrintDebugNpc		(PD_ZS_CHECK,	"...Npc_GetTarget() done!");
 	//PrintGlobals		(PD_ZS_CHECK);
 			
@@ -176,7 +178,7 @@ func int ZS_FriendlyAttack_Loop()
 func void ZS_FriendlyAttack_End()
 {	
 	PrintDebugNpc		(PD_ZS_FRAME,	"ZS_FriendlyAttack_End");		
-	C_StopLookAt		(self);
+	_ = C_StopLookAt		(self);
 	AI_RemoveWeapon		(self);
 };
 
@@ -304,7 +306,7 @@ func void ZS_FollowModeWait	()
 	Npc_PercEnable		(self, 	PERC_ASSESSCALL			,	B_FriendlyAssessCall);
 };
 
-func void ZS_FollowModeWait_Loop ()
+func int ZS_FollowModeWait_Loop ()
 {
 	PrintDebugNpc 		(PD_ZS_LOOP,	"ZS_FollowModeWait_Loop");
 
@@ -312,6 +314,8 @@ func void ZS_FollowModeWait_Loop ()
 	{
 		AI_ContinueRoutine(self);
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_FollowModeWait_End ()

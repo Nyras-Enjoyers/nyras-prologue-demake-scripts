@@ -22,7 +22,7 @@ func int ZS_ClearRoom_Loop ()
 {
 	PrintDebugNpc		(PD_ZS_LOOP, "ZS_ClearRoom_Loop" );		
 
-	Npc_GetTarget		(self);
+	_ = Npc_GetTarget		(self);
 	
 
 	//-------- SC hat mittlerweile den Raum verlassen --------
@@ -85,7 +85,7 @@ func void ZS_ClearRoomWait ()
 	C_ZSInit();
 };
 
-func void ZS_ClearRoomWait_Loop ()
+func int ZS_ClearRoomWait_Loop ()
 {
 	/*
 	if (other.aivar[AIV_DIDWAITTOCLEARROOM]	== 1)
@@ -121,6 +121,7 @@ func void ZS_ClearRoomWait_Loop ()
 	}; 
 	
 	AI_Wait						(self,	1);       
+	return LOOP_CONTINUE;
 };
 
 func void ZS_ClearRoomWait_End ()

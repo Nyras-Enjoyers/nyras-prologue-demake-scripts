@@ -142,6 +142,9 @@ func int DIA_PC_Thief_Whats_Up_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -169,6 +172,9 @@ func int DIA_PC_Thief_About_Barrier_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -198,6 +204,9 @@ func int DIA_PC_Thief_Whats_Is_Your_Business_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -227,6 +236,9 @@ func int DIA_PC_Thief_About_Old_Camp_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Whats_Is_Your_Business))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -258,6 +270,9 @@ func int DIA_PC_Thief_How_Did_You_Get_Here_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -287,6 +302,9 @@ func int DIA_PC_Thief_About_Weapon_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -314,6 +332,9 @@ func int DIA_PC_Thief_You_Let_Me_Sleep_Here_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -365,6 +386,9 @@ func int DIA_PC_Thief_About_Kirgo_Death_Condition()
 	if (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello)) && (Kirgo_Killed == true) && (Kirgo_IntroducedHimself == true)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 

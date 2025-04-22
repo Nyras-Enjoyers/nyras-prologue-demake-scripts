@@ -7,8 +7,9 @@ func void ZS_ArenaSpectator()
 	AI_AlignToFP( self );				//Richte Dich aus
 };
 
-func void ZS_ArenaSpectator_loop()
+func int ZS_ArenaSpectator_loop()
 {
+	return LOOP_CONTINUE;
 };
 
 func void ZS_ArenaSpectator_end()

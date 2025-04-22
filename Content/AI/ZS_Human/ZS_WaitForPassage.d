@@ -24,6 +24,8 @@ func int ZS_WaitForPassage_Loop ()
 		return 1;
 	};
 	AI_Wait				(self,	0.5);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_WaitForPassage_End ()

@@ -23,11 +23,13 @@ func void ZS_Speech()
 
 };
 
-func void ZS_Speech_Loop()
+func int ZS_Speech_Loop()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_Speech_Loop");   
     AI_Wait(self,1);
 	//AI_AlignToFP(self);	
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Speech_End ()

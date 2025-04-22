@@ -11,12 +11,12 @@ func void ZS_Trialog_Ratford ()
 		{
 			AI_GotoWP	(self, self.wp);
 		};
-		AI_UseMob (self,"PAN",1);			// Benutze den Mob einmal bis zum angegebenen State
+		_ = AI_UseMob (self,"PAN",1);			// Benutze den Mob einmal bis zum angegebenen State
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
 };
 
-func void ZS_Trialog_Ratford_Loop ()
+func int ZS_Trialog_Ratford_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_Trialog_Ratford_Loop");
 	
@@ -136,7 +136,7 @@ func void ZS_Trialog_Ratford_Loop ()
 	
 	if (C_BodyStateContains(self, BS_MOBINTERACT) == false)
 	{
-		AI_UseMob(self,"PAN",1);
+		_ = AI_UseMob(self,"PAN",1);
 		self.aivar[AIV_TAPOSITION] = NOTINPOS;
 	};
 
@@ -156,13 +156,15 @@ func void ZS_Trialog_Ratford_Loop ()
 		};
 		AI_Wait(hero,10);
 	};
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Trialog_Ratford_End ()
 {
 	PrintDebugNpc(PD_TA_FRAME,"ZS_Trialog_Ratford_End");
     
-	AI_UseMob (self,"PAN",-1);			// Stell die Pfanne weg
+	_ = AI_UseMob (self,"PAN",-1);			// Stell die Pfanne weg
 	AI_UseItem (self,ItFoMutton);
 };
 

@@ -22,8 +22,11 @@
 func void B_ObserveIntruder ()
 {
 	// NyrasPrologueDemake: a mechanic not available in Nyras Prologue
-	return;
-
+	if (true)
+	{
+		return;
+	};
+	
 	PrintDebugNpc			(PD_ZS_FRAME, "B_ObserveIntruder");
 
 	//-------- SC im Dialog ? --------

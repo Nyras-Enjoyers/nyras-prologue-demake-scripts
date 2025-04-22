@@ -17,6 +17,9 @@ func int DIA_ORG_818_Ratford_Hello_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello)) && (Jorik_CorpseReached == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -138,6 +141,9 @@ func int DIA_ORG_818_Ratford_Hello_Again_Condition()
 	&& (Jorik_CorpseReached == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -194,6 +200,9 @@ func int DIA_ORG_818_Ratford_Who_Are_You_Condition()
 	if (Jorik_CorpseReached == true)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -371,6 +380,9 @@ func int DIA_ORG_818_Ratford_About_Searching_Jorik_Body_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Ratford_HeroHasToCheckJorik == true) && (!Npc_HasItems (hero, ItWrJorik))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -399,6 +411,9 @@ func int DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Condition()
 	if (Ratford_HeroHasToCheckJorik == true) && (Npc_HasItems (hero, ItWrJorik) == 1)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -498,6 +513,9 @@ func int DIA_ORG_818_Ratford_Go_Camp_Smalltalk_Condition()
 	&& (Ratford_IsInTheCamp == false) // If didn't reach the camp
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 

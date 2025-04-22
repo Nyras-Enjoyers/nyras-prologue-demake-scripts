@@ -28,7 +28,7 @@ func void ZS_HostileGuard ()
 	B_InitArmor();    
 };
 
-func void ZS_HostileGuard_Loop ()
+func int ZS_HostileGuard_Loop ()
 {
 	PrintDebugNpc	(PD_TA_LOOP,"ZS_HostileGuard_Loop");
 
@@ -37,6 +37,8 @@ func void ZS_HostileGuard_Loop ()
 	B_PlayArmor		();
  	
 	AI_Wait			(self,	0.5);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_HostileGuard_End ()

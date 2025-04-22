@@ -3783,7 +3783,7 @@ INSTANCE FOUNTAIN (C_PARTICLEFX)
      ppsscalekeys_s = "1 1.2 0.6 0.3 1.2";
      ppsIsLooping = 1;
      ppsIsSmooth = 1;
-     ppsFps = 5;
+     ppsFps = 5.0;
      shptype_s = "sphere";
      shpfor_s = "world";
      shpisvolume = 1; 
@@ -3798,13 +3798,13 @@ INSTANCE FOUNTAIN (C_PARTICLEFX)
      velavg = 0.100000003;
      velvar = 4.99999989e-003;
      lsppartavg = 1000.;
-     lsppartvar = 200;
+     lsppartvar = 200.0;
      flygravity_s = "0 -0.0004 0";
      visname_s = "zDebris0_a0.TGA";
      visorientation_s = "VELO";     
      vistexcolorstart_s = "100 100 200";     
      vistexisquadpoly = 1;
-     vistexanifps = 10;
+     vistexanifps = 10.0;
      vistexaniislooping = 1;
      flycolldet_b = 1;
      vistexcolorend_s = "155 155 200";
@@ -3812,7 +3812,7 @@ INSTANCE FOUNTAIN (C_PARTICLEFX)
      vissizeendscale = 2.;     
      visalphafunc_s = "BLEND";     
      visalphastart = 120.;
-     visAlphaEnd = 80;
+     visAlphaEnd = 80.0;
 };
 
 
@@ -4423,7 +4423,7 @@ INSTANCE MENU_SELECT_ITEM(C_PARTICLEFX)
      ppsvalue = 20.;
      ppsscalekeys_s = "1.0";
      ppsislooping = 0;
-     ppsfps = 1;
+     ppsfps = 1.0;
      ppsIsSmooth = 1;
      shptype_s = "BOX";
      shpfor_s = "object";
@@ -4490,7 +4490,7 @@ INSTANCE FIRE_MENU_OLD(C_PARTICLEFX)
      vistexcolorstart_s = "200 100 100";
      vistexcolorend_s = "100 100 0";
      vissizestart_s = "15 15";
-     vissizeendscale = 2;
+     vissizeendscale = 2.0;
      visalphafunc_s = "ADD";
      visalphastart = 90.;
      visalphaend = 50.;
@@ -4533,11 +4533,11 @@ INSTANCE MAGICGLOW (C_PARTICLEFX)
 // Nyras Prologue Demake
 prototype PROTO_BUTTERFLY(C_PARTICLEFX)
 {
-	ppsvalue = 1;
+	ppsvalue = 1.0;
     ppsscalekeys_s = "1";
     ppsislooping = 1;
     ppsissmooth = 1;
-    ppsfps = 1;
+    ppsfps = 1.0;
     shptype_s = "BOX";
     shpfor_s = "object";
     shpoffsetvec_s = "0 500 0";
@@ -4548,26 +4548,26 @@ prototype PROTO_BUTTERFLY(C_PARTICLEFX)
     shpscalekeys_s = "1 1 2 0.4 1";
     shpscaleislooping = 1;
     shpscaleissmooth = 1;
-    shpscalefps = 2;
+    shpscalefps = 2.0;
     dirmode_s = "DIR";
-    dirangleelev = -90;
+    dirangleelev = -90.0;
     velavg = 0.100000001;
     velvar = 0.0299999993;
-    lsppartavg = 20000;
-    lsppartvar = 100;
+    lsppartavg = 20000.0;
+    lsppartvar = 100.0;
     flygravity_s = "0 0 0";
 	// visname_s = "BFLYYELLOW_A0.TGA"; // TO SELECT
     visorientation_s = "VELO";
     vistexisquadpoly = 1;
-    vistexanifps = 15;
+    vistexanifps = 15.0;
     vistexaniislooping = 1;
     vistexcolorstart_s = "160 170 170";
     vistexcolorend_s = "160 170 170";
     vissizestart_s = "30 30";
-    vissizeendscale = 1;
+    vissizeendscale = 1.0;
     visalphafunc_s = "BLEND";
-    visalphastart = 255;
-    visalphaend = 255;
+    visalphastart = 255.0;
+    visalphaend = 255.0;
     // flockmode = "WIND";
     // flockstrength = 0.200000003;
     // m_bIsAmbientPFX = 1;
@@ -4591,24 +4591,24 @@ INSTANCE BUTTERFLY_AREA_BIG_YELLOW (PROTO_BUTTERFLY)
 INSTANCE BUTTERFLY_AREA_SMALL_BLUE (PROTO_BUTTERFLY)
 {
     shpdim_s = "300 10 300";
-    lsppartavg = 10000;
-    lsppartvar = 1000;
+    lsppartavg = 10000.0;
+    lsppartvar = 1000.0;
 	visname_s = "BFLYBLUE_A0.TGA";
 };
 
 INSTANCE BUTTERFLY_AREA_SMALL_ORANGE (PROTO_BUTTERFLY)
 {
     shpdim_s = "300 10 300";
-    lsppartavg = 10000;
-    lsppartvar = 1000;
+    lsppartavg = 10000.0;
+    lsppartvar = 1000.0;
 	visname_s = "BFLYORANGE_A0.TGA";
 };
 
 INSTANCE BUTTERFLY_AREA_SMALL_YELLOW (PROTO_BUTTERFLY)
 {
     shpdim_s = "300 10 300";
-    lsppartavg = 10000;
-    lsppartvar = 1000;
+    lsppartavg = 10000.0;
+    lsppartvar = 1000.0;
     visname_s = "BFLYYELLOW_A0.TGA";
 };
 

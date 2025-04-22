@@ -8,11 +8,11 @@ func void SmalltalkDiegoWhistler_PrepareNPCs()
 
 	// Change Diego's routine to start saying SVMs
 	Npc_ClearAIQueue(DiegoNpc);
-	B_ExchangeRoutine(DiegoNpc, "SmallTalkDiegoWhistler");
+	B_ExchangeRoutine_C_NPC(DiegoNpc, "SmallTalkDiegoWhistler");
 
 	// Change Whistler's routine to start saying SVM
 	Npc_ClearAIQueue(WhistlerNpc);
-	B_ExchangeRoutine(WhistlerNpc, "SmallTalkDiegoWhistler");
+	B_ExchangeRoutine_C_NPC(WhistlerNpc, "SmallTalkDiegoWhistler");
 };
 
 var int Trigger_Smalltalk_Diego_Whistler;

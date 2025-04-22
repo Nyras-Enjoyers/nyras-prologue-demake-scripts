@@ -14,7 +14,7 @@ func void ZS_WalkAround	()
 
 };
  
-func void ZS_WalkAround_Loop()
+func int ZS_WalkAround_Loop()
 {
     PrintDebugNpc (PD_TA_LOOP,"ZS_WalkAround_Loop");
        
@@ -56,6 +56,8 @@ func void ZS_WalkAround_Loop()
 	};
 	
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_WalkAround_End()

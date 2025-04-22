@@ -25,7 +25,7 @@ func void ZS_Erpresser()
 	};
 };
 
-func void ZS_Erpresser_Loop()
+func int ZS_Erpresser_Loop()
 {
 	PrintDebugNpc	(PD_TA_LOOP,	"ZS_Erpresser_Loop");
 
@@ -36,6 +36,8 @@ func void ZS_Erpresser_Loop()
 	
 	B_SmartTurnToNpc(self,other);
 	AI_Wait			(self,	0.5);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Erpresser_End()

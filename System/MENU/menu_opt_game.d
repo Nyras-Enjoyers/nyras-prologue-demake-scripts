@@ -151,7 +151,7 @@ instance MENUITEM_MSENSITIVITY_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_GAME_Y + (MENU_PANEL3_STEP * 4);
 	onchgsetoption = "mouseSensitivity";
 	onchgsetoptionsection = "GAME";
-	userfloat[0] = 20;
+	userfloat[0] = 20.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags | IT_TXT_CENTER;

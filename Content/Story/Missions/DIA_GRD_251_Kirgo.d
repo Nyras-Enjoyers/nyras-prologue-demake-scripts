@@ -19,6 +19,9 @@ func int DIA_GRD_251_Kirgo_Hello_Condition()
 	if (Npc_IsInState (self, ZS_Talk)) && (Npc_KnowsInfo (hero, DIA_PC_Thief_Hello))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -212,6 +215,9 @@ func int DIA_GRD_251_Kirgo_Ready_To_Fight_Condition()
 	&& (Kirgo_FirstDuelFinished == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -314,6 +320,9 @@ func int DIA_GRD_251_Kirgo_After_Fight_Condition()
 	&& (Kirgo_FirstDuelFinished == true)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -387,6 +396,9 @@ func int DIA_GRD_251_Kirgo_Why_Are_You_Nice_Condition()
 	if (Npc_KnowsInfo (hero, DIA_GRD_251_Kirgo_After_Fight))
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -423,6 +435,9 @@ func int DIA_GRD_251_Kirgo_About_Rematch_Condition()
 	&& (Kirgo_PlayerChoseSecondFight == false)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 
@@ -497,6 +512,9 @@ func int DIA_GRD_251_Kirgo_After_Rematch_Fight_Condition()
 	if (Kirgo_PlayerChoseSecondFight == true) && (Npc_IsInState (self, ZS_Talk)) && (Kirgo_SecondDuelFinished == true)
 	{
 		return true;
+	} else
+	{
+		return false;
 	};
 };
 

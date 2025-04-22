@@ -26,12 +26,12 @@ func void ZS_Smalltalk ()
     AI_AlignToFP( self );				//Richte Dich aus
 };
 
-func void ZS_Smalltalk_Loop()
+func int ZS_Smalltalk_Loop()
 {
     PrintDebugNpc			(PD_TA_LOOP,	"ZS_Smalltalk_Loop");
 	
 	Npc_PerceiveAll			(self);
-	Wld_DetectNpc(self,	-1, ZS_Smalltalk, -1);
+	_ = Wld_DetectNpc(self,	-1, ZS_Smalltalk, -1);
 	PrintGlobals(PD_TA_CHECK);
 	
 	if (Wld_DetectNpc(self,	-1, ZS_Smalltalk, -1) && (Npc_GetDistToNpc	(self, other)<HAI_DIST_SMALLTALK))
@@ -260,6 +260,8 @@ func void ZS_Smalltalk_Loop()
 	};
 	
 	AI_Wait					(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smalltalk_End ()

@@ -15,11 +15,11 @@ FUNC VOID ZS_Cook ()
 		{
 			AI_GotoWP		(self, self.wp);
 		};
-		AI_UseMob(self,"CAULDRON",1);		// Benutze den Mob einmal bis zum angegebenen State
+		_ = AI_UseMob(self,"CAULDRON",1);		// Benutze den Mob einmal bis zum angegebenen State
 	};
 };
 
-FUNC VOID ZS_Cook_Loop()
+FUNC int ZS_Cook_Loop()
 {
 	PrintDebugNpc (PD_TA_LOOP,"ZS_Cook_Loop"); // Da hier nur eine Ani geloopt wird reicht es diese in Begin und End zu benutzen
 	var int randomizer;
@@ -30,11 +30,13 @@ FUNC VOID ZS_Cook_Loop()
     };
 	
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 FUNC VOID ZS_Cook_End()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_Cook_End");
-	AI_UseMob (self,"CAULDRON",-1);		//Verlassen sie bitte ihr Mobsi
+	_ = AI_UseMob (self,"CAULDRON",-1);		//Verlassen sie bitte ihr Mobsi
 };
 

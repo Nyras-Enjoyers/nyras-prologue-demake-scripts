@@ -673,57 +673,57 @@ PROTOTYPE MFX_FIREBALL_INVEST_PROTO (C_PARTICLEFX)
 
 INSTANCE MFX_FIREBALL_INVEST	(MFX_FIREBALL_INVEST_PROTO)
 {
-	 ppsvalue = 10;
+	 ppsvalue = 10.0;
 	 lsppartavg = 1000.000000000;
 	 vistexcolorstart_s = "200 50 50";
 	 vistexcolorend_s = "200 0 0";
      vissizeendscale = 5.000000000;
      shpdim_s = "6";
-     visalphastart = 180;
+     visalphastart = 180.0;
 };
 
 INSTANCE MFX_FIREBALL_INVEST_L1 (MFX_FIREBALL_INVEST_PROTO)
 {
-	 ppsvalue = 10;
+	 ppsvalue = 10.0;
 	 lsppartavg = 1000.000000000;
 	 vistexcolorstart_s = "200 100 100";
      vistexcolorend_s = "200 50 50";
      vissizeendscale = 5.000000000;
      shpdim_s = "6";
-     visalphastart = 180;
+     visalphastart = 180.0;
 };
 
 INSTANCE MFX_FIREBALL_INVEST_L2 (MFX_FIREBALL_INVEST_PROTO)
 {
-	 ppsvalue = 13;
+	 ppsvalue = 13.0;
 	 lsppartavg = 1300.000000000;
 	 vistexcolorstart_s = "220 150 150";
      vistexcolorend_s = "220 100 100";
      vissizeendscale = 6.000000000;
      shpdim_s = "14";
-     visalphastart = 200;
+     visalphastart = 200.0;
 };
 
 INSTANCE MFX_FIREBALL_INVEST_L3 (MFX_FIREBALL_INVEST_PROTO)
 {
-	 ppsvalue = 16;
+	 ppsvalue = 16.0;
 	 lsppartavg = 1600.000000000;
 	 vistexcolorstart_s = "235 200 200";
      vistexcolorend_s = "235 150 150";
      vissizeendscale = 7.000000000;
      shpdim_s = "22";
-     visalphastart = 220;
+     visalphastart = 220.0;
 };
 
 INSTANCE MFX_FIREBALL_INVEST_L4 (MFX_FIREBALL_INVEST_PROTO)
 {
-	 ppsvalue = 20;
+	 ppsvalue = 20.0;
 	 lsppartavg = 2000.000000000;
 	 vistexcolorstart_s = "255 255 255";
      vistexcolorend_s = "255 200 200";
      vissizeendscale = 8.000000000;
      shpdim_s = "30";
-     visalphastart = 255;
+     visalphastart = 255.0;
 };
 
 
@@ -775,7 +775,7 @@ INSTANCE MFX_FIREBALL_CAST (MFX_FIREBALL_CAST_PROTO)
      vissizeendscale = 1.000000000;
      lsppartavg = 200.000000000;
      shpdim_s = "10";
-     visalphastart = 180;
+     visalphastart = 180.0;
 };
 
 INSTANCE MFX_FIREBALL_CAST_L1 (MFX_FIREBALL_CAST_PROTO)
@@ -2389,47 +2389,47 @@ PROTOTYPE MFX_THUNDERBALL_INVEST_PROTO (C_PARTICLEFX)
 
 INSTANCE MFX_THUNDERBALL_INVEST	(MFX_THUNDERBALL_INVEST_PROTO)
 {
-	 ppsvalue = 10;
+	 ppsvalue = 10.0;
 	 vissizeendscale = 5.000000000;
      shpdim_s = "6";
-     visalphastart = 180;
-     visalphaend = 180;
+     visalphastart = 180.0;
+     visalphaend = 180.0;
 };
 
 INSTANCE MFX_THUNDERBALL_INVEST_L1 (MFX_THUNDERBALL_INVEST_PROTO)
 {
-	 ppsvalue = 10;
+	 ppsvalue = 10.0;
 	 vissizeendscale = 5.000000000;
      shpdim_s = "6";
-     visalphastart = 180;
-	 visalphaend = 180;
+     visalphastart = 180.0;
+	 visalphaend = 180.0;
 };
 
 INSTANCE MFX_THUNDERBALL_INVEST_L2 (MFX_THUNDERBALL_INVEST_PROTO)
 {
-	 ppsvalue = 13;
+	 ppsvalue = 13.0;
 	 vissizeendscale = 6.000000000;
      shpdim_s = "14";
-     visalphastart = 200;
-     visalphaend = 200;
+     visalphastart = 200.0;
+     visalphaend = 200.0;
 };
 
 INSTANCE MFX_THUNDERBALL_INVEST_L3 (MFX_THUNDERBALL_INVEST_PROTO)
 {
-	 ppsvalue = 16;
+	 ppsvalue = 16.0;
 	 vissizeendscale = 7.000000000;
      shpdim_s = "22";
-     visalphastart = 220;
-	 visalphaend = 220;
+     visalphastart = 220.0;
+	 visalphaend = 220.0;
 };
 
 INSTANCE MFX_THUNDERBALL_INVEST_L4 (MFX_THUNDERBALL_INVEST_PROTO)
 {
-	 ppsvalue = 20;
+	 ppsvalue = 20.0;
 	 vissizeendscale = 8.000000000;
      shpdim_s = "30";
-     visalphastart = 255;
-	 visalphaend = 255;
+     visalphastart = 255.0;
+	 visalphaend = 255.0;
 };
 
 
@@ -2480,8 +2480,8 @@ INSTANCE MFX_THUNDERBALL_CAST (MFX_THUNDERBALL_CAST_PROTO)
 {
 	 vissizeendscale = 1.000000000;
      shpdim_s = "10";
-     visalphastart = 180;
-     visalphaend = 180;
+     visalphastart = 180.0;
+     visalphaend = 180.0;
 };
 
 
@@ -2490,41 +2490,41 @@ INSTANCE MFX_THUNDERBALL_CAST_L1 (MFX_THUNDERBALL_CAST_PROTO)
 	 vissizeendscale = 1.000000000;
      shpdim_s = "10";
      vissizestart_s = "15 15";
-     visalphastart = 100;
-     visalphaend = 100;
+     visalphastart = 100.0;
+     visalphaend = 100.0;
 };
 
 
 INSTANCE MFX_THUNDERBALL_CAST_L2 (MFX_THUNDERBALL_CAST_PROTO)
 {
-	 ppsvalue		= 700;
+	 ppsvalue		= 700.0;
 	 vissizeendscale = 1.000000000;
      vissizestart_s = "20 20";
      shpdim_s = "15";
-     visalphastart = 150;
-     visalphaend = 150;
+     visalphastart = 150.0;
+     visalphaend = 150.0;
 };
 
 
 INSTANCE MFX_THUNDERBALL_CAST_L3 (MFX_THUNDERBALL_CAST_PROTO)
 {
-	 ppsvalue		= 800;
+	 ppsvalue		= 800.0;
 	 vissizeendscale = 2.000000000;
      vissizestart_s = "25 25";
      shpdim_s = "20";
-     visalphastart = 200;
-	 visalphaend = 200;
+     visalphastart = 200.0;
+	 visalphaend = 200.0;
 };
 
 
 INSTANCE MFX_THUNDERBALL_CAST_L4 (MFX_THUNDERBALL_CAST_PROTO)
 {
-	 ppsvalue		= 900;
+	 ppsvalue		= 900.0;
 	 vissizeendscale = 2.000000000;
      vissizestart_s = "30 30";
      shpdim_s = "30";
-     visalphastart = 255;
-     visalphaend = 255;
+     visalphastart = 255.0;
+     visalphaend = 255.0;
 };
 
 
@@ -5188,7 +5188,7 @@ INSTANCE MFX_Firespell_HUMANSMOKE (C_PARTICLEFX)
      ppsvalue = 3.000000000;
      ppsscalekeys_s = "1 2 3 4 3 2 2 2 2 1 1 1 1 1 1";
      ppsissmooth = 1;
-     ppsfps = 1;
+     ppsfps = 1.0;
      shptype_s = "CIRCLE";
      shpfor_s = "object";
      shpoffsetvec_s = "0 1 0";
@@ -5507,7 +5507,7 @@ INSTANCE NEW(C_PARTICLEFX)
      shpscalekeys_s = "1 15";
      shpscaleislooping = 1;
      shpscaleissmooth = 1;
-     shpscalefps = 1;
+     shpscalefps = 1.0;
      dirmode_s = "DIR";
      dirfor_s = "OBJECT";
      lsppartavg = 1500.;
@@ -5719,7 +5719,7 @@ INSTANCE CAST3 (C_PARTICLEFX)
      ppsvalue = 50.;
      ppsscalekeys_s = "1.0";
      ppsislooping = 0;
-     ppsfps = 1;
+     ppsfps = 1.0;
      shptype_s = "LINE";
      shpfor_s = "object";
      shpoffsetvec_s = "0 1 0";
@@ -5752,7 +5752,7 @@ INSTANCE BLAST(C_PARTICLEFX)
      ppsvalue = 10.;
      ppsscalekeys_s = "3 2 1";
 	 //ppsIsLooping = 1;
-	 ppsfps = 1;
+	 ppsfps = 1.0;
      shptype_s = "CIRCLE";
      shpfor_s = "object";
      shpdistribtype_s = "WALK";

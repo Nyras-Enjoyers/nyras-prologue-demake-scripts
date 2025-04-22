@@ -10,5 +10,5 @@ func void DraxStartsHunt()
 {
 	Drax_IsHunting = true;
 
-	B_ExchangeRoutine (self, "HUNTING");
+	B_ExchangeRoutine_C_NPC (self, "HUNTING");
 };

@@ -72,19 +72,19 @@ CLASS C_MUSICJINGLE {
 PROTOTYPE C_MUSICTHEME_DEF(C_MUSICTHEME)
 {
         //file                    = "";	 // midi file or direct music segment
-        vol                     = 1;     // 0..1
+        vol                     = 1.0;     // 0..1
         loop                    = 1;	 // 0=off; 1=on
 	transType		= TRANSITION_TYPE_NONE;
 	transSubType		= TRANSITION_SUB_TYPE_MEASURE;
-	reverbMix		= -10;
-	reverbTime		= 8500;
+	reverbMix		= -10.0;
+	reverbTime		= 8500.0;
 };
 
 // jingle Prototype with default parameters
 PROTOTYPE C_MUSICJINGLE_DEF(C_MUSICJINGLE)
 {
         name                    = "";    // motif - name or wave
-        vol                     = 1;     // 0..1
+        vol                     = 1.0;     // 0..1
 		loop					= 0;
 		transSubType			= TRANSITION_SUB_TYPE_BEAT;
 };

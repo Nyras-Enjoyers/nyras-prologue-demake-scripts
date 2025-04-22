@@ -14,7 +14,7 @@ func void ZS_Babe_Dance ()  //### Wahrnehmungen?
 	AI_AlignToWP (self);
 };
 
-func void ZS_Babe_Dance_Loop()
+func int ZS_Babe_Dance_Loop()
 {
 	PrintDebugNpc		(PD_TA_LOOP,	"ZS_Babe_Dance_Loop");
 
@@ -58,6 +58,8 @@ func void ZS_Babe_Dance_Loop()
 			AI_PlayAni(self, "S_DANCE9");
 		};
 	AI_GotoWP (self, self.wp);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Babe_Dance_End()

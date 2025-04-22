@@ -14,7 +14,7 @@ func void ZS_Pee ()
 		AI_AlignToFP(self);
 	};
 };
-func void ZS_Pee_Loop ()
+func int ZS_Pee_Loop ()
 {
 	PrintDebugNpc(PD_TA_LOOP,"ZS_Pee_Loop");
 	
@@ -35,6 +35,8 @@ func void ZS_Pee_Loop ()
 	};
 	
 	AI_Wait(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 func void ZS_Pee_End ()
 {

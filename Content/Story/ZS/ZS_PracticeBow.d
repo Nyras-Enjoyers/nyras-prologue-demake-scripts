@@ -21,11 +21,13 @@ func void ZS_PracticeBow ()
 	};
 };
 
-func void ZS_PracticeBow_Loop ()
+func int ZS_PracticeBow_Loop ()
 {
     PrintDebugNpc(PD_TA_LOOP,"ZS_PracticeBow_Loop");
 	
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_PracticeBow_End ()

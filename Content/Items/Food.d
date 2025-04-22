@@ -18,7 +18,7 @@ const int	Value_CrawlerSuppe	=	10;		const int	HP_CrawlerSuppe		=	15;
 
 const int	Value_FleischRoh	=	 5;		const int	HP_FleischRoh		=	2; // NyrasPrologueDemake: 10 -> 2
 const int	Value_Brot			=	 8;		const int	HP_Brot				=	12;
-const int	Value_Käse			=	10;		const int	HP_Käse				=	15;
+const int	Value_Kase			=	10;		const int	HP_Kase				=	15;
 const int	Value_Fleisch		=	 8;		const int	HP_Fleisch			=	14; // NyrasPrologueDemake: 15 -> 14
 const int	Value_Schinken		=	12;		const int	HP_Schinken			=	18;
 
@@ -33,12 +33,12 @@ const int	Value_Mondschatten	=	12;		const int	HP_Mondschatten		=	24;
 const int	Value_Orkblatt		=	13;		const int	HP_Orkblatt			=	26;
 const int	Value_Eichenblatt	=	14;		const int	HP_Eichenblatt		=	28;
 
-const int	Value_Höllenpilz	=	 3;		const int	HP_Höllenpilz		=	 6;
+const int	Value_Hollenpilz	=	 3;		const int	HP_Hollenpilz		=	 6;
 const int	Value_Sklavenbrot	=	 9;		const int	HP_Sklavenbrot		=	15;
 
-const int	Value_Heilkräuter1	=	14;		const int	HP_Heilkräuter1		=	30;
-const int	Value_Heilkräuter2	=	19;		const int	HP_Heilkräuter2		=	39;
-const int	Value_Heilkräuter3	=	24;		const int	HP_Heilkräuter3		=	49;
+const int	Value_Heilkrauter1	=	14;		const int	HP_Heilkrauter1		=	30;
+const int	Value_Heilkrauter2	=	19;		const int	HP_Heilkrauter2		=	39;
+const int	Value_Heilkrauter3	=	24;		const int	HP_Heilkrauter3		=	49;
 
 // Fixme: Trollkirsche als Handelsware mit Wert?
 const int	Value_Trollkirsche	=	15;		const int	HP_Trollkirsche		=	-20;
@@ -249,27 +249,28 @@ INSTANCE ItFoCheese(C_Item)
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	
 
-	value 				=	Value_Käse;
+	value 				=	Value_Kase;
 
 	visual 				=	"ItFo_Cheese_01.3ds";
 	scemeName			=	"FOODHUGE";
 	on_state[0]			=	UseCheese;
 
 	description			= name;
-	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Käse;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Kase;
 	TEXT[4]				= ItFo_Cheese_description_1;
 	TEXT[5]				= ItFo_Cheese_description_2;
 };
 
 	FUNC VOID UseCheese()
 	{
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Käse);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Kase);
 	};
 
 /******************************************************************************************/
 const string ItFo_Rice_description = "Podstawa niezale¿noœci Nowego Obozu, starannie uprawiana na strze¿onych polach. Nadwy¿ki napêdzaj¹ handel i kszta³tuj¹ relacje z innymi obozami.";
-const string ItFo_Rice_description_1 = "Podstawa niezale¿noœci Nowego Obozu, starannie uprawiana na strze¿onych";
-const string ItFo_Rice_description_2 = "polach. Nadwy¿ki napêdzaj¹ handel i kszta³tuj¹ relacje z innymi obozami.";
+const string ItFo_Rice_description_1 = "Podstawa niezale¿noœci Nowego Obozu,";
+const string ItFo_Rice_description_2 = "starannie uprawiana na strze¿onych polach.";
+const string ItFo_Rice_description_3 = "Nadwy¿ki napêdzaj¹ handel i kszta³tuj¹ relacje z innymi obozami.";
 INSTANCE ItFoRice(C_Item)
 {	
 	name 				=	"Ry¿";
@@ -285,8 +286,9 @@ INSTANCE ItFoRice(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Reis;
-	TEXT[4]				= ItFo_Rice_description_1;
-	TEXT[5]				= ItFo_Rice_description_2;
+	TEXT[3]				= ItFo_Rice_description_1;
+	TEXT[4]				= ItFo_Rice_description_2;
+	TEXT[5]				= ItFo_Rice_description_3;
 };
 
 	FUNC VOID UseRice()
@@ -463,8 +465,9 @@ INSTANCE ItFoWine(C_Item)
 
 /******************************************************************************************/
 const string ItFo_Potion_Booze_description = "Duma Nowego Obozu, destylowana z poletek ry¿owych. Ten mocny alkohol s³u¿y za walutê i zacieœnia spo³eczne wiêzi, symbolizuj¹c zaradnoœæ obozu.";
-const string ItFo_Potion_Booze_description_1 = "Duma Nowego Obozu, destylowana z poletek ry¿owych. Ten mocny alkohol";
-const string ItFo_Potion_Booze_description_2 = "s³u¿y za walutê i zacieœnia spo³eczne wiêzi, symbolizuj¹c zaradnoœæ obozu.";
+const string ItFo_Potion_Booze_description_1 = "Duma Nowego Obozu, destylowana z poletek ry¿owych.";
+const string ItFo_Potion_Booze_description_2 = "Ten mocny alkohol s³u¿y za walutê i zacieœnia spo³eczne wiêzi,";
+const string ItFo_Potion_Booze_description_3 = "symbolizuj¹c zaradnoœæ obozu.";
 INSTANCE ItFoBooze(C_Item)
 {	
 	name 				=	"Ry¿ówka";
@@ -481,8 +484,9 @@ INSTANCE ItFoBooze(C_Item)
 
 	description			= name;
 	//TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Reisschnaps;
-	TEXT[4]				= ItFo_Potion_Booze_description_1;
-	TEXT[5]				= ItFo_Potion_Booze_description_2;
+	TEXT[3]				= ItFo_Potion_Booze_description_1;
+	TEXT[4]				= ItFo_Potion_Booze_description_2;
+	TEXT[5]				= ItFo_Potion_Booze_description_3;
 };
 
 	FUNC VOID UseBooze()
@@ -774,7 +778,7 @@ INSTANCE ItFo_Plants_mushroom_01(C_Item)
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	
 
-	value 				=	Value_Höllenpilz;
+	value 				=	Value_Hollenpilz;
 
 	visual 				=	"ItFo_Plants_mushroom_01.3ds";
 	material 			=	MAT_WOOD;
@@ -782,13 +786,13 @@ INSTANCE ItFo_Plants_mushroom_01(C_Item)
 	scemeName			=	"FOOD";
 
 	description			= name;
-	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Höllenpilz;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Höllenpilz;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Hollenpilz;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Hollenpilz;
 };
 
 		func void Usemush ()
 		{
-			Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Höllenpilz);
+			Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Hollenpilz);
 			PrintDebugNpc 		(PD_ITEM_MOBSI, "Ich esse Höllenpilz");
 		};
 
@@ -829,7 +833,7 @@ INSTANCE ItFo_Plants_Herb_01(C_Item)
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	
 
-	value 				=	Value_Heilkräuter1;
+	value 				=	Value_Heilkrauter1;
 
 	visual 				=	"ItFo_Plants_Herb_01.3ds";
 	material 			=	MAT_WOOD;
@@ -837,13 +841,13 @@ INSTANCE ItFo_Plants_Herb_01(C_Item)
 	scemeName			=	"FOOD";
 
 	description			= name;
-	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkräuter1;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkräuter1;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkrauter1;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkrauter1;
 };
 
 	func void UsePlants1 ()
 	{
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkräuter1);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkrauter1);
 		PrintDebugNpc 		(PD_ITEM_MOBSI, "Ich esse Heilkräuter");
 	};
 
@@ -855,7 +859,7 @@ INSTANCE ItFo_Plants_Herb_02(C_Item)
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	
 
-	value 				=	Value_Heilkräuter2;
+	value 				=	Value_Heilkrauter2;
 
 	visual 				=	"ItFo_Plants_Herb_02.3ds";
 	material 			=	MAT_WOOD;
@@ -863,13 +867,13 @@ INSTANCE ItFo_Plants_Herb_02(C_Item)
 	scemeName			=	"FOOD";
 
 	description			= name;
-	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkräuter2;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkräuter2;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkrauter2;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkrauter2;
 };
 
 		func void UsePlants2 ()
 		{
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkräuter2);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkrauter2);
 		PrintDebugNpc 		(PD_ITEM_MOBSI, "Ich esse Heilpflanzen");
 	};
 
@@ -881,7 +885,7 @@ INSTANCE ItFo_Plants_Herb_03(C_Item)
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	
 
-	value 				=	Value_Heilkräuter3;
+	value 				=	Value_Heilkrauter3;
 
 	visual 				=	"ItFo_Plants_Herb_03.3ds";
 	material 			=	MAT_WOOD;
@@ -889,13 +893,13 @@ INSTANCE ItFo_Plants_Herb_03(C_Item)
 	scemeName			=	"FOOD";
 
 	description			= name;
-	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkräuter3;
-	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkräuter3;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Heilkrauter3;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Heilkrauter3;
 };
 
 	func void UsePlants3 ()
 	{			
-			Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkräuter3);
+			Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Heilkrauter3);
 			PrintDebugNpc 		(PD_ITEM_MOBSI, "Ich esse Heilpflanzen");
 	};
 

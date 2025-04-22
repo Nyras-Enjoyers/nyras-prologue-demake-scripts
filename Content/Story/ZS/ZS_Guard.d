@@ -21,7 +21,7 @@ func void ZS_Guard ()
 	B_InitArmor();    
 };
 
-func void ZS_Guard_Loop ()
+func int ZS_Guard_Loop ()
 {
 	PrintDebugNpc	(PD_TA_LOOP,"ZS_Guard_Loop");
 
@@ -39,6 +39,8 @@ func void ZS_Guard_Loop ()
 	B_PlayArmor		();
  	
 	AI_Wait			(self,	0.5);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Guard_End ()

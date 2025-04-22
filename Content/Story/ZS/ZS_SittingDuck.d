@@ -21,11 +21,13 @@ func void ZS_SittingDuck ()
 	AI_AlignToWP			(self);
 };
 
-func void ZS_SittingDuck_Loop ()
+func int ZS_SittingDuck_Loop ()
 {
 	PrintDebugNpc			(PD_TA_LOOP,	"ZS_SittingDuck_Loop");
 	
 	AI_Wait					(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_SittingDuck_End ()

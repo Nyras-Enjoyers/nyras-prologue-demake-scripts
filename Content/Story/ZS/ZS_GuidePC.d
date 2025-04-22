@@ -93,7 +93,7 @@ func int ZS_GuidePC_Loop ()
 	return				LOOP_CONTINUE;
 };
 	
-func int ZS_GuidePC_End ()
+func void ZS_GuidePC_End ()
 {	
 	PrintDebugNpc		(PD_TA_FRAME,	"ZS_GuidePC_End");
 

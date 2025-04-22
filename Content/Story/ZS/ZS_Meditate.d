@@ -17,7 +17,7 @@ func void ZS_Meditate()
 		AI_GotoFP (self,"MEDITATE");
 		AI_AlignToFP( self );				//Richte Dich aus
 	};
-	Wld_DetectNpc   (self, -1, ZS_Teaching, -1);
+	_ = Wld_DetectNpc   (self, -1, ZS_Teaching, -1);
 	if (Npc_GetDistToNpc (self,other) <= PERC_DIST_INTERMEDIAT)
 	{
 		B_SmartTurnToNpc (self,other);
@@ -27,7 +27,7 @@ func void ZS_Meditate()
 	
 	AI_PlayAniBS(self,"T_STAND_2_PRAY",BS_SIT);
 };
-func void ZS_Meditate_Loop()
+func int ZS_Meditate_Loop()
 {
 	PrintDebugNpc(PD_TA_LOOP,"ZS_Meditate_Loop");
 	
@@ -43,11 +43,13 @@ func void ZS_Meditate_Loop()
 	};
 	AI_Wait(self,1);
 	//AI_AlignToFP(self);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Meditate_End ()
 {
-    C_StopLookAt(self);
+    _ = C_StopLookAt(self);
 	AI_PlayAniBS(self,"T_PRAY_2_STAND",BS_STAND);
 	
 	PrintDebugNpc(PD_TA_FRAME,"ZS_Meditate_End");

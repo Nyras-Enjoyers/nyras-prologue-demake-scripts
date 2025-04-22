@@ -51,7 +51,7 @@ instance MENUITEM_AUDIO_SFXVOL_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_AUDIO_Y + (MENU_PANEL3_STEP * 0);
 	onchgsetoption = "soundVolume";
 	onchgsetoptionsection = "SOUND";
-	userfloat[0] = 20;
+	userfloat[0] = 20.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -73,7 +73,7 @@ instance MENUITEM_AUDIO_MUSICVOL_SLIDER(C_MENU_ITEM_PANELREST_SLIDER_DEF)
 	posy += MENU_START_AUDIO_Y + (MENU_PANEL3_STEP * 1);
 	onchgsetoption = "musicVolume";
 	onchgsetoptionsection = "SOUND";
-	userfloat[0] = 15;
+	userfloat[0] = 15.0;
 	userstring[0] = MENU_SLIDER_POS_PIC;
 	flags = flags & ~IT_SELECTABLE;
 };

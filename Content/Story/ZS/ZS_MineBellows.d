@@ -18,18 +18,20 @@ FUNC VOID ZS_MineBellows ()
 	};
 };
 
-FUNC VOID ZS_MineBellows_Loop()
+FUNC int ZS_MineBellows_Loop()
 {
 	PrintDebugNpc (PD_TA_LOOP,"ZS_MineBellows_Loop");
 	
-	AI_UseMob(self,"BELLOW",1);		// Benutze den Mob einmal bis zum angegebenen State
-	AI_UseMob (self,"BELLOW",0);	//Verlassen sie bitte ihr Mobsi
+	_ = AI_UseMob(self,"BELLOW",1);		// Benutze den Mob einmal bis zum angegebenen State
+	_ = AI_UseMob (self,"BELLOW",0);	//Verlassen sie bitte ihr Mobsi
+	
+	return LOOP_CONTINUE;
 };
 
 FUNC VOID ZS_MineBellows_End()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_MineBellows_End");
 	
-	AI_UseMob (self,"BELLOW",-1);	//Verlassen sie bitte ihr Mobsi
+	_ = AI_UseMob (self,"BELLOW",-1);	//Verlassen sie bitte ihr Mobsi
 };
 

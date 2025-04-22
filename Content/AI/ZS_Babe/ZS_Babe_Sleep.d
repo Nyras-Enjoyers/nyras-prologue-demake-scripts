@@ -20,19 +20,21 @@ func void ZS_Babe_Sleep()
 		{
 			AI_GotoWP	(self, self.wp);
 		};
-		AI_UseMob(self,"BABEBED",1);
+		_ = AI_UseMob(self,"BABEBED",1);
 	};
 };
 
-func void ZS_Babe_Sleep_Loop()
+func int ZS_Babe_Sleep_Loop()
 {
 	PrintDebugNpc (PD_TA_LOOP,"ZS_BabeSleep_Loop");
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Babe_Sleep_End()
 {
 	PrintDebugNpc (PD_TA_FRAME,"ZS_BabeSleep_End");
-	AI_UseMob(self,"BABEBED",-1);
+	_ = AI_UseMob(self,"BABEBED",-1);
 };
 

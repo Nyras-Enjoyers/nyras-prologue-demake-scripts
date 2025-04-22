@@ -35,7 +35,7 @@ INSTANCE CamModLookBack(CCamSys_Def)
 	maxAzimuth			= 90.0; 
 	rotOffsetX			= 20.0;   
 	rotOffsetY			= 180.0;  
-	veloRot 			= 5;
+	veloRot 			= 5.0;
 };
 
 /* Tombraider Style - Azimuth Grenzen 0/0/0 - Rotations-Stop-Geschw. langsam, Offset X -15 Grad */
@@ -498,7 +498,7 @@ INSTANCE CamModLook(CCamSys_Def)
 	bestAzimuth			= 0.0;  
 	minAzimuth			= -90.0;
 	maxAzimuth			= 90.0; 
-	veloTrans			= 5;
+	veloTrans			= 5.0;
 };
 
 

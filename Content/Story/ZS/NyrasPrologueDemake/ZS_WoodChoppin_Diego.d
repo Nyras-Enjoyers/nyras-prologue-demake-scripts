@@ -19,13 +19,13 @@ func void ZS_WoodChoppin_Diego()
 			AI_GotoWP	(self, self.wp);
 		};
 
-		AI_UseMob (self, "WOODCHOPPIN", 1);			
+		_ = AI_UseMob (self, "WOODCHOPPIN", 1);			
 	};
 
 	
 };
 
-func void ZS_WoodChoppin_Diego_Loop()
+func int ZS_WoodChoppin_Diego_Loop()
 {
     PrintDebugNpc (PD_TA_LOOP, "ZS_WoodChoppin_Diego_Loop");
         
@@ -38,11 +38,13 @@ func void ZS_WoodChoppin_Diego_Loop()
     };
 
 	AI_Wait(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_WoodChoppin_Diego_End ()
 {
-	AI_UseMob (self, "WOODCHOPPIN", -1);			
+	_ = AI_UseMob (self, "WOODCHOPPIN", -1);			
 	
 	PrintDebugNpc (PD_TA_FRAME, "ZS_WoodChoppin_Diego_End");
 };

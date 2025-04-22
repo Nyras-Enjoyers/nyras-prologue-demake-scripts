@@ -35,9 +35,11 @@ func void ZS_Babe_Fan ()
 	
 };
 
-func void ZS_Babe_Fan_Loop ()
+func int ZS_Babe_Fan_Loop ()
 {
 	PrintDebugNpc		(PD_TA_LOOP,	"ZS_Babe_Fan_Loop");
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Babe_Fan_End ()

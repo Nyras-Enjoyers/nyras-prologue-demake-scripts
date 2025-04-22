@@ -23,7 +23,7 @@ func int ZS_Sit_Crate_Loop ()
 	if (!C_BodyStateContains(self, BS_SIT))
 	&& (Wld_IsMobAvailable(self,"CRATE"))
 	{
-		AI_UseMob (self, "CRATE", 1);
+		_ = AI_UseMob (self, "CRATE", 1);
 	};
 
 	// ------ Random-Anis im Sitzen ------
@@ -45,6 +45,6 @@ func int ZS_Sit_Crate_Loop ()
 
 func void ZS_Sit_Crate_End ()
 {
-	AI_UseMob (self, "CRATE", -1);
+	_ = AI_UseMob (self, "CRATE", -1);
 };
 

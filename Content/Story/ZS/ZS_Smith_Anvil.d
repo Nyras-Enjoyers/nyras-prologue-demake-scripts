@@ -10,7 +10,7 @@ func void ZS_Smith_Anvil	()
 	B_StartUseMob	(self,	"BSANVIL");	
 };
 
-func void ZS_Smith_Anvil_Loop	()
+func int ZS_Smith_Anvil_Loop	()
 {	
     PrintDebugNpc	(PD_TA_LOOP,	"ZS_Smith_Anvil_Loop");
    
@@ -21,6 +21,8 @@ func void ZS_Smith_Anvil_Loop	()
     	B_InterruptMob ("BSANVIL");
     };
 	AI_Wait(self,1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Smith_Anvil_End ()

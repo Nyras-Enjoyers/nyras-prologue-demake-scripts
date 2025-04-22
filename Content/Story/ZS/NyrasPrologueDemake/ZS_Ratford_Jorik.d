@@ -16,7 +16,7 @@ func void ZS_Ratford_Jorik()
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 };
 
-func void ZS_Ratford_Jorik_loop()
+func int ZS_Ratford_Jorik_loop()
 {
 	if (self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
@@ -59,6 +59,8 @@ func void ZS_Ratford_Jorik_loop()
 	};
 	
 	AI_Wait		(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Ratford_Jorik_end()

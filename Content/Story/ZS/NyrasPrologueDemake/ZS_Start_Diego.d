@@ -16,9 +16,11 @@ func void ZS_Start_Diego()
 		AI_AlignToFP(self);
 	};
 };
-func void ZS_Start_Diego_loop()
+func int ZS_Start_Diego_loop()
 {
 	AI_Wait(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 func void ZS_Start_Diego_end()
 {

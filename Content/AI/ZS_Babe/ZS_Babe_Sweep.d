@@ -28,10 +28,12 @@ func void ZS_Babe_Sweep ()
 	};
 };
 
-func void ZS_Babe_Sweep_Loop ()
+func int ZS_Babe_Sweep_Loop ()
 {
 	PrintDebugNpc		(PD_TA_LOOP,	"ZS_Babe_Sweep_Loop");
 	AI_Wait				(self,	1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Babe_Sweep_End ()

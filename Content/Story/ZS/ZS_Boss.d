@@ -20,7 +20,7 @@ func void ZS_Boss()
     AI_PlayAni (self,"T_STAND_2_HGUARD");
 };
 
-func void ZS_Boss_loop()
+func int ZS_Boss_loop()
 {
 	var int zufall;
 	zufall = Hlp_Random(1000);
@@ -34,6 +34,8 @@ func void ZS_Boss_loop()
     {
     	AI_PlayAni (self,"T_HGUARD_LOOKAROUND");
     };
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Boss_end()

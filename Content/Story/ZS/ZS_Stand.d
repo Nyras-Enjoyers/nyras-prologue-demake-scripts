@@ -23,7 +23,7 @@ func void ZS_Stand()
     AI_PlayAni (self,"T_STAND_2_LGUARD");
 };
 
-func void ZS_Stand_loop()
+func int ZS_Stand_loop()
 {
 	var int zufall;
 	zufall = Hlp_Random(100);
@@ -47,6 +47,8 @@ func void ZS_Stand_loop()
 	};
 	
 	AI_Wait		(self, 1);
+	
+	return LOOP_CONTINUE;
 };
 
 func void ZS_Stand_end()
