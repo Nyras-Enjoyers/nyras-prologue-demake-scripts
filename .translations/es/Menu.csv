@@ -145,7 +145,7 @@
 "System/MENU/menu_status.d:282","przed ogniem","contra fuego","","False","MENU_ITEM_ARMOR_3_TITLE.text[0]","",""
 "System/MENU/menu_status.d:291","przed magią","contra magia","","False","MENU_ITEM_ARMOR_4_TITLE.text[0]","",""
 "System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","HAB. COMBATE / GOLPE CRÍTICO","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
-"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","HAB. ROBO / PROBAB. FALLO","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
+"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","HAB. ROBO / PROBAB. FALLO","","True","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","HAB. ESPECIALES","","False","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
 "System/MENU/menu_log.d:169","Dzień","Día:","","False","MENU_ITEM_DAY_TITLE.text[0]","",""
 "System/MENU/menu_log.d:178","Czas:","Hora:","","False","MENU_ITEM_TIME_TITLE.text[0]","",""
