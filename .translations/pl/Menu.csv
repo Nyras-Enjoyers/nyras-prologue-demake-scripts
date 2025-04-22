@@ -147,5 +147,5 @@
 "System/MENU/menu_status.d:282","przed ogniem","przed ogniem","","","MENU_ITEM_ARMOR_3_TITLE.text[0]","",""
 "System/MENU/menu_status.d:291","przed magią","przed magią","","","MENU_ITEM_ARMOR_4_TITLE.text[0]","",""
 "System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","UMIEJ. WALKI / TRAF. KRYTYCZNE","","","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
-"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","","","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
+"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","UMIEJ. ZŁODZIEJ. / SZANSA PORAŻKI","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","UMIEJ. SPECJALNE","","","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
