@@ -147,3 +147,5 @@
 "System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","战斗技能/致命一击","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
 "System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","盗窃技巧/失败机率","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","特殊技能","","False","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
+"System/MENU/menu_log.d:169","Dzień","天数：","","False","MENU_ITEM_DAY_TITLE.text[0]","",""
+"System/MENU/menu_log.d:178","Czas:","时间：","","False","MENU_ITEM_TIME_TITLE.text[0]","",""
