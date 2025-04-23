@@ -145,7 +145,7 @@
 "System/MENU/menu_status.d:282","przed ogniem","proti ohni","","False","MENU_ITEM_ARMOR_3_TITLE.text[0]","",""
 "System/MENU/menu_status.d:291","przed magią","proti magii","","False","MENU_ITEM_ARMOR_4_TITLE.text[0]","",""
 "System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","BOJOVÉ DOVED. / KRITICKÝ ÚDER","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
-"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","ZLODĚJ. DOVED. / MOŽN. PŘISTIŽENÍ","","True","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
+"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","ZLODĚJ. DOVED. / MOŽN. PŘISTIŽENÍ","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","ZVLÁŠTNÍ DOVED.","","False","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
 "System/MENU/menu_log.d:169","Dzień","Den:","","False","MENU_ITEM_DAY_TITLE.text[0]","",""
 "System/MENU/menu_log.d:178","Czas:","Čas:","","False","MENU_ITEM_TIME_TITLE.text[0]","",""
