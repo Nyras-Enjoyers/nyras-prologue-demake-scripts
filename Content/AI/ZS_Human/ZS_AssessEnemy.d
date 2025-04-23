@@ -41,7 +41,8 @@ func void ZS_AssessEnemy ()
 	||	(self.npctype==NPCTYPE_FRIEND)	//solche dürfen niemals fliehen!
 	{
 		//---- NSC ruft zusätzlich Hilfe ! ----
-		if (C_AmIWeaker(self,other) || (Npc_IsPlayer(other) && self.aivar[AIV_WASDEFEATEDBYSC]) )
+		// NyrasPrologueDemake: Ignore being defeated by player
+		if (C_AmIWeaker(self,other))
 		{
 			B_CallComrades	();
 		};
@@ -65,7 +66,8 @@ func void ZS_AssessEnemy ()
 	else
 	{
 		//---- Flucht ? ----
-		if ( (Npc_IsPlayer(other) && self.aivar[AIV_WASDEFEATEDBYSC]) || C_AmIWeaker(self,other) )
+		// NyrasPrologueDemake: Ignore being defeated by player
+		if ( C_AmIWeaker(self,other) )
 		{
 			B_CallGuards	();
 			AI_StartState	(self,	ZS_Flee,	0,	"");

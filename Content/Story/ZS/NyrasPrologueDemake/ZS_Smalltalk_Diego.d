@@ -48,8 +48,14 @@ func void ZS_Smalltalk_Diego ()
 };
 func int ZS_Smalltalk_Diego_Loop()
 {
-	// Make sure, that Diego is enough close to Whistler
-	
+	// Interrupts, if Whistler was bothered
+	if (Npc_IsInState(WhistlerNpc, ZS_Smalltalk_Whistler) == false)
+	&& (Smalltalk_Finished == false)
+	{
+		Diego_Smalltalk_IsSaying = false;
+		AI_Wait(self, 0.5);
+		return LOOP_CONTINUE;
+	};
 
 	if (Diego_Smalltalk_HasSVMToSay == true)
 	{

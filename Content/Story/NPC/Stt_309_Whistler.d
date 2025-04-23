@@ -73,8 +73,7 @@ func void Rtn_AfterSmalltalk_309 ()
 	TA_Inspect(15,35, 15,50, "WP_INTRO_008");
 	TA_Inspect(15,50, 16,20, "WP_INTRO_012");
 	TA_Inspect(16,20, 16,35, "WP_INTRO_005");
-	TA_Inspect(16,35, 16,50, "WP_INTRO_004");
-	TA_Pee(16,50, 17,15, "WP_INTRO_017");
+	TA_Inspect(16,35, 17,15, "WP_INTRO_004");
 	TA_SitAround(17,15, 18,20, "WP_INTRO_012");
 	TA_Inspect(18,20, 10,50, "WP_INTRO_012");
 	TA_Inspect(18,50, 11,05, "WP_INTRO_005");

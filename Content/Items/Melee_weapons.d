@@ -703,12 +703,12 @@ INSTANCE ItMw_1H_Sword_01 (C_Item)
 
 	value 				=	Value_1H_Sword_01; 	//SN: WICHTIG, da diese Instanz das Produkt des SC-Schmiedens ist!!!
 
-	damageTotal			= 	20; //30 weil Schmieden und verkaufen runtergesetzt
+	damageTotal			= 	10; // NyrasPrologueDemake //30 weil Schmieden und verkaufen runtergesetzt
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	100;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	20; //12 
+	cond_value[2]  		= 	5; // NyrasPrologueDemake //12 
 	visual 				=	"ItMw_1H_Sword_01.3DS";
 
 	description			= name;

@@ -60,14 +60,19 @@ func void TICKTOCK_FUNC()
 			// And player is enough near
 			if (Npc_GetDistToNpc(hero, RatfordNpc) < HAI_DIST_RATFORD_AUTOWALK)
 			{
-				// If didn't start to go already
-				if (Ratford_HeroGoesToHimAsFoundJorik == false)
+				// If didn't start to go already and hasn't opened an inventory or not opening or closing Jorik. And Ratford is not fighting.
+				if (C_BodyStateContains(hero, BS_INVENTORY) == false)
+				&& (C_BodyStateContains(hero, BS_MOBINTERACT_INTERRUPT) == false)
+				&& (Npc_IsInState(RatfordNpc, ZS_Attack) == false) // And if Ratford isn't in ZS_Attack
 				{
-					Ratford_HeroGoesToHimAsFoundJorik = true;
-
-					AI_Wait(hero, 0.1);
-					AI_GotoNpc(hero, RatfordNpc);
-					AI_Wait(hero, 0.1);
+					if (Ratford_HeroGoesToHimAsFoundJorik == false)
+					{
+						Ratford_HeroGoesToHimAsFoundJorik = true;
+	
+						AI_Wait(hero, 0.1);
+						AI_GotoNpc(hero, RatfordNpc);
+						AI_Wait(hero, 0.1);
+					};
 				};
 			};
 		};
@@ -82,7 +87,7 @@ func void TICKTOCK_FUNC()
 		{
 			Hero_TookJorikSketch = true;
 			
-			// If talked with Ratford about the corpse already, then has to goes to him
+			// If talked with Ratford about the corpse already, then has to goes to him.
 			if (Ratford_TalkNyrasNearJorik == true)
 			{
 				Ratford_HeroHasToGoesToHimAsFoundJorikNote = true;
@@ -97,6 +102,7 @@ func void TICKTOCK_FUNC()
 		if (Npc_GetDistToNpc(hero, RatfordNpc) < HAI_DIST_RATFORD_AUTOWALK)
 		{
 			if (C_BodyStateContains(hero, BS_INVENTORY) == false) // And hasn't opened inventory
+			&& (C_BodyStateContains(hero, BS_MOBINTERACT_INTERRUPT) == false) // And doesn't use Jorik's corpse
 			&& (Npc_IsInState(RatfordNpc, ZS_Attack) == false) // And if Ratford isn't in ZS_Attack
 			{
 				Ratford_HeroHasToGoesToHimAsFoundJorikNote = false;

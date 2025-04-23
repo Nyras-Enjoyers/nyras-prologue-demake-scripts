@@ -44,6 +44,14 @@ func void ZS_Smalltalk_Whistler ()
 
 func int ZS_Smalltalk_Whistler_Loop()
 {
+	// Interrupts, if Diego was bothered
+	if (Npc_IsInState(DiegoNpc, ZS_Smalltalk_Diego) == false)
+	{
+		Whistler_Smalltalk_IsSaying = false;
+		AI_Wait(self, 0.5);
+		return LOOP_CONTINUE;
+	};
+	
 	if (Whistler_Smalltalk_HasSVMToSay == true)
 	{
 		if (Whistler_Smalltalk_IsSaying == false)

@@ -31,8 +31,8 @@ func void ZS_ProclaimAndPunish ()
 	Npc_PercEnable		(self,	PERC_MOVENPC		,	B_StopGotoHero				);	
 
 	//-------- Wurde der NSC schon mal vom SC besiegt ? --------
-	if 	self.aivar[AIV_WASDEFEATEDBYSC]
-	&&	!C_NpcIsBoss(self)												// Bosse drehen sich nie ab!
+	// NyrasPrologueDemake: Ignore being defeated by player
+	if 	!C_NpcIsBoss(self)												// Bosse drehen sich nie ab!
 	&&	(Wld_GetGuildAttitude(self.guild,other.guild) != ATT_HOSTILE)	// Todfeinde drehen sich auch nie ab...
 	&&  (Npc_GetPermAttitude (self, other) != ATT_HOSTILE)				// MH: ...eben!
 	{

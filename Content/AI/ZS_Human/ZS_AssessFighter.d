@@ -52,8 +52,8 @@ func void ZS_AssessFighter ()
 	B_WhirlAround		(self,	other);
 
 	//-------- Wird der NSC zurückweichen ? --------
-	if (	self.aivar[AIV_WASDEFEATEDBYSC] 					||		// Wurde NSC schon mal besiegt, oder...
-			(C_NpcIsWorker(self) && C_AmIWeaker(self, other))		)	// ...ist NSC ein schwächerer WORKER ?
+	// NyrasPrologueDemake: Ignore being defeated by player
+	if (	(C_NpcIsWorker(self) && C_AmIWeaker(self, other))		)	// ...ist NSC ein schwächerer WORKER ?
 	{
 		PrintDebugNpc	(PD_ZS_CHECK,	"...NSC wird zurückweichen!");
 		
