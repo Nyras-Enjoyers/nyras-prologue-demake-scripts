@@ -145,7 +145,7 @@
 "System/MENU/menu_status.d:282","przed ogniem","impotriva focului","","False","MENU_ITEM_ARMOR_3_TITLE.text[0]","",""
 "System/MENU/menu_status.d:291","przed magią","impotriva magiei","","False","MENU_ITEM_ARMOR_4_TITLE.text[0]","",""
 "System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","ABILI. DE LUPTĂ / LOVIT. CRITICĂ","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
-"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","ABILI. DE HOȚ / ȘANSE DE EȘEC","","True","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
+"System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","ABILI. DE HOȚ / ȘANSE DE EȘEC","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","ABILI. SPECIALE","","False","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
 "System/MENU/menu_log.d:178","Czas:","Ora:","","False","MENU_ITEM_TIME_TITLE.text[0]","",""
 "System/MENU/menu_log.d:169","Dzień","Ziua:","","False","MENU_ITEM_DAY_TITLE.text[0]","",""
