@@ -23,7 +23,7 @@ func void Drax_GoesCamp()
 	// Goes to the camp
 	Drax_StartGoingToTheCamp = true;
 	Drax_GoToTheCamp = true;
-	B_ExchangeRoutine_C_NPC(self, "HuntersCamp");
+	B_ExchangeRoutine_C_NPC(DraxNpc, "HuntersCamp");
 	
 	// Don't want talk
 	if (Drax_HowLooksThisRatford == false)
@@ -41,5 +41,5 @@ func void Ratford_GoesCamp()
 	Ratford_StartGoingToTheCamp = true;
 	Ratford_GoToTheCamp = true;
 	
-	B_ExchangeRoutine_C_NPC(self, "HuntersCamp");
+	B_ExchangeRoutine_C_NPC(RatfordNpc, "HuntersCamp");
 };

@@ -127,6 +127,17 @@ func void TICKTOCK_FUNC()
 				Wld_SendTrigger("EVT_CAM_TRIA_GO");
 
 				// Drax and Ratford change behaviour (it is defined in their ZS_*)
+				
+				// Remove a pan and a booze from the focus
+				MOBNAME_PAN = "";
+				Npc_PerceiveAll(RatfordNpc);
+				if (Wld_DetectItem(RatfordNpc, ITEM_KAT_FOOD)) // A booze has to be detected, because doesn't use a string const
+				{
+					if (Hlp_IsItem(item, ItFoBooze))
+					{
+						item.name = "";
+					};
+				};
 			};
 		};
 	};
@@ -266,6 +277,55 @@ func void TICKTOCK_FUNC()
 				Wld_PlayEffect("spellFX_Teleport", Shadowbeast, Shadowbeast, 0, 0, 0, false);
 			};
 		};
+	};
+	
+	// Detect an item taken under water
+	if (C_BodyStateContains(hero, BS_DIVE) == true)
+	{
+		// If hero started diving
+		if (Hero_IsDiving == false)
+		{
+			// Save, how many items of given instances hero has
+			Hero_ItemsBeforeDiving_ItMi_Stuff_Mug_01 = Npc_HasItems(hero, ItMi_Stuff_Mug_01);
+			Hero_ItemsBeforeDiving_AltesSchwert = Npc_HasItems(hero, AltesSchwert);
+			Hero_ItemsBeforeDiving_ItFoBeer = Npc_HasItems(hero, ItFoBeer);
+		
+			Hero_IsDiving = true;
+		// If already is diving
+		} else
+		{
+			// Count whether player took an item...
+			
+			// ...a mug
+			if (Npc_HasItems(hero, ItMi_Stuff_Mug_01) > Hero_ItemsBeforeDiving_ItMi_Stuff_Mug_01)
+			{
+				// Save a new amount
+				Hero_ItemsBeforeDiving_ItMi_Stuff_Mug_01 = Npc_HasItems(hero, ItMi_Stuff_Mug_01);
+				
+				// Display a message
+				B_TakenItem(ItMi_Stuff_Mug_01, _YPOS_MESSAGE_TAKEN_ITMI_STUFF_MUG_01);
+			// ...an old sword
+			} else if (Npc_HasItems(hero, AltesSchwert) > Hero_ItemsBeforeDiving_AltesSchwert)
+			{
+				// Save a new amount
+				Hero_ItemsBeforeDiving_AltesSchwert = Npc_HasItems(hero, AltesSchwert);
+				
+				// Display a message
+				B_TakenItem(AltesSchwert, _YPOS_MESSAGE_TAKEN_ALTESSCHWERT);
+			// ...a beer
+			} else if (Npc_HasItems(hero, ItFoBeer) > Hero_ItemsBeforeDiving_ItFoBeer)
+			{
+				// Save a new amount
+				Hero_ItemsBeforeDiving_ItFoBeer = Npc_HasItems(hero, ItFoBeer);
+				
+				// Display a message
+				B_TakenItem(ItFoBeer, _YPOS_MESSAGE_TAKEN_ITFOBEER);
+			};
+		};
+	// If isn't then reset the variable which indicates it
+	} else if (Hero_IsDiving == true)
+	{
+		Hero_IsDiving = false;
 	};
 
 	Wld_SendTrigger("TICKTOCK");

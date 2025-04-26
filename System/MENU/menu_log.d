@@ -28,14 +28,26 @@ const int LOG_ITEM_LIST_X = 3000;
 const int LOG_ITEM_LIST_Y = 1000;
 const int LOG_ITEM_LIST_HEIGHT = 6100;
 const int LOG_ITEM_LIST_WIDTH = 4500;
+const int LOG_DIM_Y = 1000;
+const int LOG_ITEM_Y1 = 1500;
+const int LOG_ITEM_DY = 1000;
+const int LOG_ITEM_FRAMESIZEX = 250;
+const int LOG_ITEM_ITEM_DAY_POSX = 1500;
+const int LOG_ITEM_ITEM_DAY_POSY = 6000;
+const int LOG_ITEM_ITEM_DAY_DIMX = 300;
+const int LOG_ITEM_ITEM_DAY_TITLE_POSX = 1800;
+const int LOG_ITEM_ITEM_TIME_POSX = 2200;
+const int LOG_ITEM_ITEM_TIME_POSY = 6300;
+const int LOG_ITEM_ITEM_TIME_TITLE_POSX = 1500;
+
 
 instance MENU_ITEM_SEL_MISSIONS_ACT(C_MENU_ITEM_DEF)
 {
 	text[0] = "Bie¿¹ce\nMisje";
 	posx = LOG_ITEM_X1;
-	posy = 1500;
+	posy = LOG_ITEM_Y1;
 	dimx = LOG_ITEM_DX1;
-	dimy = 1000;
+	dimy = LOG_DIM_Y;
 	fontname = LOG_FONT_DEFAULT;
 	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_SELECTABLE | IT_MULTILINE | IT_TXT_CENTER;
 	onselaction[0] = SEL_ACTION_EXECCOMMANDS;
@@ -46,9 +58,9 @@ instance MENU_ITEM_SEL_MISSIONS_OLD(C_MENU_ITEM_DEF)
 {
 	text[0] = "Zakoñczone\nMisje";
 	posx = LOG_ITEM_X1;
-	posy = 2500;
+	posy = LOG_ITEM_Y1 + 1 * LOG_DIM_Y;
 	dimx = LOG_ITEM_DX1;
-	dimy = 1000;
+	dimy = LOG_DIM_Y;
 	fontname = LOG_FONT_DEFAULT;
 	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_SELECTABLE | IT_MULTILINE | IT_TXT_CENTER;
 	onselaction[0] = SEL_ACTION_EXECCOMMANDS;
@@ -59,9 +71,9 @@ instance MENU_ITEM_SEL_MISSIONS_FAILED(C_MENU_ITEM_DEF)
 {
 	text[0] = "Niezaliczone\nMisje";
 	posx = LOG_ITEM_X1;
-	posy = 3500;
+	posy = LOG_ITEM_Y1 + 2 * LOG_DIM_Y;
 	dimx = LOG_ITEM_DX1;
-	dimy = 1000;
+	dimy = LOG_DIM_Y;
 	fontname = LOG_FONT_DEFAULT;
 	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_SELECTABLE | IT_MULTILINE | IT_TXT_CENTER;
 	onselaction[0] = SEL_ACTION_EXECCOMMANDS;
@@ -72,9 +84,9 @@ instance MENU_ITEM_SEL_LOG(C_MENU_ITEM_DEF)
 {
 	text[0] = "Informacje\nogólne";
 	posx = LOG_ITEM_X1;
-	posy = 4500;
+	posy = LOG_ITEM_Y1 + 3 * LOG_DIM_Y;
 	dimx = LOG_ITEM_DX1;
-	dimy = 1000;
+	dimy = LOG_DIM_Y;
 	fontname = LOG_FONT_DEFAULT;
 	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_SELECTABLE | IT_MULTILINE | IT_TXT_CENTER;
 	onselaction[0] = SEL_ACTION_EXECCOMMANDS;
@@ -94,7 +106,7 @@ instance MENU_ITEM_LIST_MISSIONS_ACT(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags & ~IT_TXT_CENTER;
 	userstring[0] = "CURRENTMISSIONS";
-	framesizex = 250;
+	framesizex = LOG_ITEM_FRAMESIZEX;
 	framesizey = 0;
 };
 
@@ -111,7 +123,7 @@ instance MENU_ITEM_LIST_MISSIONS_FAILED(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags & ~IT_TXT_CENTER;
 	userstring[0] = "OLDMISSIONS";
-	framesizex = 250;
+	framesizex = LOG_ITEM_FRAMESIZEX;
 	framesizey = 0;
 };
 
@@ -128,7 +140,7 @@ instance MENU_ITEM_LIST_MISSIONS_OLD(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags & ~IT_TXT_CENTER;
 	userstring[0] = "FAILEDMISSIONS";
-	framesizex = 250;
+	framesizex = LOG_ITEM_FRAMESIZEX;
 	framesizey = 0;
 };
 
@@ -145,7 +157,7 @@ instance MENU_ITEM_LIST_LOG(C_MENU_ITEM_DEF)
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags & ~IT_TXT_CENTER;
 	userstring[0] = "LOG";
-	framesizex = 250;
+	framesizex = LOG_ITEM_FRAMESIZEX;
 	framesizey = 0;
 };
 
@@ -167,8 +179,8 @@ instance MENU_ITEM_CONTENT_VIEWER(C_MENU_ITEM_DEF)
 instance MENU_ITEM_DAY_TITLE(C_MENU_ITEM_DEF)
 {
 	text[0] = "Dzieñ";
-	posx = 1800;
-	posy = 6000;
+	posx = LOG_ITEM_ITEM_DAY_TITLE_POSX;
+	posy = LOG_ITEM_ITEM_DAY_POSY;
 	fontname = LOG_FONT_DATETIME;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -176,8 +188,8 @@ instance MENU_ITEM_DAY_TITLE(C_MENU_ITEM_DEF)
 instance MENU_ITEM_TIME_TITLE(C_MENU_ITEM_DEF)
 {
 	text[0] = "Czas:";
-	posx = 1500;
-	posy = 6300;
+	posx = LOG_ITEM_ITEM_TIME_TITLE_POSX;
+	posy = LOG_ITEM_ITEM_TIME_POSY;
 	fontname = LOG_FONT_DATETIME;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -185,9 +197,9 @@ instance MENU_ITEM_TIME_TITLE(C_MENU_ITEM_DEF)
 instance MENU_ITEM_DAY(C_MENU_ITEM_DEF)
 {
 	text[0] = "XX.";
-	posx = 1500;
-	posy = 6000;
-	dimx = 300;
+	posx = LOG_ITEM_ITEM_DAY_POSX;
+	posy = LOG_ITEM_ITEM_DAY_POSY;
+	dimx = LOG_ITEM_ITEM_DAY_DIMX;
 	fontname = LOG_FONT_DATETIME;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -195,8 +207,8 @@ instance MENU_ITEM_DAY(C_MENU_ITEM_DEF)
 instance MENU_ITEM_TIME(C_MENU_ITEM_DEF)
 {
 	text[0] = "XX:XX";
-	posx = 2200;
-	posy = 6300;
+	posx = LOG_ITEM_ITEM_TIME_POSX;
+	posy = LOG_ITEM_ITEM_TIME_POSY;
 	fontname = LOG_FONT_DATETIME;
 	flags = flags & ~IT_SELECTABLE;
 };

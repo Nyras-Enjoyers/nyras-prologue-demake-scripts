@@ -508,6 +508,10 @@ const int	_YPOS_MESSAGE_PICKLOCK_UNLOCK	=	9;
 const int	_YPOS_MESSAGE_PICKLOCK_FAILURE	=	12;
 const int 	_YPOS_MESSAGE_PICKLOCK_BROKEN	=	15;
 const int	_YPOS_MESSAGE_CANNOTSTEAL		=	6;
+const int	_YPOS_MESSAGE_TAKEN_ALTESSCHWERT =	40; // NyrasPrologDemake: display information about taken an old sword in the other line than the rest of the items which are underwater
+const int	_YPOS_MESSAGE_TAKEN_ITFOBEER	 =	43; // NyrasPrologDemake: display information about taken an beer in the other line than the rest of the items which are underwater
+const int	_YPOS_MESSAGE_TAKEN_ITMI_STUFF_MUG_01 =	46; // NyrasPrologDemake: display information about taken a mug in the other line than the rest of the items which are underwater
+
 
 
 // ***************************************************************************************

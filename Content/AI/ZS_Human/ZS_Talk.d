@@ -347,6 +347,8 @@ FUNC VOID ZS_Talk_End ()
 			
 			// Start CH0_DraxHunt if not started
 			if (MIS_CH0_DraxHunt == LOG_NONE)
+			// And Nyras didn't refuse
+			&& (Drax_IHaveNoTimeForThat == false)
 			{
 				Log_CreateTopic(CH0_DraxHunt, LOG_MISSION);
 				Log_SetTopicStatus(CH0_DraxHunt, LOG_RUNNING);
@@ -383,7 +385,15 @@ FUNC VOID ZS_Talk_End ()
 				{
 					Log_CreateTopic		(CH0_DraxHunt, LOG_MISSION);
 					Log_SetTopicStatus	(CH0_DraxHunt, LOG_RUNNING);
-					B_LogEntry			(CH0_DraxHunt, CH0_DraxHunt_0);
+					
+					// Don't play a new log entry sound, if player wants to hunt immediately
+					if (Drax_HeroWeaponCheck == true)
+					{
+						B_LogEntry_Silent(CH0_DraxHunt, CH0_DraxHunt_0);
+					} else
+					{
+						B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_0);
+					};
 					MIS_CH0_DraxHunt = LOG_RUNNING;
 					
 					// Update quest CH0_APlaceToSleep - help Drax, if player didn't find Jorik yet. Otherwise `CH0_APlaceToSleep_2` was already added.
@@ -492,6 +502,7 @@ FUNC VOID ZS_Talk_End ()
 			{
 				// A log entry about a danger
 				if (B_LogEntry_AlreadyAdded == false)
+				&& (Drax_FirstZSTalkFinished == true) // Play a sound of a new log entry only, if it is not the first ZS_Talk with Drax
 				{
 					B_LogEntry(CH0_DraxHunt, CH0_DraxHunt_3);
 				} else
@@ -504,6 +515,13 @@ FUNC VOID ZS_Talk_End ()
 			
 				ORG_819_Drax_Lets_Hunt = true;
 			};
+		};
+		
+		// Hero talked with Drax at least a one time.
+		// INFO: Needed to not play a log entry sound, if the hunt has to start just after the first ZS_Talk state, where Drax was `self`
+		if (Drax_FirstZSTalkFinished == false)
+		{
+			Drax_FirstZSTalkFinished = true;
 		};
 	// Orry
 	} else if (GRD_254_Orry == Hlp_GetInstanceID(self))

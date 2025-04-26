@@ -801,3 +801,24 @@ func void B_Ani_GiveItem(var C_NPC giver, var C_NPC taker)
 	AI_PlayAni(giver, "T_TRADEITEM");
 	AI_PlayAni(taker, "T_TRADEITEM");
 };
+
+//////////////////////////////////////////////////////////////////////////
+//	B_TakenItem
+//	==============
+//	Display which an item player took.
+//
+//  Used underwater only.
+//////////////////////////////////////////////////////////////////////////
+func void B_TakenItem(var int itemInstance, var int YPos)
+{
+	PrintDebugNpc(PD_ZS_DETAIL,	"B_TakenItem");
+
+	// Save the item in `item` variable
+	Npc_GetInvItem(hero, itemInstance);
+
+	// Prepare a message
+	var string msg; msg = ConcatStrings(_STR_MESSAGE_ITEMS_TAKEN, item.name);
+	
+	// Display the message
+	_ = PrintScreen(msg, -1, YPos, "FONT_OLD_10_WHITE.TGA", _TIME_MESSAGE_TAKEN);
+};

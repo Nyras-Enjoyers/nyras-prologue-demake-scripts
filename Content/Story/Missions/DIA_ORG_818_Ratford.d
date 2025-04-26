@@ -258,8 +258,7 @@ func void DIA_ORG_818_Ratford_Who_Are_You_Info()
 		AI_Output	(hero, self, "Ratford-CH0-None-Hero-22878");	//Chyba znalaz³em twojego kumpla.
 		AI_Output	(self, hero, "Ratford-CH0-None-Ratford-80190");	//W³aœnie widzê. 
 		
-		// DAMIANUT-TODO <-- TU DAJ ALBO KOM PO ANGIELSKU ALBO DO WYWALENIA CA£KIEM (FABIO)
-		// Kontynuuje dialog wspólny dla przypadku, gdy nie spotka³ Nyrasa i ten nie powiedzia³, by w niego nie celowa³.
+		// Continue a dialogue common for a case, when didn't meet Nyras and Nyras didn't tell him, to not aim at him.
 		DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence();
 	};
 };
@@ -288,8 +287,7 @@ func void DIA_ORG_818_Ratford_Who_Are_You_This_Is_How_I_Found_Jorik()
 
 	AI_RemoveWeapon(self);
 
-	// DAMIANUT-TODO <-- TU DAJ ALBO KOM PO ANGIELSKU ALBO DO WYWALENIA CA£KIEM (FABIO)
-	// Kontynuuje dialog wspólny dla przypadku, gdy ju¿ spotka³ Nyrasa
+	// Continue a dialogue common for a case, when he met Nyras already
 	DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence();
 };
 

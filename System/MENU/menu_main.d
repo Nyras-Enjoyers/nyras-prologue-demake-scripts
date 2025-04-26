@@ -3,8 +3,7 @@ instance MENU_MAIN(C_MENU_DEF)
 {
 	musictheme = "SYS_Menu";
 	
-	// items[0] = "MENUITEM_MAIN_HEADLINE";
-	items[0] = "MENUITEM_MAIN_HEADLINE2"; // Shadow of the logo
+	items[0] = "MENUITEM_MAIN_HEADLINE"; // Shadow of the logo
 	items[1] = "MENUITEM_MAIN_RESUME";
 	items[2] = "MENUITEM_MAIN_NEWGAME";
 	items[3] = "MENUITEM_MAIN_SAVEGAME_SAVE";
@@ -17,7 +16,7 @@ instance MENU_MAIN(C_MENU_DEF)
 	flags = MENU_SHOW_INFO | MENU_EXCLUSIVE;
 };
 
-instance MENUITEM_MAIN_HEADLINE2(C_MENU_ITEM_DEF)
+instance MENUITEM_MAIN_HEADLINE(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_LOGO_TOP;
 	posx = MENU_MAIN_LOGO_X;
@@ -25,19 +24,6 @@ instance MENUITEM_MAIN_HEADLINE2(C_MENU_ITEM_DEF)
 	dimx = MENU_MAIN_LOGO_WIDTH;
 	dimy = MENU_MAIN_LOGO_HEIGHT;
 	alphamode = "NONE";
-	flags = flags | IT_TXT_CENTER;
-	flags = flags & ~IT_SELECTABLE;
-};
-
-instance MENUITEM_MAIN_HEADLINE(C_MENU_ITEM_DEF)
-{
-	backpic = MENU_LOGO_SHADOW_TOP;
-	posx = MENU_MAIN_LOGO_X;
-	posy = MENU_MAIN_LOGO_Y;
-	dimx = MENU_MAIN_LOGO_WIDTH;
-	dimy = MENU_MAIN_LOGO_HEIGHT;
-	alphamode = "BLEND";
-	alpha = 220; // Shadow
 	flags = flags | IT_TXT_CENTER;
 	flags = flags & ~IT_SELECTABLE;
 };

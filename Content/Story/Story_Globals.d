@@ -7,6 +7,7 @@ var int Orry_IWillDoThat; // If player wants to give him a beer.
 var int Orry_ABeerFound; // If player found a beer
 var int Drax_IHaveNoTimeForThat; // If player refused to help in the hunt.
 var int Drax_IsHunting; // If Drax is hunting
+var int Drax_FirstZSTalkFinished; // If hero talked with Drax at least a one time
 var int Kirgo_NotYourBusiness; // If player refuses to answer Kirgo.
 const int DRAX_HUNTSCAVENGERSTOKILL = 3;
 var int Drax_KilledScavengersCounter; // How many scavengers were killed during hunt with Drax.
@@ -62,6 +63,12 @@ var int HuntersCamp_Busy; // If any of the hunters returned
 var int HuntersCamp_AllCameBack; // If all hunters come back
 
 var int Hero_TookJorikSketch; // Whether hero already took Jorik's sketch
+var int Hero_IsDiving; // If hero is diving now
+
+// The items in the player's inventory before the diving
+var int Hero_ItemsBeforeDiving_ItMi_Stuff_Mug_01; // A mug
+var int Hero_ItemsBeforeDiving_AltesSchwert; // An old sword
+var int Hero_ItemsBeforeDiving_ItFoBeer; // A beer
 
 /*
  *  Diego-Whistler smalltalk

@@ -394,5 +394,3 @@ func void DIA_ORG_819_Drax_Hello_About_Ratford()
 
 	AI_StopProcessInfos	(self);
 };
-
-// -> DAMIANUT-TODO jak zaatakuje siê œcierwojady przed pierwsz¹ rozmow¹ z Draxem, to chce zabiæ
