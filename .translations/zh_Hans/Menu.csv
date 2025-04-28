@@ -21,7 +21,7 @@
 "System/MENU/Menu_Defines.d:165","Powrót do otchłani systemu Windows.","回到桌面。","","False","MENU_MAIN_QUIT_TEXT","",""
 "System/MENU/Menu_Defines.d:167","Czy na pewno chcesz opuścić grę?","确定退出游戏？","","False","MENUITEM_LEAVE_GAME_TEXT1","",""
 "System/MENU/Menu_Defines.d:170","Wymagane ponowne uruchomienie gry!","重新开始游戏!","","False","MENU_TEXT_NEEDS_RESTART","",""
-"System/MENU/Menu_Defines.d:172","WITAMY W KOLONII!","欢迎来到殖民地！","","False","MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER_TEXT","",""
+"System/MENU/Menu_Defines.d:172","WITAMY W KOLONII!","欢迎来到殖民地","","False","MENUITEM_LOADSAVE_THUMBPICFIXED_CHAPTER_TEXT","",""
 "System/MENU/Menu_Defines.d:174","Rozdział:","第 章：","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_TEXT","",""
 "System/MENU/Menu_Defines.d:175","Nyras","尼拉斯","","False","MENUITEM_LOADSAVE_CHAPTERSMALL_VALUE_TEXT","",""
 "System/MENU/Menu_Defines.d:176","Zapisz czas","存档时间：","","False","MENUITEM_LOADSAVE_DATETIME_TEXT","",""
