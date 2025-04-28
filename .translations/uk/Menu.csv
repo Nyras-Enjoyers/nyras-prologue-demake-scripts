@@ -144,7 +144,7 @@
 "System/MENU/menu_status.d:273","przed strzałami","від Стріл","","False","MENU_ITEM_ARMOR_2_TITLE.text[0]","",""
 "System/MENU/menu_status.d:282","przed ogniem","від Вогню","","False","MENU_ITEM_ARMOR_3_TITLE.text[0]","",""
 "System/MENU/menu_status.d:291","przed magią","від Магії","","False","MENU_ITEM_ARMOR_4_TITLE.text[0]","",""
-"System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","ЗБРОЙОВІ ВМІННЯ / КРИТИЧНЕ ВЛУЧАННЯ","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
+"System/MENU/menu_status.d:332","UMIEJ. WALKI / TRAF. KRYTYCZNE","БОЕВ. УМЕНИЯ / КРИТ. ПОПАДАН.","","False","MENU_ITEM_TALENTS_WEAPON_HEADING.text[0]","",""
 "System/MENU/menu_status.d:341","UMIEJ. ZŁODZIEJSKIE / SZANSA PORAŻKI","ЗЛОДІЙСЬКІ ВМІННЯ / ШАНС НЕВДАЧІ","","False","MENU_ITEM_TALENTS_THIEF_HEADING.text[0]","",""
 "System/MENU/menu_status.d:350","UMIEJ. SPECJALNE","СПЕЦІАЛЬНІ ВМІННЯ","","False","MENU_ITEM_TALENTS_SPECIAL_HEADING.text[0]","",""
 "System/MENU/menu_log.d:169","Dzień","День:","","False","MENU_ITEM_DAY_TITLE.text[0]","",""
