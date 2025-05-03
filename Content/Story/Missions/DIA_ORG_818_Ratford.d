@@ -452,7 +452,6 @@ func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching__Choices_Common
 	{
 		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-32587-0"); //Tak czy siak, kolacji nie bêdzie, dopóki Drax nie upoluje dla nas paru œcierwojadów. 
 		
-		// DAMIANUT-OPT-TODO: Ograæ Remake jeszcze raz i sprawdziæ tê opcjê.
 		if (MIS_CH0_DraxHunt == LOG_NONE)
 		{
 			AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-15507-0"); 	//Mo¿e ty mu pomo¿esz? Bêdzie móg³ ciê wtedy poznaæ.
