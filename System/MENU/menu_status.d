@@ -71,6 +71,7 @@ instance MENU_STATUS(C_MENU_DEF)
 	dimx = 8191;
 	dimy = 8191;
 	flags = flags | MENU_OVERTOP|MENU_NOANI;
+	backpic = STAT_BACK_PIC;
 };
 
 
@@ -612,11 +613,10 @@ instance MENU_ITEM_TALENT_13_SKILL(C_MENU_ITEM_DEF)
 
 instance MENU_ITEM_STATUS_BACKGROUND(C_MENU_ITEM_DEF)
 {
-	backpic = STAT_BACK_PIC;
+	
 	posx = 0;
 	posy = 0;
 	dimx = 8191;
 	dimy = 8191;
-	alphamode = "NONE";
 	flags = flags & ~IT_SELECTABLE;
 };
