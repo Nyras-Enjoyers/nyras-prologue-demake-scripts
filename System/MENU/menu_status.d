@@ -617,5 +617,6 @@ instance MENU_ITEM_STATUS_BACKGROUND(C_MENU_ITEM_DEF)
 	posy = 0;
 	dimx = 8191;
 	dimy = 8191;
+	alphamode = "NONE";
 	flags = flags & ~IT_SELECTABLE;
 };
