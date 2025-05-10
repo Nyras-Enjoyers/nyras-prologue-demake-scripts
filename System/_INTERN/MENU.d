@@ -127,7 +127,7 @@ prototype C_MENU_DEF(C_MENU)
 	posy = 0;
 	dimx = 8191;
 	dimy = 8191;
-	alpha = 254;
+	alpha = 0;
 	flags = MENU_EXCLUSIVE | MENU_DONTSCALE_DIM | MENU_ALIGN_CENTER;
 	eventtimermsec = 1000;
 	musictheme = "";
