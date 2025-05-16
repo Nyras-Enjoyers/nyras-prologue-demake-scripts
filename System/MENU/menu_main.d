@@ -23,6 +23,7 @@ instance MENUITEM_MAIN_HEADLINE(C_MENU_ITEM_DEF)
 	posy = MENU_MAIN_LOGO_Y;
 	dimx = MENU_MAIN_LOGO_WIDTH;
 	dimy = MENU_MAIN_LOGO_HEIGHT;
+	alpha = 255;
 	alphamode = "NONE";
 	flags = flags | IT_TXT_CENTER;
 	flags = flags & ~IT_SELECTABLE;
