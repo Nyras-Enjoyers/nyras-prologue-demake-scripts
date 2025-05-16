@@ -102,7 +102,7 @@ prototype C_MENU_ITEM_DEF(C_MENU_ITEM)
 	fontname = MENU_FONT_DEFAULT;
 	text[0] = "";
 	alphamode = "BLEND";
-	alpha = 254;
+	alpha = 255;
 	type = MENU_ITEM_TEXT;
 	posx = 0;
 	posy = 0;
