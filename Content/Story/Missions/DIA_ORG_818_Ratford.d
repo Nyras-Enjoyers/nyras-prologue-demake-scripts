@@ -210,12 +210,15 @@ func int DIA_ORG_818_Ratford_Who_Are_You_Condition()
 func void DIA_ORG_818_Ratford_Who_Are_You_Common_No_Offence()
 {
 	AI_Output	(self, hero, "TEXT_HECTO_20230817_110702_41");				//No tak. Nie ¿yje. Kurwa. To pewnie robota cieniostwora.
-	AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-46542");	//Zna³eœ go?
 
-	// TODO: Zmieniæ warunek na ukoñczone polowanie z Draxem, jak bêdzie dubbing.
-	if (false)
+	// If Drax mentioned about Jorik. Mentions only, if Nyras helped with hunting.
+	if (MIS_CH0_DraxHunt == LOG_SUCCESS)
 	{
 		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-24422");	//Drax wspomnia³, ¿e by³ jednym z was?
+	// If didn't
+	} else
+	{
+		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-46542");	//Zna³eœ go?
 	};
 	
 	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-56356");	//By³ z naszego gangu, wiêc tak. W³aœnie dlatego jesteœmy tutaj z kumplem.
@@ -422,18 +425,6 @@ func int DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Condition()
 	};
 };
 
-// TODO: Ten kod trzeba wykonywaæ w `DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Info`, jak bêdzie dubbing.
-// If player pissed off Ratford before.
-func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_What_An_Idiot()
-{
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-33264-0");	//Wiêc Drax obieca³ ci miejsce w naszym obozie? Na jajca Beliara, co za je³op...
-	AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-39243-0");		//Pomog³em mu w polowaniu...
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-47000-0");	//Czy¿by? A, dobra ju¿, chuj tam. Pewnie nie znalaz³bym nieboszczyka przed zmrokiem, gdybyœ nie postanowi³ pobuszowaæ po krzakach. 
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-25814-0");	//Zorganizujemy ci kawa³ek ubitej ziemi do spania, a nawet kolacjê. Przepraszam za wczeœniej. Po prostu w tej zasranej dziurze op³aca siê mieæ oczy dooko³a g³owy.
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-36744-0");	//W ka¿dym razie...
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-15303-1");	//ChodŸ, wracamy. Mój kumpel, Drax, powinien ju¿ byæ w obozie.
-};
-
 func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Info()
 {
 	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-63489");		//Co to?
@@ -442,16 +433,33 @@ func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Info()
 	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-41888-0");	//He. Musia³ to nabazgraæ, kiedy by³ ju¿ porobiony. Mo¿esz to wzi¹æ. 
 	AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-9744-0");		//Co teraz? Zabierzesz go z powrotem do obozu?
 	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-23899-0");	//Nie. Przeczekamy tu noc, a jutro wrócimy do obozu i powiemy szefowi, ¿e Jorik nie ¿yje. I po temacie.
+
+	// If player helped Drax
+	if (MIS_CH0_DraxHunt == LOG_SUCCESS)
+	{
+		Ratford_CommentedFoundNote = true;
 	
-	// TODO: Jeœli gracz pomóg³ Draxowi, to zamiast kodu poni¿ej jest wykonywany `DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_What_An_Idiot();`.
-	
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-72836-0");	//To ten... mówi³eœ, ¿e szukasz bezpiecznego miejsca na obóz, tak? Dobry pomys³, zw³aszcza ¿e w okolicy grasuje cieniostwór.
-	AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-90162-0");		//Taa.
-	AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-32267-0");	//Dobra ju¿ chuj tam – mo¿esz spaæ przy naszym ognisku. W starym obozie Kopaczy po drugiej stronie Opuszczonej Kopalni. Stwór siê tam nie zapuœci. 
-	
-	Info_ClearChoices (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching);
-	Info_AddChoice (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching, Ratford_CH0_G1RDemo_DraxHunt_Caption_25858_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Nice_Thanks);
-	Info_AddChoice (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching, Ratford_CH0_G1RDemo_DraxHunt_Caption_9934_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Just_That);
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-33264-0");	//Wiêc Drax obieca³ ci miejsce w naszym obozie? Na jajca Beliara, co za je³op...
+		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-39243-0");		//Pomog³em mu w polowaniu...
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-47000-0");	//Czy¿by? A, dobra ju¿, chuj tam. Pewnie nie znalaz³bym nieboszczyka przed zmrokiem, gdybyœ nie postanowi³ pobuszowaæ po krzakach. 
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-25814-0");	//Zorganizujemy ci kawa³ek ubitej ziemi do spania, a nawet kolacjê. Przepraszam za wczeœniej. Po prostu w tej zasranej dziurze op³aca siê mieæ oczy dooko³a g³owy.
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-36744-0");	//W ka¿dym razie...
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-15303-1");	//ChodŸ, wracamy. Mój kumpel, Drax, powinien ju¿ byæ w obozie.
+		
+		AI_StopProcessInfos (self);
+		
+		Npc_ExchangeRoutine(self, "HUNTERSCAMP");
+	// If didn't help yet or refused
+	} else
+	{
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-72836-0");	//To ten... mówi³eœ, ¿e szukasz bezpiecznego miejsca na obóz, tak? Dobry pomys³, zw³aszcza ¿e w okolicy grasuje cieniostwór.
+		AI_Output	(hero, self, "Ratford-CH0-G1RDemo_DraxHunt-Hero-90162-0");		//Taa.
+		AI_Output	(self, hero, "Ratford-CH0-G1RDemo_DraxHunt-Ratford-32267-0");	//Dobra ju¿ chuj tam – mo¿esz spaæ przy naszym ognisku. W starym obozie Kopaczy po drugiej stronie Opuszczonej Kopalni. Stwór siê tam nie zapuœci. 
+		
+		Info_ClearChoices (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching);
+		Info_AddChoice (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching, Ratford_CH0_G1RDemo_DraxHunt_Caption_25858_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Nice_Thanks);
+		Info_AddChoice (DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching, Ratford_CH0_G1RDemo_DraxHunt_Caption_9934_0, DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching_Just_That);
+	};
 };
 func void DIA_ORG_818_Ratford_About_Found_Sketch_After_Searching__Choices_Common()
 {
