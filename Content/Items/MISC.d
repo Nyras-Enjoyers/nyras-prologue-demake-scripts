@@ -182,6 +182,9 @@ INSTANCE ItMiStomper (C_Item)
 
 /******************************************************************************************/
 // Reparieren
+const string ItMi_Hammer_description = "Solidny m³otek. Symbol ciê¿kiej pracy w Kolonii, u¿ywany przez kowali i rzemieœlników.";
+const string ItMi_Hammer_description_1 = "Solidny m³otek. Symbol ciê¿kiej pracy w Kolonii,";
+const string ItMi_Hammer_description_2 = "u¿ywany przez kowali i rzemieœlników.";
 INSTANCE ItMiHammer (C_Item)
 {
 	name 				=	"M³otek";
@@ -195,7 +198,8 @@ INSTANCE ItMiHammer (C_Item)
 	material 			=	MAT_WOOD;
 
 	description			= name;
-	TEXT[4]				= NAME_Value;					COUNT[4]	= Value_MobsiItem;
+	TEXT[4] = ItMi_Hammer_description_1;
+	TEXT[5] = ItMi_Hammer_description_2;
 };
 
 /******************************************************************************************/
