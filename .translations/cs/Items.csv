@@ -410,3 +410,6 @@
 "Content/Items/Food.d:273","Nadwyżki napędzają handel i kształtują relacje z innymi obozami.","Její nadbytek pohání jejich obchod a formuje vztahy s ostatními tábory.","","False","ItFo_Rice_description_3","",""
 "Content/Items/Food.d:468","symbolizując zaradność obozu.","a společenské mazivo, podtrhuje vynalézavost tábora.","","False","ItFo_Potion_Booze_description_3","",""
 "Content/Items/MISC.d:700","Często jedyny luksus w skromnym dobytku Kopacza.","Často je to ta nejluxusnější věc z kopáčova majetku.","","False","ItMi_Stuff_Cup_01_description_2","",""
+"Content/Items/MISC.d:185","Solidny młotek. Symbol ciężkiej pracy w Kolonii, używany przez kowali i rzemieślników.","Bytelné kladivo. Nezbytný nástroj pro kováře a řemeslníky, symbol tvrdé práce v Kolonii.","","False","ItMi_Hammer_description","",""
+"Content/Items/MISC.d:186","Solidny młotek. Symbol ciężkiej pracy w Kolonii,","Bytelné kladivo. Nezbytný nástroj pro kováře a řemeslníky,","","False","ItMi_Hammer_description_1","",""
+"Content/Items/MISC.d:187","używany przez kowali i rzemieślników.","symbol tvrdé práce v Kolonii.","","False","ItMi_Hammer_description_2","",""
