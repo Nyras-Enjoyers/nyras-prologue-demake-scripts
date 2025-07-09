@@ -12,7 +12,7 @@ const string    CH0_KirgoFight          =   "Sparing";
 // CH0_APlaceToSleep
 const string CH0_APlaceToSleep_0 = "Powitanie Diego jest niewielk¹ pociech¹. Lawina skalna blokuje dostêp do doliny, a w pobli¿u grasuje cieniostwór. Muszê znaleŸæ jakieœ schronienie, w którym przenocujê.";
 
-const string CH0_APlaceToSleep_1 = "Plac Wymian przemierza cieniostwór. Muszê znaleŸæ bezpieczne schronienie przed nadejœciem nocy."; // DAMIANUT-TODO
+// const string CH0_APlaceToSleep_1 = "Plac Wymian przemierza cieniostwór. Muszê znaleŸæ bezpieczne schronienie przed nadejœciem nocy.";
 const string CH0_APlaceToSleep_2 = "Ratford zasugerowa³, bym pomóg³ jego przyjacielowi Draxowi w polowaniu na œcierwojady w pobli¿u traktu w dolinie. To mo¿e byæ moja szansa na znalezienie noclegu przy ognisku.";
 const string CH0_APlaceToSleep_3 = "Drax potrzebuje pomocy w polowaniu na œcierwojady. Jeœli oka¿ê siê przydatny, mogê zyskaæ miejsce przy ich ognisku, z dala od cieniostwora.";
 const string CH0_APlaceToSleep_4 = "Jorik, cz³onek ekipy ³owców, zagin¹³ w kanionie. Jeœli go odnajdê, byæ mo¿e zapewniê sobie bezpieczny nocleg.";
