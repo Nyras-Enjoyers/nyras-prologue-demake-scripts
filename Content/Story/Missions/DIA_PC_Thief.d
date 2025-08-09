@@ -414,6 +414,7 @@ func void DIA_PC_Thief_About_Kirgo_Death_Are_You_Impressed()
 	AI_Output	(hero, self, "Diego-CH0-None-Caption-69944-0");	//Nie jesteœ pod wra¿eniem?
 	AI_Output	(self, hero, "Diego-CH0-None-Diego-94971");		//Czy jes...
 	AI_Output	(self, hero, "Diego-CH0-None-Diego-76598");		//Nie jestem pewien, czy próbujesz byæ zabawny, ale moja cierpliwoœæ ma granice.
+	AI_Output	(self, hero, "TEXT_MATTM_20230808_122333");		//W porz¹dku?
 };
 
 //Nie zabijesz mnie?
