@@ -160,4 +160,4 @@ func void ZS_Smalltalk_Whistler_End()
 	AI_StopLookAt(self);
 	
 	AI_PlayAni (self,"T_LGUARD_2_STAND");
-};
+}; 
