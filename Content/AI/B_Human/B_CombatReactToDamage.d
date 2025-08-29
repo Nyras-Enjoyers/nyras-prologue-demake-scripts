@@ -107,8 +107,6 @@ func void B_CombatReactToDamage_FixMinimalDamage()
 			B_GiveXP(self.level * XP_PER_LEVEL_DEAD);
 		};
 	};
-	
-	// DAMIANUT-OPT-TODO: Handle last hit
 };
 
 func void B_CombatReactToDamage ()

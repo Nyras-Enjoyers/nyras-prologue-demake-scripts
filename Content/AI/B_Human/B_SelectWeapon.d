@@ -197,7 +197,6 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 			if (Npc_IsInFightMode(slf, FMODE_FIST) == false)
 			{
 				AI_UnequipWeapons(slf);
-				// DAMIANUT-OPT-TODO: Zak³adanie broni po walce.
 				AI_ReadyMeleeWeapon(slf);
 			};
 			return;
