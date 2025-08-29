@@ -79,6 +79,6 @@ func void Rtn_HuntersCamp_818 ()
 
 func void Rtn_WaitHuntersCamp_Ratford_818 ()
 {
-	TA_Trialog_Ratford(23,00, 10,00, "HUNTERSCAMP_002"); 
-	TA_Trialog_Ratford(10,00, 23,00, "HUNTERSCAMP_002");
+	TA_Trialog_Ratford(23,00, 2,00, "HUNTERSCAMP_002"); 
+	TA_Trialog_Ratford(2,00, 23,00, "HUNTERSCAMP_002");
 };

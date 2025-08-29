@@ -75,6 +75,6 @@ func void Rtn_HuntersCamp_819 ()
 
 func void Rtn_WaitHuntersCamp_Drax_819 ()
 {
-	TA_Trialog_Drax(23,00, 10,00, "HUNTERSCAMP_DRAX"); 
-	TA_Trialog_Drax(10,00, 23,00, "HUNTERSCAMP_DRAX");
+	TA_Trialog_Drax(23,00, 2,00, "HUNTERSCAMP_DRAX"); 
+	TA_Trialog_Drax(2,00, 23,00, "HUNTERSCAMP_DRAX");
 };
