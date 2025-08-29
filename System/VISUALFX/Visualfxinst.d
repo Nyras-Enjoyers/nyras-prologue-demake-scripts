@@ -1294,7 +1294,7 @@ instance spellFX_Demon  (CFx_Base_Proto)
 
 		emtrjmode_s 		= "FIXED";
 		emTrjOriginNode 	= "ZS_RIGHTHAND";
-		LightPresetname 	= "REDAMBIENCE";	//ToDo: "REDAMBIENCE"
+		LightPresetname 	= "REDAMBIENCE";
 		
 		emFXInvestOrigin_S	= "spellFX_Demon_INVEST";
 		
