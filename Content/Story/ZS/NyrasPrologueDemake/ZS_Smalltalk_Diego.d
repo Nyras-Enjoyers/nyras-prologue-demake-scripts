@@ -44,6 +44,9 @@ func void ZS_Smalltalk_Diego ()
 	if (Diego_Smalltalk_IsSaying == true)
 	{
 		Diego_Smalltalk_IsSaying = false;
+		
+		// And wait longer after saying
+		Diego_Smalltalk_WaitLongerAfterRestarting = true;
 	};
 };
 func int ZS_Smalltalk_Diego_Loop()
@@ -180,6 +183,14 @@ func int ZS_Smalltalk_Diego_Loop()
 	};
 	
 	AI_Wait(self, 0.5);
+
+	// Wait longer after saying a line after restarting ZS_Smalltalk_*
+	if (Diego_Smalltalk_WaitLongerAfterRestarting == true)
+	{
+		AI_Wait(self, 5);
+		
+		Diego_Smalltalk_WaitLongerAfterRestarting = false;
+	};
 	
 	return LOOP_CONTINUE;
 };

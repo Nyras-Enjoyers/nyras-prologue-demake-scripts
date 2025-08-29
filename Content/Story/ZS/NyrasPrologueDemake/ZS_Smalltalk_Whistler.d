@@ -39,6 +39,9 @@ func void ZS_Smalltalk_Whistler ()
 	if (Whistler_Smalltalk_IsSaying == true)
 	{
 		Whistler_Smalltalk_IsSaying = false;
+		
+		// And wait longer after saying
+		Whistler_Smalltalk_WaitLongerAfterRestarting = true;
 	};
 };
 
@@ -140,6 +143,14 @@ func int ZS_Smalltalk_Whistler_Loop()
 	};
 	
 	AI_Wait(self, 0.5);
+	
+	// Wait longer after saying a line after restarting ZS_Smalltalk_*
+	if (Whistler_Smalltalk_WaitLongerAfterRestarting == true)
+	{
+		AI_Wait(self, 5);
+		
+		Whistler_Smalltalk_WaitLongerAfterRestarting = false;
+	};
 	
 	return LOOP_CONTINUE;
 };

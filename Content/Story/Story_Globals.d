@@ -100,6 +100,8 @@ var int Diego_Smalltalk_IsSaying; // Whether Diego is saying SVM now
 var int Whistler_Smalltalk_IsSaying; // Whether Whistler is saying SVM now
 var int Diego_Smalltalk_SVMSaid; // Last said SVM by Diego
 var int Whistler_Smalltalk_SVMSaid; // Last said SVM by Whistler
+var int Diego_Smalltalk_WaitLongerAfterRestarting; // Wait longer after saying a line after restarting ZS_Smalltalk_*
+var int Whistler_Smalltalk_WaitLongerAfterRestarting; // Wait longer after saying a line after restarting ZS_Smalltalk_*
 
 /*
  * Trialog
