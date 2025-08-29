@@ -30,6 +30,9 @@ func void ZS_AssessEnemy ()
 	Npc_PercEnable  		(self,	PERC_ASSESSDEFEAT	,	B_CombatAssessDefeat		);
 	Npc_PercEnable  		(self,	PERC_CATCHTHIEF		,	ZS_CatchThief				);
 	Npc_PercEnable  		(self, 	PERC_ASSESSSURPRISE	,	ZS_AssessSurprise			);
+	
+	// Minimal damage fix
+	Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_CombatReactToDamage_FixMinimalDamage);
 
 	B_FullStop 				(self);
 	B_WhirlAround			(self,	other);

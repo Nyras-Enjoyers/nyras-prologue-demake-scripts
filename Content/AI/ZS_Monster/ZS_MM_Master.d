@@ -292,6 +292,9 @@ func void B_MM_ReactToDamage ()
 
 	self.aivar[AIV_MM_TEMP_PRIO] = PRIO_ATTACKER;
 	
+	// Minimal damage fix
+	B_CombatReactToDamage_FixMinimalDamage();
+	
 	if (C_PreyToPredator(self,other))
 	{
 		PrintDebugNpc	(PD_MST_FRAME,"...Monster ist Beute");

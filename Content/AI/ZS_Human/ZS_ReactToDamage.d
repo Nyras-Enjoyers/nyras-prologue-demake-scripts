@@ -26,10 +26,16 @@ func void ZS_ReactToDamage ()
 	PrintDebugNpc		(PD_ZS_FRAME,	"ZS_ReactToDamage" );			
 	PrintGlobals		(PD_ZS_CHECK);
 	C_ZSInit();	
+	
+	// Minimal damage fix
+	B_CombatReactToDamage_FixMinimalDamage();
 
 	Npc_PercEnable		(self,	PERC_ASSESSMAGIC	,	B_AssessMagic			);
 	Npc_PercEnable		(self,	PERC_ASSESSMURDER	,	B_CombatAssessMurder	);	
 	Npc_PercEnable		(self,	PERC_ASSESSDEFEAT	,	B_CombatAssessDefeat	);
+	
+	// Minimal damage fix (to call, when NPC is a loop of this ZS_*)
+	Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_CombatReactToDamage_FixMinimalDamage);
 	
 	B_WhirlAround 		(self, other);
 
