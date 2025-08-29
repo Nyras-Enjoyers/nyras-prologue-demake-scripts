@@ -353,7 +353,7 @@ func void DIA_ORG_819_Drax_After_Hunting_Info()
 		Info_AddChoice (DIA_ORG_819_Drax_After_Hunting, "„Kompanii”?", DIA_ORG_819_Drax_Hello_About_Company);
 	};
 	
-	// DAMIANUT-OPT-TODO: Raz uda³o mi siê odtworzyæ ten dialog. Zapisujê tu na wypadek, gdybym ustali³, jak to zrobiæ.
+	// TODO: Find a case, when this line is played. It happens only once time while my gameplay [Damianut]. More precisely after a first talk with Drax and it didn't make a sense. From precompiled, original scripts follows, that this line is played in `else` case, i.e. when the other cases are not fulfilled. We preserved this line in demake's scripts to have it compiled. Also the records in all languages provided by Alkimia are included in the demake's files.
 	if (false)
 	{
 		AI_Output	(self, hero, "Drax-CH0-G1RDemo_DraxHunt-Drax-57366");	//Przykro mi, przyjacielu, ale dokona³eœ wyboru. Powodzenia.
