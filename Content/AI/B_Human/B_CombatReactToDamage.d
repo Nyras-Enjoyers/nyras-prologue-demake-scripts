@@ -78,6 +78,12 @@ func void B_CombatReactToDamage_FixMinimalDamage()
 			if (self.attribute[ATR_HITPOINTS] >= self.attribute[ATR_HITPOINTS_MAX])
 			{
 				Npc_ChangeAttribute(self, ATR_HITPOINTS, -NPC_MINIMAL_DAMAGE);
+				
+				// If killed by a script, then give an experience
+				if (0 >= self.attribute[ATR_HITPOINTS])
+				{
+					B_GiveXP(self.level * XP_PER_LEVEL_DEAD);
+				};
 			};
 			
 			// Save new value
@@ -94,6 +100,12 @@ func void B_CombatReactToDamage_FixMinimalDamage()
 		
 		// Save new value
 		self.aivar[AIV_LASTHITHP] = self.attribute[ATR_HITPOINTS];
+		
+		// If killed by a script, then give an experience
+		if (0 >= self.attribute[ATR_HITPOINTS])
+		{
+			B_GiveXP(self.level * XP_PER_LEVEL_DEAD);
+		};
 	};
 	
 	// DAMIANUT-OPT-TODO: Handle last hit
