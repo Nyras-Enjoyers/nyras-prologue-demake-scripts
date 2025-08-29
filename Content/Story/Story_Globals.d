@@ -91,7 +91,6 @@ var int Hero_ItemsBeforeDiving_ItFoBeer; // A beer
  *	   Diego_CH0_None_Diego_38791			8D
  *	   Diego_CH0_None_Whistler_2972			7W
  */
-// var int Smalltalk_DiegoHasGoToWhistlerAfterWP; // If Diego wasn't on the lower part of the Exchange Area, then he has to go to a WP first, then to Whistler // DAMIANUT-OPT-TODO: Diego ma iść ścieżką...
 var string Smalltalk_Diego_WP; // Near which WP Diego has to stay while the smalltalk with Whistler
 var int Smalltalk_HasToBeFinished; // Whether the smalltalk has to be finished
 var int Smalltalk_Finished; // Whether the smalltalk was finished
