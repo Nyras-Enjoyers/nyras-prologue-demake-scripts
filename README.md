@@ -7,7 +7,9 @@ Assets from Nyras Prologue Demake can be found on [GitHub]([https://github.com/N
 
 ## SUMMARY
 
-The scripts are written in Polish. They are connected with Weblate platform, which uses `.csv` files with translations stored on [translation](https://github.com/Nyras-Enjoyers/scripts-nyras-prologue-demake/tree/translation/.translations) branch. Then thanks to Auronen's tool the scripts are substituted with the translations to get the scripts in 10 languages (without Japanese, because it requires manual translation).
+The scripts are written in Polish. They are connected with [Weblate project](https://weblate.cokoliv.eu/projects/nyras-prolog-demake/), which uses `.csv` files with translations stored on [translation](https://github.com/Nyras-Enjoyers/scripts-nyras-prologue-demake/tree/translation/.translations) branch. Then thanks to Auronen's tool the scripts are substituted with the translations to get the scripts in 10 languages (without Japanese, because it requires manual translation).
+
+The translations available in _Nyras Prolog Demake_ project come from [Gothic 1 Remake demo](https://weblate.cokoliv.eu/projects/gothic-1-remake-demo/) and [Gothic 1](https://weblate.cokoliv.eu/projects/gothic-1/) projects on Weblate.
 
 ## CREDITS
 **Fabiosek** – Scripts, Tests
