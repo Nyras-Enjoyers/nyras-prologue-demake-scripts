@@ -3,7 +3,7 @@ The scripts of Nyras Prologue Demake project – the port of Nyras Prologue on G
 
 Based on [Gothic 1 Remake - Demo (Nyras Prologue)](https://store.steampowered.com/app/3448280/Gothic_1_Remake__Demo_Nyras_Prologue)
 
-Assets from Nyras Prologue Demake can be found on [GitHub](https://github.com/Nyras-Enjoyers/scripts-nyras-prologue-demake](https://github.com/Nyras-Enjoyers/nyras-prologue-demake-assets)
+Assets from Nyras Prologue Demake can be found on [GitHub](https://github.com/Nyras-Enjoyers/nyras-prologue-demake-assets).
 
 ## SUMMARY
 
